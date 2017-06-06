@@ -1,0 +1,72 @@
+.color-red {
+    color: #d52d30;
+}
+
+.color-blue {
+    color: #1d5176;
+}
+
+.color-brown {
+    color: #474747;
+}
+
+.name {
+    color: #3dc3ea;
+}
+
+.title {
+    font-size: 29px;
+}
+
+.title-end {
+    font-weight: 100;
+}
+
+.company-name {
+    font-weight: 150;
+    font-size: 27px;
+}
+
+.logo {
+    font-size: 45px;
+    color: #1a75cf;
+}
+
+.logo h2 {
+    margin: 0;
+    float: right;
+}
+
+hr {
+    font-weight: 400;
+    border: none;
+    height: 2px;
+    background-color: #1d5176;
+    margin-bottom: 10px;
+}
+
+.right-col {
+    margin-left: 5px;
+}
+
+.detail-heading {
+    background-color: #1d5176;
+    padding: 3px;
+    color: #ffffff;
+}
+
+.rating {
+    background-color: #00cc00;
+    padding: 3px;
+    color: #1d5176;
+}
+
+.score {
+    padding: 2px;
+    background-color: #22bde8;
+}
+
+.display-panel {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding-left: 5px;
+}
