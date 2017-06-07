@@ -1,0 +1,11 @@
+
+
+DATE/TIME: {ts '2017-06-06 16:32:50'} 
+ERROR MESSAGE: Variable TYPE is undefined. 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\userController.cfc 
+ERROR LINE: 42 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfuserController2ecfc299727074$funcREGISTERUSER.runFunction(D:\coldfusion\company\controller\userController.cfc:42) 
+----------------------------------------------------------------------
+
