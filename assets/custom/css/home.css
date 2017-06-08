@@ -1,3 +1,11 @@
+/**
+* File: home.css
+* Author: Satyapriya Baral
+* Path: assets/custom/home.css
+* Purpose: contains all the css for the home page
+* Date: 06-06-2017
+*/
+
 .error {
     color: #B20000;
 }
@@ -10,6 +18,11 @@ table {
     height: 4298px;
     width: 960px;
     margin: 0 auto;
+}
+
+.signout {
+    font:  normal 14px /  sans-serif;
+    float: right;
 }
 
 .color-red {

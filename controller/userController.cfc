@@ -179,7 +179,7 @@ component {
     * @param null
     * @return null
     */
-	public void function signoutUser()
+	remote void function signoutUser()
 	{
 		try {
 			if(SESSION.userEmail NEQ "") {
