@@ -30,11 +30,13 @@
 .logo {
     font-size: 45px;
     color: #1a75cf;
+    padding-right: 15px;
 }
 
 .logo h2 {
     margin: 0;
     float: right;
+
 }
 
 hr {
