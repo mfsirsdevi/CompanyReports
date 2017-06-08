@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8">
     <title>Auto Report</title>
-    <link rel="stylesheet" href="../assets/vendors/normalize.css">
-    <link rel="stylesheet" href="../assets/css/main.css">
-    <link rel="stylesheet" href="../assets/css/autoreport.css">
-    <link rel="stylesheet" href="../assets/vendors/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../assets/vendors/normalize.css">
+    <link rel="stylesheet" href="../../assets/custom/css/main.css">
+    <link rel="stylesheet" href="../../assets/custom/css/autoreport.css">
+    <link rel="stylesheet" href="../../assets/vendors/font-awesome/css/font-awesome.min.css">
   </head>
 <body>
   <div id="wrapper" class="grid">
