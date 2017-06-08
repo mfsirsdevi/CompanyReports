@@ -1,0 +1,99 @@
+.error {
+    color: #B20000;
+}
+
+table {
+    border-spacing: 0px;
+}
+
+#wrapper {
+    height: 4298px;
+    width: 960px;
+    margin: 0 auto;
+}
+
+.color-red {
+    color: #d52d30;
+}
+
+.color-blue {
+    color: #1d5176;
+}
+
+.color-brown {
+    color: #474747;
+}
+
+.title-end {
+    font-weight: 100;
+}
+
+.title {
+    float: left;
+    height: 50px;
+    font: normal normal normal normal 13px / 19.5px Roboto, sans-serif;
+}
+
+.selectAnalyst {
+    float: right;
+}
+
+.spanAnalyst {
+    font: normal normal bold normal 13px / 19.5px Roboto, sans-serif;
+}
+
+.dropdown {
+    width: 143px;
+    font: normal normal normal normal 13px / normal Arial;
+    margin: 10.5px 0px;
+}
+
+.header-div {
+    display: table;
+    width: 962px;
+    margin-bottom: 0 !important;
+    background: rgb(30, 80, 117) none repeat scroll 0% 0% / auto padding-box border-box;
+}
+
+.header-title {
+    color: rgb(255, 255, 255);
+    float: left;
+    font: normal normal bold normal 26px / 19.5px Roboto, sans-serif;
+    padding: 10px;
+}
+
+.search-form {
+    color: rgb(255, 255, 255);
+    float: right;
+    height: 46px;
+    font: normal normal normal normal 13px / 19.5px Roboto, sans-serif;
+    margin: 0px;
+}
+
+.input {
+    font: normal normal normal normal 13px / normal Arial;
+    margin: 6.5px 0px;
+    padding: 5px;
+}
+
+.search-button {
+    color: rgb(255, 255, 255);
+    width: 50px;
+    background: rgb(30, 80, 117) none repeat scroll 0% 0% / auto padding-box border-box;
+    border: 0px none rgb(255, 255, 255);
+    font: normal normal bold normal 12px / normal Arial;
+}
+
+.table {
+    width: 962px;
+}
+
+.thead {
+    background: rgb(0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;
+}
+
+.table-row {
+    color: rgb(255, 255, 255);
+    font: normal normal bold normal 13px / 19.5px Roboto, sans-serif;
+}
+
