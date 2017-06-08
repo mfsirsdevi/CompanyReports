@@ -4,6 +4,9 @@
 		<link rel="stylesheet" href = "<cfoutput>#request.webRoot#</cfoutput>assets/custom/css/main.css?ver=nsdfg">
 	</head>
 	<body>
+		<cfif  SESSION.isLogged EQ "false">
+			<cflocation url="#request.webRoot#view/login/login.cfm" addToken="false"></cflocation>
+		</cfif>
 		<div id = "wrapper" class="grid">
 			<div class="row">
 				<div class="col-6">
