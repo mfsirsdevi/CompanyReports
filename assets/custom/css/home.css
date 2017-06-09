@@ -120,14 +120,14 @@ tr:nth-child(even){background-color: #f2f2f2}
 }
 
 .header-title {
-    color: rgb(255, 255, 255);
+    color: #ffffff;
     float: left;
     font: normal normal bold normal 26px / 19.5px Roboto, sans-serif;
     padding: 10px;
 }
 
 .search-form {
-    color: rgb(255, 255, 255);
+    color: #ffffff;
     float: right;
     height: 46px;
     font: normal normal normal normal 13px / 19.5px Roboto, sans-serif;
@@ -141,10 +141,10 @@ tr:nth-child(even){background-color: #f2f2f2}
 }
 
 .search-button {
-    color: rgb(255, 255, 255);
+    color: #ffffff;
     width: 50px;
     background: rgb(30, 80, 117) none repeat scroll 0% 0% / auto padding-box border-box;
-    border: 0px none rgb(255, 255, 255);
+    border: 0px none #ffffff;
     font: normal normal bold normal 12px / normal Arial;
 }
 
@@ -153,11 +153,11 @@ tr:nth-child(even){background-color: #f2f2f2}
 }
 
 .thead {
-    background: rgb(0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;
+    background: #000 none repeat scroll 0% 0% / auto padding-box border-box;
 }
 
 .table-row {
-    color: rgb(255, 255, 255);
+    color: #ffffff;
     font: normal normal bold normal 13px / 19.5px Roboto, sans-serif;
 }
 

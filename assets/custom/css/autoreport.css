@@ -6,6 +6,45 @@
 * Date: 06-06-2017
 */
 
+.HighlightDiv {
+    text-align: center;
+    width: 100%;
+    margin: 10px 0 0 0;
+    border: 1px solid;
+    position: relative;
+}
+
+.Highlight {
+    margin-bottom: 5px;
+}
+
+.subjectHeader {
+    display: inline-block;
+}
+.HighlightSubject {
+    width : 300px;
+    height : 30px;
+    padding : 6px;
+}
+.save-btn {
+    float: right ;
+    right : 10px ;
+    margin: 10px 10px 0 0;
+    position: absolute;
+}
+
+.old{
+    text-align: center;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+.old h5 { 
+    display: inline;
+    margin: 0;
+    padding: 0;
+    color : #ffffff;
+    background-color: #1d5176;
+}
 .color-red {
     color: #d52d30;
 }
