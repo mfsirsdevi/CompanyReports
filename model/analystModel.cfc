@@ -28,4 +28,26 @@ component {
 			return false;
 		}
 	}
+
+	/**
+    * Function to get analyst Data of specific company.
+    * @author R S Devi Prasad
+    * @param cid - company id of the company
+    * @return - Returns object of analyst data found.
+    */
+
+	public any function getAnalyst(numeric cid) {
+		try {
+			fetchAnalyst = new Query();
+			fetchAnalyst.setSQL("SELECT [tbl_analyst].[str_analyst], [tbl_analyst].[str_phone] FROM [tbl_company] JOIN [tbl_analyst] ON [tbl_analyst].[int_analystid] = [tbl_company].[int_analystid] WHERE [tbl_company].[int_companyid] = :cid");
+			fetchAnalyst.addParam( name = "cid", value = "#arguments.cid#", cfsqltype = "cf_sql_varchar" );
+			result = fetchAnalyst.execute();
+			return result;
+		}
+		
+		catch (any exception){
+			error.errorLog(exception);
+			return false;
+		}
+	}
 }

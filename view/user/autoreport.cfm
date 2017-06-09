@@ -9,20 +9,42 @@
     <link rel="stylesheet" href="../../assets/vendors/font-awesome/css/font-awesome.min.css">
   </head>
 <body>
+  <cfif  SESSION.isLogged EQ "false">
+			<cflocation url="#request.webRoot#view/login/login.cfm" addToken="false"></cflocation>
+	</cfif>
   <div id="wrapper" class="grid">
+    <cfif IsDefined(url.cid) && IsDefined(url.rid)>
+    <cfset cid = val(url.cid) />
+    <cfset rid = val(url.rid) />
+    </cfif>
+    <cfset reportObject = CreateObject("component","controller.reportController") />
+    <cfset VARIABLES.reportData = reportObject.generateReport(cid = "#cid#", rid = "#rid#") />
+    <cfset companyObject = CreateObject("component","controller.companyController") />
+		<cfset VARIABLES.analystData = companyObject.getAnalyst(cid = "#cid#") />
     <div class="row">
       <h1 class="title"><i class="fa fa-lock color-red" aria-hidden="true"></i>
       <span class="color-blue">Public</span> <span class="color-red">Company</span> <span class="color-brown title-end">Report</span></h1>
     </div>
     <div class="row">
-      <h2 class="color-blue company-name">Walmart Stores, Inc.</h2>
+      <h2 class="color-blue company-name"><cfoutput>#reportData.str_title#</cfoutput></h2>
     </div>
     <div class="row">
       <div class="col-6">
         <strong>
-	        <p ><span class="color-blue">Analyst:</span> <span class="name">Deepak Rajwani</span></p>
-	        <p><span class="color-blue">Phone: </span>+91-96580085868</p>
-	        <p>Report Period: <span class="color-red">e.g Fiscal Year End: February 1st, 2016</span></p>
+	        <p ><span class="color-blue">Analyst:</span> <span class="name">
+          <cfif IsSimpleValue(analystData)>
+          <cfoutput>No Analyst</cfoutput>
+          <cfelse>
+          <cfoutput>#analystData.str_analyst#</cfoutput>
+          </cfif>
+          </span></p>
+	        <p><span class="color-blue">Phone: </span><cfif IsSimpleValue(analystData)>
+          <cfoutput>No Number</cfoutput>
+          <cfelse>
+          <cfoutput>#analystData.str_phone#</cfoutput>
+          </cfif>
+          </p>
+	        <p>Report Period: <span class="color-red"><cfoutput>#reportData.str_summary#</cfoutput></span></p>
         </strong>
       </div>
       <div class="col-6 logo">
@@ -36,34 +58,33 @@
           <p class="col-12 detail-heading"><strong>Retailer View</strong></p>
         </div>
         <div class="row">
-          <p><span class="color-red"><strong>Credit Score:</strong></span> <span class="score"><strong>B1</strong></span></p>
+          <p><span class="color-red"><strong>Credit Score:</strong></span> <span class="score"><strong><cfoutput>#reportData.str_creditscore#</cfoutput></strong></span></p>
         </div>
         <div class="row">
           <div class="col-4">
 
             <p class="color-red"><strong>General Information</strong></p>
-            <p>702 S.W. 8th Street</p>
-            <p>Bentoneville, AR 72716</p>
-            <p><span class="color-red"><strong>Phone:</strong></span> 479-273-4000</p>
+            <p><cfoutput>#reportData.str_address#</cfoutput></p>
+            <p><span class="color-red"><strong>Phone:</strong></span> <cfoutput>#reportData.str_phone#</cfoutput></p>
 
           </div>
           <div class="col-8">
 
             <p class="color-red"><strong>Key Personnel</strong></p>
-            <p><strong>CEO</strong> Dough McMillan</p>
-            <p><strong>CFO</strong> Charles M Holly Jr.</p>
+            <p><strong>CEO</strong> <cfoutput>#reportData.str_ceo#</cfoutput></p>
+            <p><strong>CFO</strong> <cfoutput>#reportData.str_cfo#</cfoutput></p>
             <p><strong>Auditor</strong> Ernst & Young LLP</p>
 
           </div>
         </div>
         <div class="row">
-          <a href="#">www.walmartstores.com</a>
+          <a href="#"><cfoutput>#reportData.str_url#</cfoutput></a>
         </div>
       </div>
       <div class="col-3 right-col display-panel">
         <div class="row">
           <div class="col-10"><p class="detail-heading">Credit Rating Chart</p></div>
-          <div class="col-2"><p class="rating">B1</p></div>
+          <div class="col-2"><p class="rating"><cfoutput>#reportData.str_creditscore#</cfoutput></p></div>
         </div>
       </div>
     </div>

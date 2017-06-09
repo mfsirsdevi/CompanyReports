@@ -7,7 +7,7 @@
 */
 
 component {
-    userObject = CreateObject("component", "model.userModel");
+    reportObject = CreateObject("component", "model.reportModel");
 	error = CreateObject("component", "log.error");
 
     /**
@@ -17,10 +17,10 @@ component {
     * @param string rid - report id of the report.
     * @return struct - containing data to be displayed or the errors.
     */
-    public struct function generateReport(int cid, int rid) {
+    public any function generateReport(numeric cid, numeric rid) {
 
         try {
-			
+			return reportObject.getReportViewData(ARGUMENTS.cid, ARGUMENTS.rid).getResult();
 		}
 		
 		catch (any exception){

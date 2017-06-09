@@ -1,2 +1,18 @@
+DATE/TIME: {ts '2017-06-09 14:49:12'} 
+ERROR MESSAGE: Variable GETQUERY is undefined. 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\CompanyReports\model\analystModel.cfc 
+ERROR LINE: 43 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfanalystModel2ecfc895507478$funcGETANALYST.runFunction(D:\coldfusion\CompanyReports\model\analystModel.cfc:43) 
+----------------------------------------------------------------------
 
+DATE/TIME: {ts '2017-06-09 14:49:12'} 
+ERROR MESSAGE: The getResult method was not found. 
+ERROR DETAILS: Either there are no methods with the specified method name and argument types or the getResult method is overloaded with argument types that ColdFusion cannot decipher reliably. ColdFusion found 0 methods that match the provided arguments. If this is a Java object and you verified that the method exists, use the javacast function to reduce ambiguity. 
+ERROR TEMPLATE: D:\coldfusion\CompanyReports\controller\companyController.cfc 
+ERROR LINE: 103 
+ERROR TYPE: Object 
+STACKTRACE: 	at cfcompanyController2ecfc1919740998$funcGETANALYST.runFunction(D:\coldfusion\CompanyReports\controller\companyController.cfc:103) 
+----------------------------------------------------------------------
 

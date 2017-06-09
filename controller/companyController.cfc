@@ -89,5 +89,21 @@ component {
 			error.errorLog(exception);
 			return false;
 		}
-	}	
+	}
+
+	/**
+    * Function to get analyst data of the company
+    * @author R S Devi Prasad
+    * @param numeric cid - contains the id of the company
+    * @return - Returns query result of data.
+    */
+
+	public any function getAnalyst(numeric cid) {
+		try {
+			return analystObject.getAnalyst(ARGUMENTS.cid).getResult();
+		} catch (any exception){
+			error.errorLog(exception);
+			return false;
+		}
+	}
 }
