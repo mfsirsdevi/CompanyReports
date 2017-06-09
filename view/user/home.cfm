@@ -1,10 +1,21 @@
 <html>
 	<head>
-		<link rel="stylesheet" href = "<cfoutput>#request.webRoot#</cfoutput>assets/custom/css/home.css?ver=ndfg">
-		<link rel="stylesheet" href = "<cfoutput>#request.webRoot#</cfoutput>assets/custom/css/main.css?ver=ndfg">
+		<link rel="stylesheet" href = "<cfoutput>#request.webRoot#</cfoutput>assets/custom/css/home.css?ver=sndfg">
+		<link rel="stylesheet" href = "<cfoutput>#request.webRoot#</cfoutput>assets/custom/css/main.css?ver=nsdfg">
 	</head>
 	<body>
+		<cfif  SESSION.isLogged EQ "false">
+			<cflocation url="#request.webRoot#view/login/login.cfm" addToken="false"></cflocation>
+		</cfif>
 		<div id = "wrapper" class="grid">
+			<div class="row">
+				<div class="col-6">
+					Hi <cfoutput>#SESSION.user#</cfoutput>
+				</div>
+				<div class="col-6">
+					<a class="signout" href="http://www.companyreports.com/controller/userController.cfc?method=signoutUser">signout</a>
+				</div>
+			</div>
 			<div class="row">
 				<div class="title col-6">
 					<h1><i class="fa fa-lock color-red" aria-hidden="true"></i>
