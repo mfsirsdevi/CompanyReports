@@ -1,6 +1,6 @@
 /**
 * File: reportController.cfc
-* Author: R S Devi Prasad
+* Author: R S Devi Prasad, Satyapriya Baral
 * Path: controller/reportController.cfc
 * Purpose: contains functions for report generation and display to the user.
 * Date: 08-06-2017
@@ -21,6 +21,31 @@ component {
 
         try {
 			return reportObject.getReportViewData(ARGUMENTS.cid, ARGUMENTS.rid).getResult();
+		}
+		
+		catch (any exception){
+			error.errorLog(exception);
+		}
+    }
+
+    /**
+    * Function to add record of highlight.
+    * @author Satyapriya Baral
+    * @param string subject - contains the highlight subject.
+    * @param string body - contains the highlight body.
+    * @param string tag - contains the highlight tag.
+    * @param string rid - contains the recordId.
+    * @return struct of all highlited data.
+    */
+    remote function addHighlight(string subject, string body, string tag, string rid) {
+
+        try {
+            createTag = reportObject.addTag(tag, rid);
+            createHighlight = reportObject.addHighlight(subject, body, #createTag.getprefix().identitycol#);
+            getData = reportObject.getHighlightData(rid);
+            writedump("#getData#");
+          //  reportObject.addHighlight(ARGUMENTS.subject)
+			//return reportObject.getReportViewData(ARGUMENTS.cid, ARGUMENTS.rid).getResult();
 		}
 		
 		catch (any exception){
