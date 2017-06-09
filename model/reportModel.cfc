@@ -7,7 +7,7 @@
 */
 
 component {
-    include "../include/include.cfm";	
+    error = CreateObject("component", "log.error");	
 
     /**
     * Function to create a record of new user registered.
@@ -35,6 +35,57 @@ WHERE [tbl_company].[int_companyid] = :cid AND [tbl_report].[int_reportid] = :ri
 		catch (any exception){
 			error.errorLog(exception);
 			return {};
+		}
+    }
+
+    public any function addTag(string tag, string rid) 
+    {
+        try {
+			createTag = new Query();
+			createTag.setSQL("INSERT into dbo.tbl_report_automation_highlights (int_reportid, str_tags) VALUES (:rid, :tag)");
+			createTag.addParam( name = "rid", value = "#arguments.rid#", cfsqltype = "cf_sql_varchar" );
+			createTag.addParam( name = "tag", value = "#arguments.tag#", cfsqltype = "cf_sql_varchar" );
+			result = createTag.execute();
+            return result;
+        }
+        catch (any exception){
+			error.errorLog(exception);
+			return false;
+		}
+    }
+
+    public any function addHighlight(string subject, string body, numeric id) 
+    {
+        try {
+			createHighlight = new Query();
+			createHighlight.setSQL("INSERT into dbo.tbl_report_automation_highlights_section (int_highlight_id, str_subject, str_text) VALUES (:id, :subject, :body)");
+			createHighlight.addParam( name = "id", value = "#arguments.id#", cfsqltype = "cf_sql_varchar" );
+            createHighlight.addParam( name = "subject", value = "#arguments.subject#", cfsqltype = "cf_sql_varchar" );
+			createHighlight.addParam( name = "body", value = "#arguments.body#", cfsqltype = "cf_sql_varchar" );
+			result = createHighlight.execute();
+            return result;
+        }
+        catch (any exception){
+			error.errorLog(exception);
+			return false;
+		}
+    }
+
+    public any function getHighlightData(numeric id) 
+    {
+        try {
+			getHighlight = new Query();
+			getHighlight.setSQL("SELECT [tbl_report_automation_highlights].[str_tags], [tbl_report_automation_highlights_section].[str_subject],
+            [tbl_report_automation_highlights_section].[str_text] FROM [tbl_report_automation_highlights]
+            JOIN [tbl_report_automation_highlights_section] ON [tbl_report_automation_highlights_section].[int_highlight_id] = [tbl_report_automation_highlights].[int_highlight_id]
+            WHERE [tbl_report_automation_highlights].[int_reportid] = :id");
+			getHighlight.addParam( name = "id", value = "#arguments.id#", cfsqltype = "cf_sql_varchar" );
+            result = getHighlight.execute();
+            return result;
+        }
+        catch (any exception){
+			error.errorLog(exception);
+			return false;
 		}
     }
 }

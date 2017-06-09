@@ -5,7 +5,7 @@
     <title>Auto Report</title>
     <link rel="stylesheet" href="../../assets/vendors/normalize.css">
     <link rel="stylesheet" href="../../assets/custom/css/main.css">
-    <link rel="stylesheet" href="../../assets/custom/css/autoreport.css">
+    <link rel="stylesheet" href="../../assets/custom/css/autoreport.css?ver=dkasbd">
     <link rel="stylesheet" href="../../assets/vendors/font-awesome/css/font-awesome.min.css">
   </head>
 <body>
@@ -87,7 +87,9 @@
           <div class="col-2"><p class="rating"><cfoutput>#reportData.str_creditscore#</cfoutput></p></div>
         </div>
       </div>
+      
     </div>
+<<<<<<< HEAD
     <hr class="color-blue">
     <div class="row">
       <div class="col-12">
@@ -106,5 +108,27 @@
   </div>
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/plugins/jQuery/jquery-2.2.3.min.js"></script>
 		<script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/autoreport.js?"></script>
+=======
+    			<cfform>
+			<div class="HighlightDiv">
+					 <button class="save-btn" type="button" id="saveHighlight" name="savebtn">Save</button>
+					<div class="subjectHeader">
+					<h5 class="Highlight">Highlight Subject</h5>
+					<cfinput class="HighlightSubject" id="subject" type="text" name="highlightText" />
+					</div>
+					<h5 class="Highlight">Highlight Body</h5>
+          	<cfinput class="HighlightSubject" id="body" type="text" name="highlightBody" />
+            <cfinput id="recordId" type="hidden" name="recordId" value="#rid#"/>
+					<h5 class="Highlight">Highlight Index Tags:(separate words with commas)</h5>
+					<cfinput class="HighlightSubject" id="tag" type="text" name="highlightTag" />
+					<div class="old">
+						<h5>Old Highlights</h5>
+					</div>
+			</div>
+			</cfform>
+  </div>
+  <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/plugins/jQuery/jquery-2.2.3.min.js"></script>
+	<script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/highlight.js?ver=1342ssss"></script>
+>>>>>>> 43d04f2e5bb61cb20a8fe46080ccc4be2bb1dbeb
 </body>
 </html>
