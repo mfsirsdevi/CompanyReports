@@ -20,8 +20,8 @@ component {
     * @param null.
     */
 	function onApplicationStart() {
-		Application.currentUsers = "";
-		Application.baseUrlData = getDirectoryFromPath(getCurrentTemplatePath());
+		APPLICATION.currentUsers = "";
+		APPLICATION.baseUrlData = getDirectoryFromPath(getCurrentTemplatePath());
 	}
 	
 	/**
@@ -36,21 +36,21 @@ component {
 	
 	function onRequestStart( string template ) {
 	  
-      var local = {};
-      local.basePath = getDirectoryFromPath(getCurrentTemplatePath());
+      LOCAL.path = {};
+      LOCAL.path.basePath = getDirectoryFromPath(getCurrentTemplatePath());
             
-      local.targetPath = getDirectoryFromPath(expandPath( arguments.template ));
+      LOCAL.path.targetPath = getDirectoryFromPath(expandPath( ARGUMENTS.template ));
 
-      local.requestDepth = (listLen( local.targetPath, "\/" ) - listLen( local.basePath, "\/" ));
-      request.webRoot = repeatString("../", local.requestDepth);
+      LOCAL.path.requestDepth = (listLen( LOCAL.path.targetPath, "\/" ) - listLen( LOCAL.path.basePath, "\/" ));
+      REQUEST.webRoot = repeatString("../", LOCAL.path.requestDepth);
 
-      request.siteUrl = ("http://" & cgi.server_name & reReplace(getDirectoryFromPath( arguments.template ), "([^\\/]+[\\/]){#local.requestDepth#}$", "", "one"));
+      REQUEST.siteUrl = ("http://" & cgi.server_name & reReplace(getDirectoryFromPath( ARGUMENTS.template ), "([^\\/]+[\\/]){#LOCAL.path.requestDepth#}$", "", "one"));
 
 	  return true;
     }
 
     function onRequest( string targetPage ) {
-        include arguments.targetPage;
+        include ARGUMENTS.targetPage;
         return;
     }
 	

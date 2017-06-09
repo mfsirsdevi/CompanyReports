@@ -1,0 +1,31 @@
+/**
+* File: analystModel.cfc
+* Author: Satyapriya Baral
+* Path: model/analystModel.cfc
+* Purpose: contains functions to connect to the analyst database table.
+* Date: 01-05-2017
+*/
+component {
+	include "../include/include.cfm";	
+	
+	/**
+    * Function to get all analyst Data.
+    *
+    * @param null
+    * @return - Returns object of all data found.
+    */
+	public any function analystDetails()
+	{
+		try {
+			analystDetails = new Query();
+			analystDetails.setSQL("SELECT int_analystid, str_analyst, str_mail, str_phone, bit_active FROM dbo.tbl_analyst");
+			result = analystDetails.execute();
+			return result;
+		}
+		
+		catch (any exception){
+			error.errorLog(exception);
+			return false;
+		}
+	}
+}

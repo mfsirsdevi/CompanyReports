@@ -7,8 +7,8 @@
 */
 component {
 	
-	userObject = CreateObject("component", "model.userModel");
-	error = CreateObject("component", "log.error");
+	userObject = createObject("component", "model.userModel");
+	include "../include/include.cfm";	
 	/**
     * Function to check fields and register user.
     *
@@ -22,7 +22,7 @@ component {
 	public any function registerUser(string username, string email, string password, string retypePassword)
 	{
 		try {
-			LOCAL.errorMessages=StructNew();
+			LOCAL.errorMessages=structNew();
 			if (Len(username) < 5) {
 				LOCAL.errorMessages.Name = 'Name Should be of minimum 5 charecters';
 			}
@@ -61,7 +61,7 @@ component {
 	{
 
 		try {
-			LOCAL.loginErrorMessages=StructNew();
+			LOCAL.loginErrorMessages=structNew();
 			if (email EQ '' OR NOT isValid("email", email)) {
 				LOCAL.loginErrorMessages.Email = 'Plese Enter a Valid Email';
 			}
@@ -117,7 +117,7 @@ component {
     public any function createToken(string email)
     {
 		try {
-			LOCAL.message=StructNew();
+			LOCAL.message=structNew();
 			//checks if email exist or not
 			LOCAL.userInfo = userObject.checkUser(email);
 			if(LOCAL.userInfo.getResult().recordCount NEQ 0) {
