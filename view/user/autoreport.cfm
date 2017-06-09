@@ -89,7 +89,6 @@
       </div>
       
     </div>
-<<<<<<< HEAD
     <hr class="color-blue">
     <div class="row">
       <div class="col-12">
@@ -108,7 +107,6 @@
   </div>
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/plugins/jQuery/jquery-2.2.3.min.js"></script>
 		<script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/autoreport.js?"></script>
-=======
     			<cfform>
 			<div class="HighlightDiv">
 					 <button class="save-btn" type="button" id="saveHighlight" name="savebtn">Save</button>
@@ -129,6 +127,5 @@
   </div>
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/plugins/jQuery/jquery-2.2.3.min.js"></script>
 	<script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/highlight.js?ver=1342ssss"></script>
->>>>>>> 43d04f2e5bb61cb20a8fe46080ccc4be2bb1dbeb
 </body>
 </html>
