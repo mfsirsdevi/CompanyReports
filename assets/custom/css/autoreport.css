@@ -44,7 +44,6 @@
 .logo h2 {
     margin: 0;
     float: right;
-
 }
 
 hr {
@@ -71,6 +70,16 @@ hr {
     color: #1d5176;
 }
 
+.company-url {
+    margin-bottom: 15px;
+}
+
+.company-url a,
+.company-url a:hover,
+.company-url a:active {
+    text-decoration: none;
+}
+
 .score {
     padding: 2px;
     background-color: #22bde8;
@@ -79,4 +88,16 @@ hr {
 .display-panel {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding-left: 5px;
+}
+
+.header-bar {
+    background-color: #d3d3d3;
+    padding: 2px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.content {
+    display: none;
+    padding: 5px;
 }

@@ -77,7 +77,7 @@
 
           </div>
         </div>
-        <div class="row">
+        <div class="row company-url">
           <a href="#"><cfoutput>#reportData.str_url#</cfoutput></a>
         </div>
       </div>
@@ -88,6 +88,23 @@
         </div>
       </div>
     </div>
+    <hr class="color-blue">
+    <div class="row">
+      <div class="col-12">
+        <div class="header"><span>Expand</span>
+        </div>
+        <div class="content">
+          <ul>
+            <li>This is just some random content.</li>
+            <li>This is just some random content.</li>
+            <li>This is just some random content.</li>
+            <li>This is just some random content.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
+  <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/plugins/jQuery/jquery-2.2.3.min.js"></script>
+		<script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/autoreport.js?"></script>
 </body>
 </html>
