@@ -5,7 +5,41 @@
 * Purpose: contains all the css for the home page
 * Date: 06-06-2017
 */
+.HighlightDiv {
+    text-align: center;
+}
 
+.Highlight {
+    margin-bottom: 5px;
+}
+
+.fixed-block {
+    display: block !important;
+}
+.subjectHeader {
+    width: 250px;
+    margin: 0 auto;
+}
+.HighlightSubject {
+    width : 300px;
+    height : 30px;
+    padding : 6px;
+}
+.save-btn {
+    float: right !important; 
+    position: absolute;
+}
+.old{
+    text-align: center;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+.old h5 { 
+    display: inline;
+    margin: 0;
+    padding: 0;
+    background-color: yellow;
+}
 .error {
     color: #B20000;
 }
