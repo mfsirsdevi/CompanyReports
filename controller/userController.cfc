@@ -35,8 +35,8 @@ component {
 			else if (password NOT EQUAL retypePassword) {
 				LOCAL.errorMessages.RetypePassword = 'Password Mismatch';
 			}
-			var LOCAL.checkUser = userObject.checkUser(email);
-			if (checkUser.getResult().recordCount NEQ 0 ) {
+			LOCAL.checkUser = userObject.checkUser(email);
+			if (LOCAL.checkUser.getResult().recordCount NEQ 0 ) {
 				LOCAL.errorMessages.emailExists = 'Email Already Exists';
 			} else {
 				LOCAL.isRegistered = userObject.createUser(username, email, password);

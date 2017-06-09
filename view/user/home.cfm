@@ -7,7 +7,7 @@
 -->
 <html>
 	<head>
-		<link rel="stylesheet" href = "<cfoutput>#request.webRoot#</cfoutput>assets/custom/css/home.css?ver=sksfg">
+		<link rel="stylesheet" href = "<cfoutput>#request.webRoot#</cfoutput>assets/custom/css/home.css?ver=skdscsdssww">
 		<link rel="stylesheet" href = "<cfoutput>#request.webRoot#</cfoutput>assets/custom/css/main.css?ver=nsdfg">
 	</head>
 	<body>
@@ -132,7 +132,7 @@
 								<td class="table-def col-1"></td>
 								<td class="table-def col-1">
 									<cfloop from="1" to="#VARIABLES.reportDetails.getResult().recordcount#" index="j">
-										<a href="www.companyreports.com/view/user/autoreport.cfm?cId=<cfoutput>#VARIABLES.reportDetails.getResult().int_companyid[j]#</cfoutput>&rId=<cfoutput>#VARIABLES.reportDetails.getResult().int_reportid[j]#</cfoutput>">Report</a>
+										<a href="http://www.companyreports.com/view/user/autoreport.cfm?cid=<cfoutput>#VARIABLES.reportDetails.getResult().int_companyid[j]#</cfoutput>&rid=<cfoutput>#VARIABLES.reportDetails.getResult().int_reportid[j]#</cfoutput>">Report</a>
 									</cfloop>
 								</td>
 							</tr>
