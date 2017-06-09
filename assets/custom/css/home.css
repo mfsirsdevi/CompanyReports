@@ -14,6 +14,14 @@ table {
     border-spacing: 0px;
 }
 
+th, td {
+    text-align: left;
+    padding: 8px;
+    
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
 #wrapper {
     height: 4298px;
     width: 960px;
@@ -27,6 +35,15 @@ table {
 
 .color-red {
     color: #d52d30;
+}
+
+#btnsbt {
+    display:hidden;
+    visibility: hidden;
+}
+
+.table-def {
+    color: #000;
 }
 
 .color-blue {

@@ -6,7 +6,7 @@
 * Date: 01-05-2017
 */
 component {
-	error = CreateObject("component", "log.error");
+	include "../include/include.cfm";	
 	/**
     * Function to create a record of new user registered.
     *

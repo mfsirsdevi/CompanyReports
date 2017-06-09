@@ -1,0 +1,1 @@
+<cfset error = CreateObject("component", "log.error")>
