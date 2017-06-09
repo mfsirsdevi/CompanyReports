@@ -20,7 +20,7 @@ component {
     public struct function generateReport(int cid, int rid) {
 
         try {
-			//var LOCAL.checkUser = userObject.checkUser(email);
+			
 		}
 		
 		catch (any exception){
