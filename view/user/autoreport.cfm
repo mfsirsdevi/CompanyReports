@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../../assets/custom/css/main.css">
     <link rel="stylesheet" href="../../assets/custom/css/autoreport.css?ver=dkasbd">
     <link rel="stylesheet" href="../../assets/vendors/font-awesome/css/font-awesome.min.css">
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
   </head>
 <body>
   <cfif  SESSION.isLogged EQ "false">
@@ -93,15 +94,19 @@
     <hr class="color-blue">
     <div class="row">
       <div class="col-12">
-        <div class="header"><span>Expand</span>
+        <div class="header top-header"><p>Expand</p><span class="pull-right">+</span>
         </div>
         <div class="content">
-          <ul>
-            <li>This is just some random content.</li>
-            <li>This is just some random content.</li>
-            <li>This is just some random content.</li>
-            <li>This is just some random content.</li>
-          </ul>
+          <div class="header"><p>Analitycal Overview</p><span class="pull-right">+</span></div>
+          <div class="content">
+            <textarea rows="5" class="analytical-text"></textarea>
+            <button id="add-analysis">save</button>
+          </div>
+          <div class="header"><p>Old Analytical Overview</p><span class="pull-right">+</span></div>
+          <div class="content">
+            <textarea></textarea>
+          </div>
+
         </div>
       </div>
     </div>
