@@ -45,6 +45,10 @@
     color : #ffffff;
     background-color: #1d5176;
 }
+
+#updateData {
+    visibility: hidden;
+}
 .color-red {
     color: #d52d30;
 }

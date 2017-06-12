@@ -1,9 +1,2 @@
-DATE/TIME: {ts '2017-06-09 19:16:23'} 
-ERROR MESSAGE: Error Executing Database Query. 
-ERROR DETAILS: [Macromedia][SQLServer JDBC Driver][SQLServer]Invalid column name 'int_highlightid'. 
-ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
-ERROR LINE: 445 
-ERROR TYPE: Database 
-STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
-----------------------------------------------------------------------
+
 
