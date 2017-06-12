@@ -22,6 +22,7 @@
     <cfset VARIABLES.reportData = reportObject.generateReport(cid = "#cid#", rid = "#rid#") />
     <cfset companyObject = CreateObject("component","controller.companyController") />
 		<cfset VARIABLES.analystData = companyObject.getAnalyst(cid = "#cid#") />
+    <cfset VARIABLES.highlightData = reportObject.getHighlightData(rid = "#rid#") />
     <div class="row">
       <h1 class="title"><i class="fa fa-lock color-red" aria-hidden="true"></i>
       <span class="color-blue">Public</span> <span class="color-red">Company</span> <span class="color-brown title-end">Report</span></h1>
@@ -109,10 +110,11 @@
         </div>
       </div>
     </div>
-  </div>
-    			<cfform>
+  
+    	<cfform>
 			<div class="HighlightDiv">
 					 <button class="save-btn" type="button" id="saveHighlight" name="savebtn">Save</button>
+           <button class="save-btn" type="button" id="updateData" name="savebtn">Update</button>
 					<div class="subjectHeader">
 					<h5 class="Highlight">Highlight Subject</h5>
 					<cfinput class="HighlightSubject" id="subject" type="text" name="highlightText" />
@@ -123,14 +125,24 @@
 					<h5 class="Highlight">Highlight Index Tags:(separate words with commas)</h5>
 					<cfinput class="HighlightSubject" id="tag" type="text" name="highlightTag" />
 					<div class="old">
-						<h5>Old Highlights</h5>
+						<h5>Old Highlights</h5><hr>
+            <div id="highlightData">
+              <cfloop from="1" to="#VARIABLES.highlightData.getResult().recordcount#" index="i">
+                <div id="item_<cfoutput>#highlightData.getResult().int_highlight_sec_id[i]#</cfoutput>">
+                <cfoutput>#highlightData.getResult().str_subject[i]#</cfoutput><hr>
+                <cfoutput>#highlightData.getResult().str_text[i]#</cfoutput><hr><hr>
+                </div>
+						  </cfloop>
+            </div>
 					</div>
 			</div>
 			</cfform>
   </div>
+  </div>
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/plugins/jQuery/jquery-2.2.3.min.js"></script>
 		<script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/autoreport.js?"></script>
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/plugins/jQuery/jquery-2.2.3.min.js"></script>
+   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/js/jQuery-ui/jquery-ui.js"></script>
 	<script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/highlight.js?ver=1342ssss"></script>
 </body>
 </html>
