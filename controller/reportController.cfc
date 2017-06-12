@@ -52,4 +52,14 @@ component {
 			error.errorLog(exception);
 		}
     }
+
+    remote function saveAnalysis(any data) method="POST" {
+        try {
+            
+        } 
+
+        catch (any exception) {
+            error.errorLog(exception);
+        }
+    }
 }
