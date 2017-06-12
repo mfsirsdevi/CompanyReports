@@ -110,11 +110,12 @@
         </div>
       </div>
     </div>
-  
+    <div class="header top-header"><p>Expand</p><span class="pull-right">+</span></div>
+    <div class="content">
+          
     	<cfform>
 			<div class="HighlightDiv">
 					 <button class="save-btn" type="button" id="saveHighlight" name="savebtn">Save</button>
-           <button class="save-btn" type="button" id="updateData" name="savebtn">Update</button>
 					<div class="subjectHeader">
 					<h5 class="Highlight">Highlight Subject</h5>
 					<cfinput class="HighlightSubject" id="subject" type="text" name="highlightText" />
@@ -137,6 +138,7 @@
 					</div>
 			</div>
 			</cfform>
+      </div></div>
   </div>
   </div>
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/plugins/jQuery/jquery-2.2.3.min.js"></script>
