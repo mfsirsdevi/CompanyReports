@@ -147,13 +147,27 @@ component {
 		}
     }
 
-    remote function saveAnalysis(any data) method="POST" {
-        try {
-            
+    /**
+    * Function to update highlight data sortId.
+    * @author R S Devi Prasad
+    * @param number cid - report id of the report.
+    * @param number rid - company id for which the report is made.
+    * @param string data - data for the analytical overview field.
+    * @return null.
+    */
+
+    remote function saveAnalysis(numeric id, numeric rid, any data) method="POST" {
+        try { 
+            LOCAL.getData = reportObject.hasQuarterlyOverview(rid);
+            if(getData.getResult().recordcount EQ 0)
+                reportObject.setOverview(id, rid, data);
+            else
+                reportObject.updateOverview(id, data);
         } 
 
         catch (any exception) {
             error.errorLog(exception);
+            return false;
         }
     }
 }

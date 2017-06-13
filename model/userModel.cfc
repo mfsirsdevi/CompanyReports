@@ -46,7 +46,7 @@ component {
 	{
 		try {
 			checkUser = new Query();
-			checkUser.setSQL("SELECT UserName, UserEmail, UserPassword, UserTokenId FROM dbo.tbl_user_info WHERE UserEmail = :email");
+			checkUser.setSQL("SELECT UserId, UserName, UserEmail, UserPassword, UserTokenId FROM dbo.tbl_user_info WHERE UserEmail = :email");
 			checkUser.addParam( name = "email", value = "#arguments.email#", cfsqltype = "cf_sql_varchar" );
 			userResult = checkUser.execute();
 			return userResult;

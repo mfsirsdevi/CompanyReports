@@ -11,10 +11,10 @@ component {
 
     /**
     * Function to create a record of new user registered.
-    *
-    * @param string $username - contains name of the user.
-    * @param string $email - contains email of the user.
-    * @return - Returns boolian value if record created or not.
+    * @author R S Devi Prasad
+    * @param numeric cid - company id for which the report is being generated.
+    * @param numeric rid - report id of the company.
+    * @return - Returns struct containing values of rows fetched from database.
     */
     public struct function getReportViewData(numeric cid, numeric rid) {
         
@@ -156,5 +156,117 @@ component {
 			error.errorLog(exception);
             return false;
 		}
+    }
+
+    /**
+    * Function to create a record of new analytical overview.
+    * @author R S Devi Prasad
+    * @param numeric id - user id.
+    * @param numeric rid - report id of the company.
+    * @param any data - data of the analytical overiew of the company
+    * @return - Returns struct containing values of rows fetched from database.
+    */
+
+    public any function setOverview(numeric id, numeric rid, any data) {
+        try {
+            setQuery = new Query();
+            setQuery.setSQL("INSERT INTO [dbo].[tbl_report_automation_analytical_overview]
+           ([int_reportid]
+           ,[str_text]
+           ,[int_createdby]
+           ,[dtm_createddate]
+           ,[int_updatedby]
+           ,[dtm_updateddate])
+            VALUES
+            (:rid
+            ,:data
+            ,:id
+            ,GETDATE()
+            ,:id
+            ,GETDATE())");
+            setQuery.addParam(name = "rid", value = "#arguments.rid#", cfsqltype = "cf_sql_varchar");
+            setQuery.addParam(name = "data", value = "#arguments.data#", cfsqltype = "cf_sql_varchar");
+            setQuery.addParam(name = "id", value = "#arguments.id#", cfsqltype = "cf_sql_varchar");
+            result = setQuery.execute();
+            return result;
+        }
+        catch (any exception) {
+            error.errorLog(exception);
+            return false;
+        }
+    }
+
+    /**
+    * Function to update record of new analytical overview.
+    * @author R S Devi Prasad
+    * @param numeric id - user id.
+    * @param numeric rid - report id of the company.
+    * @param any data - data of the analytical overiew of the company
+    * @return - Returns struct containing values of rows fetched from database.
+    */
+
+    public any function updateOverview(numeric id, any data) {
+        try {
+            setQuery = new Query();
+            setQuery.setSQL("UPDATE [dbo].[tbl_report_automation_analytical_overview]
+            SET [str_text] = :data
+            ,[int_updatedby] = :id
+            ,[dtm_updateddate] = GETDATE()
+            WHERE int_reportid = 8");
+            setQuery.addParam(name = "data", value = "#arguments.data#", cfsqltype = "cf_sql_varchar");
+            setQuery.addParam(name = "id", value = "#arguments.id#", cfsqltype = "cf_sql_varchar");
+            result = setQuery.execute();
+            return result;
+        }
+        catch (any exception) {
+            error.errorLog(exception);
+            return false;
+        }
+    }
+
+    /**
+    * Function to check whether there is a record in this quarter.
+    * @author R S Devi Prasad
+    * @param numeric id - report id of the company
+    * @return - Returns struct containing values of rows fetched from database.
+    */
+
+    public struct function hasQuarterlyOverview(numeric id) {
+        try {
+            hasOverview = new Query();
+            hasOverview.setSQL("SELECT int_analytical_overview_id, str_text
+                FROM [dbo].[tbl_report_automation_analytical_overview]
+                WHERE int_reportid = :id AND (SELECT DATEDIFF(QQ,dtm_createddate,GETDATE())) <= 1");
+            hasOverview.addParam(name = "id", value = "#arguments.id#", cfsqltype = "cf_sql_varchar");
+            result = hasOverview.execute();
+            return result;
+        }
+        catch (any exception) {
+            error.errorLog(exception);
+            return false;
+        }
+    }
+
+    /**
+    * Function to check whether there is a record in previous quarter.
+    * @author R S Devi Prasad
+    * @param numeric id - report id of the company
+    * @return - Returns struct containing values of rows fetched from database.
+    */
+
+    public struct function hasPreviousOverview(numeric id) {
+        try {
+            hasOverview = new Query();
+            hasOverview.setSQL("SELECT int_analytical_overview_id, str_text
+                FROM [dbo].[tbl_report_automation_analytical_overview]
+                WHERE int_reportid = :id AND (SELECT DATEDIFF(QQ,dtm_createddate,GETDATE())) > 1 AND (SELECT DATEDIFF(QQ,dtm_createddate,GETDATE())) < 3");
+            hasOverview.addParam(name = "id", value = "#arguments.id#", cfsqltype = "cf_sql_varchar");
+            result = hasOverview.execute();
+            return result;
+        }
+        catch (any exception) {
+            error.errorLog(exception);
+            return false;
+        }
     }
 }

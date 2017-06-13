@@ -31,7 +31,7 @@ component {
     */
 	function onSessionStart() {
 		SESSION.isLogged = "false";
-		SESSION.userEmail = "";	
+		SESSION.userEmail = "";
 	}
 	
 	function onRequestStart( string template ) {

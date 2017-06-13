@@ -19,10 +19,21 @@
     <cfset rid = val(url.rid) />
     </cfif>
     <cfset reportObject = CreateObject("component","controller.reportController") />
+    <cfset modelObject = CreateObject("component","model.reportModel") />
     <cfset VARIABLES.reportData = reportObject.generateReport(cid = "#cid#", rid = "#rid#") />
     <cfset companyObject = CreateObject("component","controller.companyController") />
 		<cfset VARIABLES.analystData = companyObject.getAnalyst(cid = "#cid#") />
     <cfset VARIABLES.highlightData = reportObject.getHighlightData(rid = "#rid#") />
+    <cfset VARIABLES.overviewData = modelObject.hasQuarterlyOverview(id = "#rid#")/>
+    <cfset VARIABLES.previousData = modelObject.hasPreviousOverview(id = "#rid#")/>
+    <div class="row">
+				<div class="col-6">
+					Hi <cfoutput>#SESSION.user#</cfoutput>
+				</div>
+				<div class="col-6">
+					<a class="signout" href="http://www.companyreports.com/controller/userController.cfc?method=signoutUser">signout</a>
+				</div>
+			</div>
     <div class="row">
       <h1 class="title"><i class="fa fa-lock color-red" aria-hidden="true"></i>
       <span class="color-blue">Public</span> <span class="color-red">Company</span> <span class="color-brown title-end">Report</span></h1>
@@ -94,19 +105,29 @@
     <hr class="color-blue">
     <div class="row">
       <div class="col-12">
-        <div class="header top-header"><p>Expand</p><span class="pull-right">+</span>
+        <div class="header top-header"><p>Analitycal Overview</p><span class="pull-right">+</span>
         </div>
         <div class="content">
           <div class="header"><p>Analitycal Overview</p><span class="pull-right">+</span></div>
           <div class="content">
-            <textarea rows="5" class="analytical-text"></textarea>
+            <cfif overviewData.getResult().recordcount EQ 0>
+              <textarea rows="5" class="analytical-text"></textarea>
+            <cfelse>
+              <textarea rows="5" class="analytical-text">
+                <cfoutput>#overviewData.getResult().str_text#</cfoutput>
+              </textarea>
+            </cfif>
+            <input id="uid" type="hidden" value="<cfoutput>#SESSION.id#</cfoutput>"/>
             <button id="add-analysis">save</button>
           </div>
           <div class="header"><p>Old Analytical Overview</p><span class="pull-right">+</span></div>
           <div class="content">
-            <textarea></textarea>
+            <cfif previousData.getResult().recordcount EQ 0 >
+              <p>No Data</p>
+            <cfelse>
+              <cfoutput>#overviewData.getResult().str_text#</cfoutput>
+            </cfif>
           </div>
-
         </div>
       </div>
     </div>
@@ -114,7 +135,6 @@
     	<cfform>
 			<div class="HighlightDiv">
 					 <button class="save-btn" type="button" id="saveHighlight" name="savebtn">Save</button>
-           <button class="save-btn" type="button" id="updateData" name="savebtn">Update</button>
 					<div class="subjectHeader">
 					<h5 class="Highlight">Highlight Subject</h5>
 					<cfinput class="HighlightSubject" id="subject" type="text" name="highlightText" />

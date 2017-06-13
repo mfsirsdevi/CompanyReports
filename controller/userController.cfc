@@ -79,6 +79,7 @@ component {
 					SESSION.isLogged = "true";
 					SESSION.userEmail = "#arguments.email#";
 					SESSION.user = "#isLogged.getResult().UserName#";
+					SESSION.id = "#isLogged.getResult().UserId#";
 					APPLICATION.currentUsers = listAppend(APPLICATION.currentUsers, #ARGUMENTS.email#);
 				}
 			}
@@ -183,10 +184,12 @@ component {
 	{
 		try {
 			if(SESSION.userEmail NEQ "") {
-				APPLICATION.currentUsers = listDeleteAt(APPLICATION.currentUsers,listFind(APPLICATION.currentUsers, SESSION.userEmail));
+				//APPLICATION.currentUsers = listDeleteAt(APPLICATION.currentUsers,listFind(APPLICATION.currentUsers, SESSION.userEmail));
 			}
+			writeOutput("no way");
 			structClear(SESSION);
 			SESSION.isLogged = "false";
+			SESSION.id = "";
 			SESSION.userEmail = "";
 			SESSION.type = "";
 			location(url="../../view/login/login.cfm", addToken="false");

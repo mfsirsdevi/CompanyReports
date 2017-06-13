@@ -28,7 +28,6 @@
 .row {
     width: 100%;
     display: flex;
-    margin-bottom: 10px;
 }
 
 .col-1 {
