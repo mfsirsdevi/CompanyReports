@@ -8,7 +8,7 @@
 
 component {
     reportObject = CreateObject("component", "model.reportModel");
-	error = CreateObject("component", "log.error");
+    error = CreateObject("component", "log.error");
 
     /**
     * Function to display report for the user by reading the company id and report id.
@@ -20,12 +20,12 @@ component {
     public any function generateReport(numeric cid, numeric rid) {
 
         try {
-			return reportObject.getReportViewData(ARGUMENTS.cid, ARGUMENTS.rid).getResult();
-		}
-		
-		catch (any exception){
-			error.errorLog(exception);
-		}
+            return reportObject.getReportViewData(ARGUMENTS.cid, ARGUMENTS.rid).getResult();
+        }
+
+        catch (any exception){
+            error.errorLog(exception);
+        }
     }
 
     /**
@@ -41,15 +41,15 @@ component {
     remote function addHighlight(string subject, string body, string tag, string rid, numeric sid) {
 
         try {
-            createTag = reportObject.addTag(tag, rid);
-            createHighlight = reportObject.addHighlight(subject, body, sid, #createTag.getprefix().identitycol#);
+            LOCAL.createTag = reportObject.addTag(tag, rid);
+            LOCAL.createHighlight = reportObject.addHighlight(subject, body, sid, #createTag.getprefix().identitycol#);
             showHighlight(ARGUMENTS.rid);
-		}
-		
-		catch (any exception){
-			error.errorLog(exception);
+        }
+
+        catch (any exception){
+            error.errorLog(exception);
             return false;
-		}
+        }
     }
 
     /**
@@ -64,21 +64,21 @@ component {
             LOCAL.getData = reportObject.getHighlightData(rid);
             LOCAL.highlightData = [];
             for(i=1 ; i <= LOCAL.getData.getResult().recordcount ; i++) {
-					obj = {
+                    obj = {
                         "id" = "#LOCAL.getData.getResult().int_highlight_sec_id[i]#",
-						"sortId" = "#LOCAL.getData.getResult().int_sortid[i]#",
-						"subject" = "#LOCAL.getData.getResult().str_subject[i]#",
-						"body" = "#LOCAL.getData.getResult().str_text[i]#"
-					};
-					arrayAppend(LOCAL.highlightData, obj);
-			}
-			WriteOutput("#serializeJSON(highlightData)#");
-		}
-		
-		catch (any exception){
-			error.errorLog(exception);
+                        "sortId" = "#LOCAL.getData.getResult().int_sortid[i]#",
+                        "subject" = "#LOCAL.getData.getResult().str_subject[i]#",
+                        "body" = "#LOCAL.getData.getResult().str_text[i]#"
+                    };
+                    arrayAppend(LOCAL.highlightData, obj);
+            }
+            WriteOutput("#serializeJSON(highlightData)#");
+        }
+
+        catch (any exception){
+            error.errorLog(exception);
             return false;
-		}
+        }
     }
 
     /**
@@ -90,14 +90,14 @@ component {
     remote function getHighlightData(numeric rid) {
 
         try {
-			getData = reportObject.getHighlightData(rid);
+            LOCAL.getData = reportObject.getHighlightData(rid);
             return getData;
-		}
-		
-		catch (any exception){
-			error.errorLog(exception);
+        }
+
+        catch (any exception){
+            error.errorLog(exception);
             return false;
-		}
+        }
     }
 
     /**
@@ -109,17 +109,17 @@ component {
     remote function getTotalHighlight() {
 
         try {
-			LOCAL.getData = reportObject.getTotalHighlight();
+            LOCAL.getData = reportObject.getTotalHighlight();
             LOCAL.total = "#LOCAL.getData.getResult().recordcount#";
             LOCAL.data = [];
             obj = {"total" = "#LOCAL.getData.getResult().int_highlight_sec_id[LOCAL.total]#"};
             arrayAppend(LOCAL.data, obj);
             WriteOutput("#serializeJSON(data)#");
         }
-		catch (any exception){
-			error.errorLog(exception);
+        catch (any exception){
+            error.errorLog(exception);
             return false;
-		}
+        }
     }
 
     /**
@@ -139,12 +139,12 @@ component {
                 LOCAL.sortOrder = (LOCAL.getData.getResult().recordcount - i)+1;
                 updateSortOrder = reportObject.updateSortOrder(LOCAL.sortOrder, LOCAL.id);
             }
-		}
-		
-		catch (any exception){
-			error.errorLog(exception);
+        }
+
+        catch (any exception){
+            error.errorLog(exception);
             return false;
-		}
+        }
     }
 
     /**
@@ -157,13 +157,13 @@ component {
     */
 
     remote function saveAnalysis(numeric id, numeric rid, any data) method="POST" {
-        try { 
+        try {
             LOCAL.getData = reportObject.hasQuarterlyOverview(rid);
             if(getData.getResult().recordcount EQ 0)
                 reportObject.setOverview(id, rid, data);
             else
                 reportObject.updateOverview(id, data);
-        } 
+        }
 
         catch (any exception) {
             error.errorLog(exception);

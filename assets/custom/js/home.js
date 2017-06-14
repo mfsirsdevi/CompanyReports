@@ -5,14 +5,14 @@
 * Author  : Satyapriya Baral
 */
 $(document).ready(function(){
-	/**
+    /**
     * Function to validate profile data
     *
     * @param null.
     * @return error messages if found.
     */
-	$("#analyst").on('change', function(e) {
+    $("#analyst").on('change', function(e) {
         e.preventDefault();
         $("#btnsbt").trigger('click');
-	});
+    });
 });

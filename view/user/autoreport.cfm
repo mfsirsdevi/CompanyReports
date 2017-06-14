@@ -11,8 +11,8 @@
   </head>
 <body>
   <cfif  SESSION.isLogged EQ "false">
-			<cflocation url="#request.webRoot#view/login/login.cfm" addToken="false"></cflocation>
-	</cfif>
+            <cflocation url="#request.webRoot#view/login/login.cfm" addToken="false"></cflocation>
+    </cfif>
   <div id="wrapper" class="grid">
     <cfif IsDefined(url.cid) && IsDefined(url.rid)>
     <cfset cid = val(url.cid) />
@@ -22,18 +22,18 @@
     <cfset modelObject = CreateObject("component","model.reportModel") />
     <cfset VARIABLES.reportData = reportObject.generateReport(cid = "#cid#", rid = "#rid#") />
     <cfset companyObject = CreateObject("component","controller.companyController") />
-		<cfset VARIABLES.analystData = companyObject.getAnalyst(cid = "#cid#") />
+        <cfset VARIABLES.analystData = companyObject.getAnalyst(cid = "#cid#") />
     <cfset VARIABLES.highlightData = reportObject.getHighlightData(rid = "#rid#") />
     <cfset VARIABLES.overviewData = modelObject.hasQuarterlyOverview(id = "#rid#")/>
     <cfset VARIABLES.previousData = modelObject.hasPreviousOverview(id = "#rid#")/>
     <div class="row">
-				<div class="col-6">
-					Hi <cfoutput>#SESSION.user#</cfoutput>
-				</div>
-				<div class="col-6">
-					<a class="signout" href="http://www.companyreports.com/controller/userController.cfc?method=signoutUser">signout</a>
-				</div>
-			</div>
+                <div class="col-6">
+                    Hi <cfoutput>#SESSION.user#</cfoutput>
+                </div>
+                <div class="col-6">
+                    <a class="signout" href="http://www.companyreports.com/controller/userController.cfc?method=signoutUser">signout</a>
+                </div>
+            </div>
     <div class="row">
       <h1 class="title"><i class="fa fa-lock color-red" aria-hidden="true"></i>
       <span class="color-blue">Public</span> <span class="color-red">Company</span> <span class="color-brown title-end">Report</span></h1>
@@ -44,20 +44,20 @@
     <div class="row">
       <div class="col-6">
         <strong>
-	        <p ><span class="color-blue">Analyst:</span> <span class="name">
+            <p ><span class="color-blue">Analyst:</span> <span class="name">
           <cfif IsSimpleValue(analystData)>
           <cfoutput>No Analyst</cfoutput>
           <cfelse>
           <cfoutput>#analystData.str_analyst#</cfoutput>
           </cfif>
           </span></p>
-	        <p><span class="color-blue">Phone: </span><cfif IsSimpleValue(analystData)>
+            <p><span class="color-blue">Phone: </span><cfif IsSimpleValue(analystData)>
           <cfoutput>No Number</cfoutput>
           <cfelse>
           <cfoutput>#analystData.str_phone#</cfoutput>
           </cfif>
           </p>
-	        <p>Report Period: <span class="color-red"><cfoutput>#reportData.str_summary#</cfoutput></span></p>
+            <p>Report Period: <span class="color-red"><cfoutput>#reportData.str_summary#</cfoutput></span></p>
         </strong>
       </div>
       <div class="col-6 logo">
@@ -100,7 +100,7 @@
           <div class="col-2"><p class="rating"><cfoutput>#reportData.str_creditscore#</cfoutput></p></div>
         </div>
       </div>
-      
+
     </div>
     <hr class="color-blue">
     <div class="row">
@@ -125,44 +125,44 @@
             <cfif previousData.getResult().recordcount EQ 0 >
               <p>No Data</p>
             <cfelse>
-              <cfoutput>#overviewData.getResult().str_text#</cfoutput>
+              <cfoutput>#previousData.getResult().str_text#</cfoutput>
             </cfif>
           </div>
         </div>
       </div>
     </div>
-  
-    	<cfform>
-			<div class="HighlightDiv">
-					 <button class="save-btn" type="button" id="saveHighlight" name="savebtn">Save</button>
-					<div class="subjectHeader">
-					<h5 class="Highlight">Highlight Subject</h5>
-					<cfinput class="HighlightSubject" id="subject" type="text" name="highlightText" />
-					</div>
-					<h5 class="Highlight">Highlight Body</h5>
-          	<cfinput class="HighlightSubject" id="body" type="text" name="highlightBody" />
+
+        <cfform>
+            <div class="HighlightDiv">
+                     <button class="save-btn" type="button" id="saveHighlight" name="savebtn">Save</button>
+                    <div class="subjectHeader">
+                    <h5 class="Highlight">Highlight Subject</h5>
+                    <cfinput class="HighlightSubject" id="subject" type="text" name="highlightText" />
+                    </div>
+                    <h5 class="Highlight">Highlight Body</h5>
+              <cfinput class="HighlightSubject" id="body" type="text" name="highlightBody" />
             <cfinput id="recordId" type="hidden" name="recordId" value="#rid#"/>
-					<h5 class="Highlight">Highlight Index Tags:(separate words with commas)</h5>
-					<cfinput class="HighlightSubject" id="tag" type="text" name="highlightTag" />
-					<div class="old">
-						<h5>Old Highlights</h5><hr>
+                    <h5 class="Highlight">Highlight Index Tags:(separate words with commas)</h5>
+                    <cfinput class="HighlightSubject" id="tag" type="text" name="highlightTag" />
+                    <div class="old">
+                        <h5>Old Highlights</h5><hr>
             <div id="highlightData">
               <cfloop from="1" to="#VARIABLES.highlightData.getResult().recordcount#" index="i">
                 <div id="item_<cfoutput>#highlightData.getResult().int_highlight_sec_id[i]#</cfoutput>">
                 <cfoutput>#highlightData.getResult().str_subject[i]#</cfoutput><hr>
                 <cfoutput>#highlightData.getResult().str_text[i]#</cfoutput><hr><hr>
                 </div>
-						  </cfloop>
+                          </cfloop>
             </div>
-					</div>
-			</div>
-			</cfform>
+                    </div>
+            </div>
+            </cfform>
   </div>
   </div>
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/plugins/jQuery/jquery-2.2.3.min.js"></script>
-		<script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/autoreport.js?"></script>
+        <script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/autoreport.js?"></script>
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/plugins/jQuery/jquery-2.2.3.min.js"></script>
    <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/js/jQuery-ui/jquery-ui.js"></script>
-	<script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/highlight.js?ver=1342ssss"></script>
+    <script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/highlight.js?ver=1342ssss"></script>
 </body>
 </html>
