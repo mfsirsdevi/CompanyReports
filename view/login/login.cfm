@@ -16,7 +16,7 @@
 	<body class="hold-transition login-page">
 		<cfset controllerObject = CreateObject("component","controller.userController") />
 		<cfif StructKeyExists(form,"loginbtn")>
-			<cfset VARIABLES.errorMessages = controllerObject.loginUser( email = "#form.Email#", password = "#form.Password#" )>
+			<cfset VARIABLES.errorMessages = controllerObject.loginUser( email = form.Email, password = form.Password )>
 		</cfif>
 		<cfif  SESSION.isLogged NEQ "false">
 			<cflocation url="#request.webRoot#view/user/home.cfm" addToken="false"></cflocation>

@@ -14,7 +14,7 @@ component {
 	* @param numeric selectAnalyst - contains the analyst id that is searched.
     * @return - Returns searched info details.
     */
-	public any function companyDetailsSearch(string searchText, numeric selectAnalyst)
+	public query function companyDetailsSearch(string searchText, numeric selectAnalyst)
 	{
 		try {
 			companyDetails = new Query();
@@ -23,10 +23,10 @@ component {
 			if(ARGUMENTS.selectAnalyst EQ 0 || ARGUMENTS.selectAnalyst EQ "") {
 				companyDetails.addParam( name = "analystId", value = "%%", cfsqltype = "cf_sql_varchar" );
 			} else {
-				companyDetails.addParam( name = "analystId", value = "%#ARGUMENTS.selectAnalyst#%", cfsqltype = "cf_sql_varchar" );
+				companyDetails.addParam( name = "analystId", value = "#ARGUMENTS.selectAnalyst#", cfsqltype = "cf_sql_integer" );
 			} 
 			result = companyDetails.execute();
-			return result;
+			return result.getResult();
 		}
 		
 		catch (any exception){
@@ -57,7 +57,7 @@ component {
 				companyDetails.addParam( name = "analystId", value = "%#ARGUMENTS.selectAnalyst#%", cfsqltype = "cf_sql_varchar" );
 			} 
 			result = companyDetails.execute();
-			return result;
+			return result.getResult();
 		}
 		
 		catch (any exception){
@@ -79,7 +79,7 @@ component {
 			reportDetails.setSQL("SELECT int_companyid, int_reportid FROM dbo.tbl_report_company WHERE int_companyid = :companyId");
 			reportDetails.addParam( name = "companyId", value = "#ARGUMENTS.companyId#", cfsqltype = "cf_sql_varchar" ); 
 			result = reportDetails.execute();
-			return result;
+			return result.getResult();
 		}
 		
 		catch (any exception){

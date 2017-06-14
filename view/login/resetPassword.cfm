@@ -21,7 +21,7 @@
 		<cfset email = url.email />
 		<cfset token = url.token />
 		<cfset VARIABLES.emailCheck = controllerObject.userDetails( email = "#email#")>
-		<cfif (VARIABLES.emailCheck.getResult().recordCount EQ 0) OR (VARIABLES.emailCheck.getResult().UserTokenId NEQ token)>
+		<cfif (VARIABLES.emailCheck.recordCount EQ 0) OR (VARIABLES.emailCheck.UserTokenId NEQ token)>
 			<cflocation url="#request.webRoot#view/login/login.cfm" addToken="false"></cflocation>
 		</cfif>
 		<cfif StructKeyExists(form,"resetBtn")>

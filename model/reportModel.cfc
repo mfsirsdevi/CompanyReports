@@ -7,7 +7,7 @@
 */
 
 component {
-    error = CreateObject("component", "log.error");	
+    include "../include/include.cfm";	
 
     /**
     * Function to create a record of new user registered.
@@ -80,7 +80,7 @@ component {
             createHighlight.addParam( name = "sortId", value = "#arguments.sid#", cfsqltype = "cf_sql_varchar" );
 
 			result = createHighlight.execute();
-            return result;
+            return result.getResult();
         }
         catch (any exception){
 			error.errorLog(exception);
@@ -105,7 +105,7 @@ component {
             WHERE [tbl_report_automation_highlights].[int_reportid] = :id ORDER BY [tbl_report_automation_highlights_section].[int_sortid] DESC ");
 			getHighlight.addParam( name = "id", value = "#arguments.id#", cfsqltype = "cf_sql_varchar" );
             result = getHighlight.execute();
-            return result;
+            return result.getResult();
         }
         catch (any exception){
 			error.errorLog(exception);
@@ -125,7 +125,7 @@ component {
 			getHighlight = new Query();
 			getHighlight.setSQL("SELECT int_sortid, int_highlight_sec_id FROM tbl_report_automation_highlights_section");
             result = getHighlight.execute();
-            return result;
+            return result.getResult();
 		}
 		
 		catch (any exception){
@@ -149,7 +149,29 @@ component {
             updateSortOrder.addParam( name = "newId", value = "#arguments.newId#", cfsqltype = "cf_sql_varchar" );
             updateSortOrder.addParam( name = "oldId", value = "#arguments.oldId#", cfsqltype = "cf_sql_varchar" );
             result = updateSortOrder.execute();
-            return result;
+            return result.getResult();
+		}
+
+		catch (any exception){
+			error.errorLog(exception);
+            return false;
+		}
+    }
+
+    /**
+    * Function to delete a highlight data.
+    * @author Satyapriya Baral
+    * @param number highlightId - contains the highlight id.
+    * @return null.
+    */
+    public any function deleteHighlight(highlightId)
+    {
+        try {
+			deleteHighlight = new Query();
+			deleteHighlight.setSQL("DELETE FROM tbl_report_automation_highlights_section WHERE int_highlight_sec_id = :highlightId ");
+            deleteHighlight.addParam( name = "highlightId", value = "#arguments.highlightId#", cfsqltype = "cf_sql_varchar" );
+            result = deleteHighlight.execute();
+            return result.getResult();
 		}
 
 		catch (any exception){

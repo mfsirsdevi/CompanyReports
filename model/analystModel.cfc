@@ -14,13 +14,13 @@ component {
     * @param null
     * @return - Returns object of all data found.
     */
-	public any function analystDetails()
+	public query function analystDetails()
 	{
 		try {
 			analystDetails = new Query();
 			analystDetails.setSQL("SELECT int_analystid, str_analyst, str_mail, str_phone, bit_active FROM dbo.tbl_analyst");
 			result = analystDetails.execute();
-			return result;
+			return result.getResult();
 		}
 		
 		catch (any exception){

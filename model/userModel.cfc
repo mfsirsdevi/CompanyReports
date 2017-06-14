@@ -17,16 +17,16 @@ component {
     * @param string $number - contains number of the user.
     * @return - Returns boolian value if record created or not.
     */
-	public boolean function createUser(string username, string email, string password)
+	public boolean function createUser(required string username, required string email, required string password)
 	{
 		try {
-			var hashPassword = HASH(password);
-			newUser = new Query();
-			newUser.setSQL("INSERT into dbo.tbl_user_info (UserName, UserEmail, UserPassword) VALUES (:username, :email, :hashPassword)");
-			newUser.addParam( name = "username", value = "#arguments.username#", cfsqltype = "cf_sql_varchar" );
-			newUser.addParam( name = "email", value = "#arguments.email#", cfsqltype = "cf_sql_varchar" );
-			newUser.addParam( name = "hashPassword", value = "#local.hashPassword#", cfsqltype = "cf_sql_varchar" );
-			result = newUser.execute();
+			LOCAL.hashPassword = HASH(password);
+			LOCAL.newUser = new Query();
+			LOCAL.newUser.setSQL("INSERT into dbo.tbl_user_info (UserName, UserEmail, UserPassword) VALUES (:username, :email, :hashPassword)");
+			LOCAL.newUser.addParam( name = "username", value = "#ARGUMENTS.username#", cfsqltype = "cf_sql_varchar" );
+			LOCAL.newUser.addParam( name = "email", value = "#ARGUMENTS.email#", cfsqltype = "cf_sql_varchar" );
+			LOCAL.newUser.addParam( name = "hashPassword", value = "#LOCAL.hashPassword#", cfsqltype = "cf_sql_varchar" );
+			LOCAL.result = LOCAL.newUser.execute();
 			return true;
 		}
 		
@@ -42,19 +42,20 @@ component {
     * @param string $email - contains email of the user.
     * @return - Returns the record of the user.
     */
-	public any function checkUser(string email)
+	public query function checkUser(required string email)
 	{
 		try {
-			checkUser = new Query();
-			checkUser.setSQL("SELECT UserName, UserEmail, UserPassword, UserTokenId FROM dbo.tbl_user_info WHERE UserEmail = :email");
-			checkUser.addParam( name = "email", value = "#arguments.email#", cfsqltype = "cf_sql_varchar" );
-			userResult = checkUser.execute();
-			return userResult;
+			LOCAL.checkUser = new Query();
+			LOCAL.checkUser.setSQL("SELECT UserName, UserEmail, UserPassword, UserTokenId FROM dbo.tbl_user_info WHERE UserEmail = :email");
+			LOCAL.checkUser.addParam( name = "email", value = "#ARGUMENTS.email#", cfsqltype = "cf_sql_varchar" );
+			LOCAL.userResult = LOCAL.checkUser.execute();
+			return LOCAL.userResult.getResult();
 		}
 		
 		catch (any exception){
 			error.errorLog(exception);
-			return false;
+			errorData = queryNew("error, varchar");
+			return errorData;
 		}
 	}
 	
@@ -67,14 +68,14 @@ component {
     * @param string $field2 - contains name of column to be updated.
     * @return - Returns boolian value if token updated or not.
     */
-	public boolean function update(string data1, string data2, string field1, string field2)
+	public boolean function update(required string data1, required string data2, required string field1, required string field2)
 	{
 		try {
-			update = new Query();
-			update.setSQL("UPDATE dbo.tbl_user_info SET #ARGUMENTS.field1# = :data1 WHERE #ARGUMENTS.field2# = :data2");
-			update.addParam( name = "data1", value = "#arguments.data1#", cfsqltype = "cf_sql_varchar" );
-			update.addParam( name = "data2", value = "#arguments.data2#", cfsqltype = "cf_sql_varchar" );
-			result = update.execute();
+			LOCAL.update = new Query();
+			LOCAL.update.setSQL("UPDATE dbo.tbl_user_info SET #ARGUMENTS.field1# = :data1 WHERE #ARGUMENTS.field2# = :data2");
+			LOCAL.update.addParam( name = "data1", value = "#ARGUMENTS.data1#", cfsqltype = "cf_sql_varchar" );
+			LOCAL.update.addParam( name = "data2", value = "#ARGUMENTS.data2#", cfsqltype = "cf_sql_varchar" );
+			LOCAL.result = LOCAL.update.execute();
 			return true;
 		}
 		
@@ -90,18 +91,19 @@ component {
     * @param null
     * @return - Returns object of all data found.
     */
-	public any function userDetails()
+	public query function userDetails()
 	{
 		try {
-			userDetails = new Query();
-			userDetails.setSQL("SELECT UserName, UserEmail, UserPassword, UserTokenId FROM dbo.tbl_user_info");
-			result = userDetails.execute();
-			return result;
+			LOCAL.userDetails = new Query();
+			LOCAL.userDetails.setSQL("SELECT UserName, UserEmail, UserPassword, UserTokenId FROM dbo.tbl_user_info");
+			LOCAL.result = LOCAL.userDetails.execute();
+			return LOCAL.result.getResult();
 		}
 		
 		catch (any exception){
 			error.errorLog(exception);
-			return false;
+			errorData = queryNew("error, varchar");
+			return errorData;
 		}
 	}
 }

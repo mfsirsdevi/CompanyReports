@@ -37,7 +37,7 @@
 					Hi <cfoutput>#SESSION.user#</cfoutput>
 				</div>
 				<div class="col-6">
-					<a class="signout" href="http://www.companyreports.com/controller/userController.cfc?method=signoutUser">signout</a>
+					<a class="signout" href="<cfoutput>#request.webRoot#</cfoutput>controller/userController.cfc?method=signoutUser">signout</a>
 				</div>
 			</div>
 			<div class="row">
@@ -50,11 +50,11 @@
 						<span class="spanAnalyst">Analyst</span> 
 						<cfselect id="analyst" class="dropdown" name="analyst">
 							<cfif isdefined("url.analyst") && url.analyst NEQ 0>
-								<option value="0"><cfoutput>#VARIABLES.analystData.getResult().str_analyst[url.analyst]#</cfoutput></option>
+								<option value="0"><cfoutput>#VARIABLES.analystData.str_analyst[url.analyst]#</cfoutput></option>
 							</cfif>
 							<option value="0">All</option>
-							<cfloop from="1" to="#VARIABLES.analystData.getResult().recordcount#" index="i">
-								<option value="<cfoutput>#VARIABLES.analystData.getResult().int_analystid[i]#</cfoutput>"><cfoutput>#VARIABLES.analystData.getResult().str_analyst[i]#</cfoutput></option>
+							<cfloop from="1" to="#VARIABLES.analystData.recordcount#" index="i">
+								<option value="<cfoutput>#VARIABLES.analystData.int_analystid[i]#</cfoutput>"><cfoutput>#VARIABLES.analystData.str_analyst[i]#</cfoutput></option>
 							</cfloop>
 						</cfselect>
 							<button id="btnsbt" type="submit" name="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
@@ -86,7 +86,7 @@
 			<cfset VARIABLES.companyDetails = companyObject.companySearch(searchText = "#searchcontent#", selectAnalyst = "#analyst#")>
 			<cfset intPagesToLinkTo = 3>
 			<cfset intItemsPerPage = 2>
-			<cfset intNumberOfTotalItems = VARIABLES.companyDetails.getResult().recordcount>
+			<cfset intNumberOfTotalItems = VARIABLES.companyDetails.recordcount>
 			<cfset intMaxLinkToShow = ceiling(variables.intCurrentPage/intPagesToLinkTo)*intPagesToLinkTo>
 			<cfset intMinLinkToShow = (int(variables.intCurrentPage/intPagesToLinkTo)*intPagesToLinkTo)+1>
 			<cfif intMaxLinkToShow eq (int(variables.intCurrentPage/intPagesToLinkTo)*intPagesToLinkTo)>
@@ -123,16 +123,16 @@
 						</tr>
 					</thead>
 					<tbody>
-						<cfloop from="1" to="#VARIABLES.companyDetailsPage.getResult().recordcount#" index="i">
-							<cfset VARIABLES.reportDetails = companyObject.getReportId(companyId = VARIABLES.companyDetailsPage.getResult().int_companyId[i])>						
+						<cfloop from="1" to="#VARIABLES.companyDetailsPage.recordcount#" index="i">
+							<cfset VARIABLES.reportDetails = companyObject.getReportId(companyId = VARIABLES.companyDetailsPage.int_companyId[i])>						
 							<tr class="table-row row">
-								<td class="table-def col-5"><cfoutput>#VARIABLES.companyDetailsPage.getResult().str_companyname[i]#</cfoutput></td>
+								<td class="table-def col-5"><cfoutput>#VARIABLES.companyDetailsPage.str_companyname[i]#</cfoutput></td>
 								<td class="table-def col-2"></td>
-								<td class="table-def col-2"><cfoutput>#VARIABLES.companyDetailsPage.getResult().str_analyst[i]#</cfoutput></td>
+								<td class="table-def col-2"><cfoutput>#VARIABLES.companyDetailsPage.str_analyst[i]#</cfoutput></td>
 								<td class="table-def col-1"></td>
 								<td class="table-def col-1">
-									<cfloop from="1" to="#VARIABLES.reportDetails.getResult().recordcount#" index="j">
-										<a href="http://www.companyreports.com/view/user/autoreport.cfm?cid=<cfoutput>#VARIABLES.reportDetails.getResult().int_companyid[j]#</cfoutput>&rid=<cfoutput>#VARIABLES.reportDetails.getResult().int_reportid[j]#</cfoutput>">Report</a>
+									<cfloop from="1" to="#VARIABLES.reportDetails.recordcount#" index="j">
+										<a href="<cfoutput>#request.webRoot#</cfoutput>view/user/autoreport.cfm?cid=<cfoutput>#VARIABLES.reportDetails.int_companyid[j]#</cfoutput>&rid=<cfoutput>#VARIABLES.reportDetails.int_reportid[j]#</cfoutput>">Report</a>
 									</cfloop>
 								</td>
 							</tr>
@@ -142,7 +142,7 @@
 			</div>
   			<cfif variables.boolShowBackButton>
     			<div style="float:left;font-weight:bold;margin:5px;padding:5px;border:1px solid black;">
-      				<a href="?page=<cfoutput>#intMinLinkToShow-1#</cfoutput>">&lt;</a>
+      				<a href="?page=<cfoutput>#intMinLinkToShow-1#</cfoutput>&search=#VARIABLES.searchcontent#&analyst=#analyst#">&lt;</a>
     			</div>
   			</cfif>
   			<cfloop from="#variables.intMinLinkToShow#" to="#variables.intMaxLinkToShow#" index="i">
@@ -151,14 +151,14 @@
         			<cfif intCurrentPage eq i>
           				#i#
         			<cfelse>
-          				<a href="?page=#i#&search=#VARIABLES.searchcontent#">#i#</a>
+          				<a href="?page=#i#&search=#VARIABLES.searchcontent#&analyst=#analyst#">#i#</a>
         			</cfif>
       				</cfoutput>
     			</div>
   			</cfloop>
   			<cfif variables.boolShowForwardButton>
     			<div style="float:left;font-weight:bold;margin:5px;padding:5px;border:1px solid black;">
-      				<a href="?page=<cfoutput>#intMaxLinkToShow+1#</cfoutput>">&gt;</a>
+      				<a href="?page=<cfoutput>#intMaxLinkToShow+1#</cfoutput>&search=#VARIABLES.searchcontent#&analyst=#analyst#">&gt;</a>
     			</div>
   			</cfif>
 		</div>
