@@ -6,8 +6,8 @@
 * Date: 08-05-2017
 */
 component {
-	
-	/**
+
+    /**
     * Function to log error to file.
     *
     * @param mixed $exception - contains all data of error.

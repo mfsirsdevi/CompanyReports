@@ -20,12 +20,12 @@ component {
     public any function generateReport(numeric cid, numeric rid) {
 
         try {
-			return reportObject.getReportViewData(ARGUMENTS.cid, ARGUMENTS.rid).getResult();
-		}
-		
-		catch (any exception){
-			error.errorLog(exception);
-		}
+            return reportObject.getReportViewData(ARGUMENTS.cid, ARGUMENTS.rid).getResult();
+        }
+
+        catch (any exception){
+            error.errorLog(exception);
+        }
     }
 
     /**
@@ -46,12 +46,12 @@ component {
             LOCAL.sId = "#LOCAL.getTotalData.int_highlight_sec_id[LOCAL.total]#";
             LOCAL.createHighlight = reportObject.addHighlight(subject, body, LOCAL.sid+1, #LOCAL.createTag.getprefix().identitycol#);
             showHighlight(ARGUMENTS.rid);
-		}
-		
-		catch (any exception){
-			error.errorLog(exception);
+        }
+
+        catch (any exception){
+            error.errorLog(exception);
             return false;
-		}
+        }
     }
 
     /**
@@ -80,7 +80,7 @@ component {
 		catch (any exception){
 			error.errorLog(exception);
             return false;
-		}
+        }
     }
 
     /**
@@ -92,14 +92,14 @@ component {
     remote function getHighlightData(numeric rid) {
 
         try {
-			getData = reportObject.getHighlightData(rid);
+            LOCAL.getData = reportObject.getHighlightData(rid);
             return getData;
-		}
-		
-		catch (any exception){
-			error.errorLog(exception);
+        }
+
+        catch (any exception){
+            error.errorLog(exception);
             return false;
-		}
+        }
     }
 
     /**
@@ -124,7 +124,7 @@ component {
 		catch (any exception){
 			error.errorLog(exception);
             return false;
-		}
+        }
     }
 
     /**
@@ -144,16 +144,30 @@ component {
 		catch (any exception){
 			error.errorLog(exception);
             return false;
-		}
+        }
     }
 
-    remote function saveAnalysis(any data) method="POST" {
+    /**
+    * Function to update highlight data sortId.
+    * @author R S Devi Prasad
+    * @param number cid - report id of the report.
+    * @param number rid - company id for which the report is made.
+    * @param string data - data for the analytical overview field.
+    * @return null.
+    */
+
+    remote function saveAnalysis(numeric id, numeric rid, any data) method="POST" {
         try {
-            
-        } 
+            LOCAL.getData = reportObject.hasQuarterlyOverview(rid);
+            if(getData.getResult().recordcount EQ 0)
+                reportObject.setOverview(id, rid, data);
+            else
+                reportObject.updateOverview(id, data);
+        }
 
         catch (any exception) {
             error.errorLog(exception);
+            return false;
         }
     }
 }

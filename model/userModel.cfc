@@ -6,8 +6,8 @@
 * Date: 01-05-2017
 */
 component {
-	include "../include/include.cfm";	
-	/**
+    include "../include/include.cfm";
+    /**
     * Function to create a record of new user registered.
     *
     * @param string $username - contains name of the user.

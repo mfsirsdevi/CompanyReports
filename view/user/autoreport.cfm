@@ -11,8 +11,8 @@
   </head>
 <body>
   <cfif  SESSION.isLogged EQ "false">
-			<cflocation url="#request.webRoot#view/login/login.cfm" addToken="false"></cflocation>
-	</cfif>
+            <cflocation url="#request.webRoot#view/login/login.cfm" addToken="false"></cflocation>
+    </cfif>
   <div id="wrapper" class="grid">
     <cfif IsDefined('url.cid') && IsDefined('url.rid')>
     <cfset cid = val(url.cid) />
@@ -21,10 +21,21 @@
     <cflocation url="#request.webRoot#view/errorPage.cfm">
     </cfif>
     <cfset reportObject = CreateObject("component","controller.reportController") />
+    <cfset modelObject = CreateObject("component","model.reportModel") />
     <cfset VARIABLES.reportData = reportObject.generateReport(cid = "#cid#", rid = "#rid#") />
     <cfset companyObject = CreateObject("component","controller.companyController") />
-		<cfset VARIABLES.analystData = companyObject.getAnalyst(cid = "#cid#") />
+        <cfset VARIABLES.analystData = companyObject.getAnalyst(cid = "#cid#") />
     <cfset VARIABLES.highlightData = reportObject.getHighlightData(rid = "#rid#") />
+    <cfset VARIABLES.overviewData = modelObject.hasQuarterlyOverview(id = "#rid#")/>
+    <cfset VARIABLES.previousData = modelObject.hasPreviousOverview(id = "#rid#")/>
+    <div class="row">
+                <div class="col-6">
+                    Hi <cfoutput>#SESSION.user#</cfoutput>
+                </div>
+                <div class="col-6">
+                    <a class="signout" href="http://www.companyreports.com/controller/userController.cfc?method=signoutUser">signout</a>
+                </div>
+            </div>
     <div class="row">
       <h1 class="title"><i class="fa fa-lock color-red" aria-hidden="true"></i>
       <span class="color-blue">Public</span> <span class="color-red">Company</span> <span class="color-brown title-end">Report</span></h1>
@@ -35,20 +46,20 @@
     <div class="row">
       <div class="col-6">
         <strong>
-	        <p ><span class="color-blue">Analyst:</span> <span class="name">
+            <p ><span class="color-blue">Analyst:</span> <span class="name">
           <cfif IsSimpleValue(analystData)>
           <cfoutput>No Analyst</cfoutput>
           <cfelse>
           <cfoutput>#analystData.str_analyst#</cfoutput>
           </cfif>
           </span></p>
-	        <p><span class="color-blue">Phone: </span><cfif IsSimpleValue(analystData)>
+            <p><span class="color-blue">Phone: </span><cfif IsSimpleValue(analystData)>
           <cfoutput>No Number</cfoutput>
           <cfelse>
           <cfoutput>#analystData.str_phone#</cfoutput>
           </cfif>
           </p>
-	        <p>Report Period: <span class="color-red"><cfoutput>#reportData.str_summary#</cfoutput></span></p>
+            <p>Report Period: <span class="color-red"><cfoutput>#reportData.str_summary#</cfoutput></span></p>
         </strong>
       </div>
       <div class="col-6 logo">
@@ -95,17 +106,28 @@
     <hr class="color-blue">
     <div class="row">
       <div class="col-12">
-        <div class="header top-header"><p>Expand</p><span class="pull-right">+</span>
+        <div class="header top-header"><p>Analitycal Overview</p><span class="pull-right">+</span>
         </div>
         <div class="content">
           <div class="header"><p>Analitycal Overview</p><span class="pull-right">+</span></div>
           <div class="content">
-            <textarea rows="5" class="analytical-text"></textarea>
+            <cfif overviewData.getResult().recordcount EQ 0>
+              <textarea rows="5" class="analytical-text"></textarea>
+            <cfelse>
+              <textarea rows="5" class="analytical-text">
+                <cfoutput>#overviewData.getResult().str_text#</cfoutput>
+              </textarea>
+            </cfif>
+            <input id="uid" type="hidden" value="<cfoutput>#SESSION.id#</cfoutput>"/>
             <button id="add-analysis">save</button>
           </div>
           <div class="header"><p>Old Analytical Overview</p><span class="pull-right">+</span></div>
           <div class="content">
-            <textarea></textarea>
+            <cfif previousData.getResult().recordcount EQ 0 >
+              <p>No Data</p>
+            <cfelse>
+              <cfoutput>#previousData.getResult().str_text#</cfoutput>
+            </cfif>
           </div>
         </div>
       </div>

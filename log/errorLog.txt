@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 DATE/TIME: {ts '2017-06-14 15:45:06'} 
 ERROR MESSAGE: Error Executing Database Query. 
@@ -35,3 +36,5 @@ ERROR TYPE: Database
 STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
 ----------------------------------------------------------------------
 
+=======
+>>>>>>> d0e5d9c3c9ad76369c6b48c82e1a0cde8844b1bc

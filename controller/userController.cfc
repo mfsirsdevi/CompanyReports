@@ -6,10 +6,10 @@
 * Date: 01-05-2017
 */
 component {
-	
-	userObject = createObject("component", "model.userModel");
-	include "../include/include.cfm";	
-	/**
+
+    userObject = createObject("component", "model.userModel");
+    include "../include/include.cfm";
+    /**
     * Function to check fields and register user.
     *
     * @param string $username - contains name of the user.
@@ -159,8 +159,8 @@ component {
 		}
 		
     }
-	
-	/**
+
+    /**
     * Function to update the new password.
     *
     * @param string password - Contains the password.
@@ -180,29 +180,31 @@ component {
 			return false;
 		}
     }
-	
-	/**
+
+    /**
     * Function to signout the user.
     *
     * @param null
     * @return null
     */
-	remote void function signoutUser()
-	{
-		try {
-			if(SESSION.userEmail NEQ "") {
-				APPLICATION.currentUsers = listDeleteAt(APPLICATION.currentUsers,listFind(APPLICATION.currentUsers, SESSION.userEmail));
-			}
-			structClear(SESSION);
-			SESSION.isLogged = "false";
-			SESSION.userEmail = "";
-			SESSION.type = "";
-			location(url="../../view/login/login.cfm", addToken="false");
-			sessionInvalidate();
-		}
-		
-		catch (any exception){
-			error.errorLog(exception);
-		}
-	}
+    remote void function signoutUser()
+    {
+        try {
+            if(SESSION.userEmail NEQ "") {
+                //APPLICATION.currentUsers = listDeleteAt(APPLICATION.currentUsers,listFind(APPLICATION.currentUsers, SESSION.userEmail));
+            }
+            writeOutput("no way");
+            structClear(SESSION);
+            SESSION.isLogged = "false";
+            SESSION.id = "";
+            SESSION.userEmail = "";
+            SESSION.type = "";
+            location(url="../../view/login/login.cfm", addToken="false");
+            sessionInvalidate();
+        }
+
+        catch (any exception){
+            error.errorLog(exception);
+        }
+    }
 }

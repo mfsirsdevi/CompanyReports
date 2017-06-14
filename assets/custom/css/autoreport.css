@@ -6,6 +6,10 @@
 * Date: 06-06-2017
 */
 
+p {
+    margin: 10px 0;
+}
+
 .HighlightDiv {
     text-align: center;
     width: 100%;

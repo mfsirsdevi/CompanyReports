@@ -1,9 +1,9 @@
 $(document).ready(function() {
     $(".header").click(function() {
 
-        $header = $(this);
+        var $header = $(this);
         //getting the next element
-        $content = $header.next();
+        var $content = $header.next();
         //open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
         $content.slideToggle(2000, function() {
             //execute this after slideToggle is done
@@ -77,21 +77,24 @@ $(document).ready(function() {
      * Save the analytical overview text in the database
      */
     $('#add-analysis').on('click', function() {
-        editorContent = tinymce.editors[0].getContent();
-        var cid = getUrlParameter('cid');
-        var rid = getUrlParameter('rid');
-        var data = {
-            "cid": cid,
+        var editorContent = tinymce.editors[0].getContent();
+        var id = parseInt($("#uid").val());
+        var rid = parseInt(getUrlParameter('rid'));
+        var body = {
+            "id": id,
             "rid": rid,
-
+            "data": editorContent
         };
-        console.log(data);
-        // $.ajax({
-        //     url: "http://www.companyreports.com/controller/reportController.cfc?method=saveAnalysis",
-        //     data: editorContent,
-        //     success: function(result) {
-        //         $("#div1").html(result);
-        //     }
-        // });
+        //console.log(body);
+        $.ajax({
+            url: "http://www.companyreports.com/controller/reportController.cfc?method=saveAnalysis",
+            data: body,
+            success: function(result) {
+                console.log('success');
+            },
+            error: function() {
+                console.log('failure');
+            }
+        });
     });
 });
