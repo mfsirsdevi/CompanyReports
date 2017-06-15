@@ -17,7 +17,7 @@ component {
     * @param null.
     * @return - Returns userinfo details.
     */
-    public any function analystDetails()
+    public query function analystDetails()
     {
         try {
             LOCAL.analystInfo = analystObject.analystDetails();
@@ -26,7 +26,8 @@ component {
 
         catch (any exception){
             error.errorLog(exception);
-            return false;
+            LOCAL.errorData = queryNew("error, varchar");
+			return LOCAL.errorData;
         }
     }
 
@@ -37,7 +38,7 @@ component {
     * @param numeric selectAnalyst - contains the analyst id that is searched.
     * @return - Returns searched info details.
     */
-    public any function companySearch(string searchText, numeric selectAnalyst)
+    public query function companySearch(string searchText, numeric selectAnalyst)
     {
         try {
             LOCAL.searchInfo = companyObject.companyDetailsSearch(searchText, selectAnalyst);
@@ -46,7 +47,8 @@ component {
 
         catch (any exception){
             error.errorLog(exception);
-            return false;
+            LOCAL.errorData = queryNew("error, varchar");
+			return LOCAL.errorData;
         }
     }
 
@@ -59,7 +61,7 @@ component {
     * @param numeric selectAnalyst - contains the analyst id that is searched.
     * @return - Returns searched info details.
     */
-    public any function companyPerPage(numeric start, numeric end, string search, numeric selectAnalyst)
+    public query function companyPerPage(required numeric start, required numeric end, string search, numeric selectAnalyst)
     {
         try {
             LOCAL.searchInfo = companyObject.companyPerPageSearch(start, end, search, selectAnalyst);
@@ -68,7 +70,8 @@ component {
 
         catch (any exception){
             error.errorLog(exception);
-            return false;
+            LOCAL.errorData = queryNew("error, varchar");
+			return LOCAL.errorData;
         }
     }
 
@@ -78,7 +81,7 @@ component {
     * @param numeric companyId - contains the id of the company
     * @return - Returns query result of data.
     */
-    public any function getReportId(numeric companyId)
+    public query function getReportId(numeric companyId)
     {
         try {
             LOCAL.reportInfo = companyObject.getReportId(companyId);
@@ -87,7 +90,8 @@ component {
 
         catch (any exception){
             error.errorLog(exception);
-            return false;
+            LOCAL.errorData = queryNew("error, varchar");
+			return LOCAL.errorData;
         }
     }
 

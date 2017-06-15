@@ -44,19 +44,19 @@ component {
     * @param string rid - contains the record Id.
     * @return struct of query executed
     */
-    public any function addTag(string tag, string rid)
+    public struct function addTag(string tag, required string rid)
     {
         try {
             LOCAL.createTag = new Query();
-            createTag.setSQL("INSERT into dbo.tbl_report_automation_highlights (int_reportid, str_tags) VALUES (:rid, :tag)");
-            createTag.addParam( name = "rid", value = "#arguments.rid#", cfsqltype = "cf_sql_varchar" );
-            createTag.addParam( name = "tag", value = "#arguments.tag#", cfsqltype = "cf_sql_varchar" );
-            LOCAL.result = createTag.execute();
-            return result;
+            LOCAL.createTag.setSQL("INSERT into dbo.tbl_report_automation_highlights (int_reportid, str_tags) VALUES (:rid, :tag)");
+            LOCAL.createTag.addParam( name = "rid", value = "#ARGUMENTS.rid#", cfsqltype = "cf_sql_integer" );
+            LOCAL.createTag.addParam( name = "tag", value = "#ARGUMENTS.tag#", cfsqltype = "cf_sql_varchar" );
+            LOCAL.result = LOCAL.createTag.execute();
+            return LOCAL.result;
         }
         catch (any exception){
             error.errorLog(exception);
-            return false;
+			return {};
         }
     }
 
@@ -69,22 +69,21 @@ component {
     * @param number id - contains the foreign key of highlight id.
     * @return struct of query executed
     */
-    public any function addHighlight(string subject, string body, numeric sid, numeric id)
+    public struct function addHighlight(string subject, string body, required numeric sid, required numeric id)
     {
         try {
             LOCAL.createHighlight = new Query();
-            createHighlight.setSQL("INSERT into dbo.tbl_report_automation_highlights_section (int_highlight_id, str_subject, str_text, int_sortid) VALUES (:id, :subject, :body, :sortId)");
-            createHighlight.addParam( name = "id", value = "#arguments.id#", cfsqltype = "cf_sql_varchar" );
-            createHighlight.addParam( name = "subject", value = "#arguments.subject#", cfsqltype = "cf_sql_varchar" );
-            createHighlight.addParam( name = "body", value = "#arguments.body#", cfsqltype = "cf_sql_varchar" );
-            createHighlight.addParam( name = "sortId", value = "#arguments.sid#", cfsqltype = "cf_sql_varchar" );
-
-			result = createHighlight.execute();
-            return result.getResult();
+            LOCAL.createHighlight.setSQL("INSERT into dbo.tbl_report_automation_highlights_section (int_highlight_id, str_subject, str_text, int_sortid) VALUES (:id, :subject, :body, :sortId)");
+            LOCAL.createHighlight.addParam( name = "id", value = "#ARGUMENTS.id#", cfsqltype = "cf_sql_integer" );
+            LOCAL.createHighlight.addParam( name = "subject", value = "#ARGUMENTS.subject#", cfsqltype = "cf_sql_varchar" );
+            LOCAL.createHighlight.addParam( name = "body", value = "#ARGUMENTS.body#", cfsqltype = "cf_sql_varchar" );
+            LOCAL.createHighlight.addParam( name = "sortId", value = "#ARGUMENTS.sid#", cfsqltype = "cf_sql_integer" );
+			LOCAL.result = LOCAL.createHighlight.execute();
+            return LOCAL.result;
         }
         catch (any exception){
             error.errorLog(exception);
-            return false;
+			return {};
         }
     }
 
@@ -94,22 +93,23 @@ component {
     * @param string id - contains the record Id.
     * @return struct of results found
     */
-    public any function getHighlightData(numeric id)
+    public query function getHighlightData(required numeric id)
     {
         try {
             LOCAL.getHighlight = new Query();
-            getHighlight.setSQL("SELECT [tbl_report_automation_highlights_section].[int_highlight_sec_id], [tbl_report_automation_highlights_section].[int_sortid],
+            LOCAL.getHighlight.setSQL("SELECT [tbl_report_automation_highlights_section].[int_highlight_sec_id], [tbl_report_automation_highlights_section].[int_sortid],
             [tbl_report_automation_highlights].[str_tags], [tbl_report_automation_highlights_section].[str_subject],
             [tbl_report_automation_highlights_section].[str_text] FROM [tbl_report_automation_highlights]
             JOIN [tbl_report_automation_highlights_section] ON [tbl_report_automation_highlights_section].[int_highlight_id] = [tbl_report_automation_highlights].[int_highlight_id]
             WHERE [tbl_report_automation_highlights].[int_reportid] = :id ORDER BY [tbl_report_automation_highlights_section].[int_sortid] DESC ");
-			getHighlight.addParam( name = "id", value = "#arguments.id#", cfsqltype = "cf_sql_varchar" );
-            result = getHighlight.execute();
-            return result.getResult();
+			LOCAL.getHighlight.addParam( name = "id", value = "#ARGUMENTS.id#", cfsqltype = "cf_sql_integer" );
+            LOCAL.result = LOCAL.getHighlight.execute();
+            return LOCAL.result.getResult();
         }
         catch (any exception){
             error.errorLog(exception);
-            return false;
+            LOCAL.errorData = queryNew("error, varchar");
+			return LOCAL.errorData;
         }
     }
 
@@ -119,18 +119,19 @@ component {
     * @param null.
     * @return struct of results found
     */
-    public any function getTotalHighlight()
+    public query function getTotalHighlight()
     {
         try {
-			getHighlight = new Query();
-			getHighlight.setSQL("SELECT int_sortid, int_highlight_sec_id FROM tbl_report_automation_highlights_section");
-            result = getHighlight.execute();
-            return result.getResult();
+			LOCAL.getHighlight = new Query();
+			LOCAL.getHighlight.setSQL("SELECT int_sortid, int_highlight_sec_id FROM tbl_report_automation_highlights_section");
+            LOCAL.result = LOCAL.getHighlight.execute();
+            return LOCAL.result.getResult();
 		}
 		
 		catch (any exception){
 			error.errorLog(exception);
-            return false;
+            LOCAL.errorData = queryNew("error, varchar");
+			return LOCAL.errorData;
         }
     }
 
@@ -141,20 +142,20 @@ component {
     * @param numeric oldId - contains the old sort Id.
     * @return struct of results found
     */
-    public any function updateSortOrder(numeric newId, numeric oldId)
+    public struct function updateSortOrder(numeric newId, numeric oldId)
     {
         try {
             LOCAL.updateSortOrder = new Query();
-            updateSortOrder.setSQL("UPDATE tbl_report_automation_highlights_section SET int_sortid = :newId WHERE int_highlight_sec_id = :oldId");
-            updateSortOrder.addParam( name = "newId", value = "#arguments.newId#", cfsqltype = "cf_sql_varchar" );
-            updateSortOrder.addParam( name = "oldId", value = "#arguments.oldId#", cfsqltype = "cf_sql_varchar" );
-            result = updateSortOrder.execute();
-            return result.getResult();
+            LOCAL.updateSortOrder.setSQL("UPDATE tbl_report_automation_highlights_section SET int_sortid = :newId WHERE int_highlight_sec_id = :oldId");
+            LOCAL.updateSortOrder.addParam( name = "newId", value = "#arguments.newId#", cfsqltype = "cf_sql_varchar" );
+            LOCAL.updateSortOrder.addParam( name = "oldId", value = "#arguments.oldId#", cfsqltype = "cf_sql_varchar" );
+            LOCAL.result = LOCAL.updateSortOrder.execute();
+            return LOCAL.result;
 		}
 
 		catch (any exception){
 			error.errorLog(exception);
-            return false;
+			return {};
 		}
     }
 
@@ -164,16 +165,20 @@ component {
     * @param number highlightId - contains the highlight id.
     * @return null.
     */
-    public any function deleteHighlight(highlightId)
+    public struct function deleteHighlight(highlightId)
     {
         try {
-			deleteHighlight = new Query();
-			deleteHighlight.setSQL("DELETE FROM tbl_report_automation_highlights_section WHERE int_highlight_sec_id = :highlightId ");
-            deleteHighlight.addParam( name = "highlightId", value = "#arguments.highlightId#", cfsqltype = "cf_sql_varchar" );
-            result = deleteHighlight.execute();
-            return result.getResult();
+			LOCAL.deleteHighlight = new Query();
+			LOCAL.deleteHighlight.setSQL("DELETE FROM tbl_report_automation_highlights_section WHERE int_highlight_sec_id = :highlightId ");
+            LOCAL.deleteHighlight.addParam( name = "highlightId", value = "#arguments.highlightId#", cfsqltype = "cf_sql_varchar" );
+            LOCAL.result = LOCAL.deleteHighlight.execute();
+            return LOCAL.result;
 		}
-
+		catch (any exception){
+			error.errorLog(exception);
+			return {};
+		}
+    }
     public any function setOverview(numeric id, numeric rid, any data) {
         try {
             LOCAL.setQuery = new Query();

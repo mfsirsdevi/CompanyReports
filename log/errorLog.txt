@@ -1,40 +1,45 @@
-<<<<<<< HEAD
-
-DATE/TIME: {ts '2017-06-14 15:45:06'} 
-ERROR MESSAGE: Error Executing Database Query. 
-ERROR DETAILS: [Macromedia][SQLServer JDBC Driver][SQLServer]Incorrect syntax near the keyword 'FROM'. 
-ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
-ERROR LINE: 445 
-ERROR TYPE: Database 
-STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+DATE/TIME: {ts '2017-06-14 18:30:53'} 
+ERROR MESSAGE: The value returned from the updateSortOrder function is not of type query. 
+ERROR DETAILS: If the component name is specified as a return type, it is possible that either a definition file for the component cannot be found or is not accessible. 
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 124 
+ERROR TYPE: query 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcUPDATEHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:124) 
 ----------------------------------------------------------------------
 
-DATE/TIME: {ts '2017-06-14 15:46:55'} 
-ERROR MESSAGE: Error Executing Database Query. 
-ERROR DETAILS: [Macromedia][SQLServer JDBC Driver][SQLServer]Incorrect syntax near the keyword 'FROM'. 
-ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
-ERROR LINE: 445 
-ERROR TYPE: Database 
-STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+DATE/TIME: {ts '2017-06-14 18:30:57'} 
+ERROR MESSAGE: The value returned from the deleteHighlight function is not of type struct. 
+ERROR DETAILS: If the component name is specified as a return type, it is possible that either a definition file for the component cannot be found or is not accessible. 
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 145 
+ERROR TYPE: struct 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcDELETEHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:145) 
 ----------------------------------------------------------------------
 
-DATE/TIME: {ts '2017-06-14 15:48:50'} 
-ERROR MESSAGE: Error Executing Database Query. 
-ERROR DETAILS: [Macromedia][SQLServer JDBC Driver][SQLServer]Incorrect syntax near the keyword 'FROM'. 
-ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
-ERROR LINE: 445 
-ERROR TYPE: Database 
-STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+DATE/TIME: {ts '2017-06-15 11:01:45'} 
+ERROR MESSAGE: Element ISLOGGED.USERID is undefined in LOCAL. 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\userController.cfc 
+ERROR LINE: 88 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfuserController2ecfc299727074$funcLOGINUSER.runFunction(D:\coldfusion\company\controller\userController.cfc:88) 
 ----------------------------------------------------------------------
 
-DATE/TIME: {ts '2017-06-14 15:50:18'} 
-ERROR MESSAGE: Error Executing Database Query. 
-ERROR DETAILS: [Macromedia][SQLServer JDBC Driver][SQLServer]Incorrect syntax near the keyword 'FROM'. 
-ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
-ERROR LINE: 445 
-ERROR TYPE: Database 
-STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+DATE/TIME: {ts '2017-06-15 12:07:09'} 
+ERROR MESSAGE: Element ISLOGGED.USERID is undefined in LOCAL. 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\userController.cfc 
+ERROR LINE: 88 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfuserController2ecfc299727074$funcLOGINUSER.runFunction(D:\coldfusion\company\controller\userController.cfc:88) 
 ----------------------------------------------------------------------
 
-=======
->>>>>>> d0e5d9c3c9ad76369c6b48c82e1a0cde8844b1bc
+DATE/TIME: {ts '2017-06-15 12:08:11'} 
+ERROR MESSAGE: Element ISLOGGED.USERID is undefined in LOCAL. 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\userController.cfc 
+ERROR LINE: 88 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfuserController2ecfc299727074$funcLOGINUSER.runFunction(D:\coldfusion\company\controller\userController.cfc:88) 
+----------------------------------------------------------------------
+

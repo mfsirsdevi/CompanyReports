@@ -95,7 +95,7 @@ component {
 	{
 		try {
 			LOCAL.userDetails = new Query();
-			LOCAL.userDetails.setSQL("SELECT UserName, UserEmail, UserPassword, UserTokenId FROM dbo.tbl_user_info");
+			LOCAL.userDetails.setSQL("SELECT UserId, UserName, UserEmail, UserPassword, UserTokenId FROM dbo.tbl_user_info");
 			LOCAL.result = LOCAL.userDetails.execute();
 			return LOCAL.result.getResult();
 		}
