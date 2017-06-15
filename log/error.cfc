@@ -13,26 +13,26 @@ component {
     * @param mixed $exception - contains all data of error.
     * @return null.
     */
-    public any function errorLog(any exception)
-    {
-        var NL = CreateObject("java", "java.lang.System").getProperty("line.separator");
-
-        // Details about the error to log //
-        savecontent variable="data"
-        {
-            WriteOutput('DATE/TIME: #Now()# #NL#');
-            WriteOutput('ERROR MESSAGE: #exception.Message# #NL#');
-            WriteOutput('ERROR DETAILS: #exception.Detail# #NL#');
-            WriteOutput('ERROR TEMPLATE: #exception.TagContext[1].Template# #NL#');
-            WriteOutput('ERROR LINE: #exception.TagContext[1].Line# #NL#');
-            WriteOutput('ERROR TYPE: #exception.Type# #NL#');
-            WriteOutput('STACKTRACE: #exception.TagContext[1].Raw_Trace# #NL#');
-            WriteOutput('----------------------------------------------------------------------#NL#');
-        }
-
-        myFile = expandPath( "../log/errorLog.txt" );
-        fileObj = FileOpen( myFile, "append");
-        fileWriteLine(fileObj,"#data#");
-        fileClose(fileObj);
-    }
+	public any function errorLog(any exception)
+	{
+		LOCAL.NL = CreateObject("java", "java.lang.System").getProperty("line.separator");
+		
+		// Details about the error to log //
+		savecontent variable="data"
+		{
+			WriteOutput('DATE/TIME: #Now()# #LOCAL.NL#');
+			WriteOutput('ERROR MESSAGE: #exception.Message# #LOCAL.NL#');
+			WriteOutput('ERROR DETAILS: #exception.Detail# #LOCAL.NL#');
+			WriteOutput('ERROR TEMPLATE: #exception.TagContext[1].Template# #LOCAL.NL#');
+			WriteOutput('ERROR LINE: #exception.TagContext[1].Line# #LOCAL.NL#');
+			WriteOutput('ERROR TYPE: #exception.Type# #LOCAL.NL#');
+			WriteOutput('STACKTRACE: #exception.TagContext[1].Raw_Trace# #LOCAL.NL#');
+			WriteOutput('----------------------------------------------------------------------#NL#');
+		}
+		
+		myFile = expandPath( "../../log/errorLog.txt" );
+		fileObj = FileOpen( myFile, "append");
+		fileWriteLine(fileObj,"#data#");
+		fileClose(fileObj);
+	}
 }

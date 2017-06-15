@@ -14,20 +14,26 @@ component {
     * @param numeric selectAnalyst - contains the analyst id that is searched.
     * @return - Returns searched info details.
     */
-    public any function companyDetailsSearch(string searchText, numeric selectAnalyst)
-    {
-        try {
-            LOCAL.companyDetails = new Query();
-            companyDetails.setSQL("SELECT int_companyid, str_companyname, str_analyst FROM dbo.tbl_company WHERE str_companyname LIKE :name AND int_analystid LIKE :analystId");
-            companyDetails.addParam( name = "name", value = "%#ARGUMENTS.searchText#%", cfsqltype = "cf_sql_varchar" );
-            if(ARGUMENTS.selectAnalyst EQ 0 || ARGUMENTS.selectAnalyst EQ "") {
-                companyDetails.addParam( name = "analystId", value = "%%", cfsqltype = "cf_sql_varchar" );
-            } else {
-                companyDetails.addParam( name = "analystId", value = "%#ARGUMENTS.selectAnalyst#%", cfsqltype = "cf_sql_varchar" );
-            }
-            LOCAL.result = companyDetails.execute();
-            return result;
-        }
+	public query function companyDetailsSearch(string searchText, numeric selectAnalyst)
+	{
+		try {
+			companyDetails = new Query();
+			companyDetails.setSQL("SELECT int_companyid, str_companyname, str_analyst FROM dbo.tbl_company WHERE str_companyname LIKE :name AND int_analystid LIKE :analystId");
+			companyDetails.addParam( name = "name", value = "%#ARGUMENTS.searchText#%", cfsqltype = "cf_sql_varchar" );
+			if(ARGUMENTS.selectAnalyst EQ 0 || ARGUMENTS.selectAnalyst EQ "") {
+				companyDetails.addParam( name = "analystId", value = "%%", cfsqltype = "cf_sql_varchar" );
+			} else {
+				companyDetails.addParam( name = "analystId", value = "#ARGUMENTS.selectAnalyst#", cfsqltype = "cf_sql_integer" );
+			} 
+			result = companyDetails.execute();
+			return result.getResult();
+		}
+		
+		catch (any exception){
+			error.errorLog(exception);
+			return false;
+		}
+	}
 
         catch (any exception){
             error.errorLog(exception);
@@ -72,19 +78,19 @@ component {
     * @param numeric companyId - contains the id of the company
     * @return - Returns query result of data.
     */
-    public any function getReportId(numeric companyId)
-    {
-        try {
-            LOCAL.reportDetails = new Query();
-            reportDetails.setSQL("SELECT int_companyid, int_reportid FROM dbo.tbl_report_company WHERE int_companyid = :companyId");
-            reportDetails.addParam( name = "companyId", value = "#ARGUMENTS.companyId#", cfsqltype = "cf_sql_varchar" );
-            LOCAL.result = reportDetails.execute();
-            return result;
-        }
-
-        catch (any exception){
-            error.errorLog(exception);
-            return false;
-        }
-    }
+	public any function getReportId(numeric companyId)
+	{
+		try {
+			reportDetails = new Query();
+			reportDetails.setSQL("SELECT int_companyid, int_reportid FROM dbo.tbl_report_company WHERE int_companyid = :companyId");
+			reportDetails.addParam( name = "companyId", value = "#ARGUMENTS.companyId#", cfsqltype = "cf_sql_varchar" ); 
+			result = reportDetails.execute();
+			return result.getResult();
+		}
+		
+		catch (any exception){
+			error.errorLog(exception);
+			return false;
+		}
+	}
 }

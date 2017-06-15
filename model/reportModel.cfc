@@ -7,7 +7,7 @@
 */
 
 component {
-    error = CreateObject("component", "log.error");
+    include "../include/include.cfm";	
 
     /**
     * Function to create a record of new user registered.
@@ -79,8 +79,8 @@ component {
             createHighlight.addParam( name = "body", value = "#arguments.body#", cfsqltype = "cf_sql_varchar" );
             createHighlight.addParam( name = "sortId", value = "#arguments.sid#", cfsqltype = "cf_sql_varchar" );
 
-            LOCAL.result = createHighlight.execute();
-            return result;
+			result = createHighlight.execute();
+            return result.getResult();
         }
         catch (any exception){
             error.errorLog(exception);
@@ -103,9 +103,9 @@ component {
             [tbl_report_automation_highlights_section].[str_text] FROM [tbl_report_automation_highlights]
             JOIN [tbl_report_automation_highlights_section] ON [tbl_report_automation_highlights_section].[int_highlight_id] = [tbl_report_automation_highlights].[int_highlight_id]
             WHERE [tbl_report_automation_highlights].[int_reportid] = :id ORDER BY [tbl_report_automation_highlights_section].[int_sortid] DESC ");
-            getHighlight.addParam( name = "id", value = "#arguments.id#", cfsqltype = "cf_sql_varchar" );
-            LOCAL.result = getHighlight.execute();
-            return result;
+			getHighlight.addParam( name = "id", value = "#arguments.id#", cfsqltype = "cf_sql_varchar" );
+            result = getHighlight.execute();
+            return result.getResult();
         }
         catch (any exception){
             error.errorLog(exception);
@@ -122,14 +122,14 @@ component {
     public any function getTotalHighlight()
     {
         try {
-            LOCAL.getHighlight = new Query();
-            getHighlight.setSQL("SELECT int_sortid, int_highlight_sec_id FROM tbl_report_automation_highlights_section");
-            LOCAL.result = getHighlight.execute();
-            return result;
-        }
-
-        catch (any exception){
-            error.errorLog(exception);
+			getHighlight = new Query();
+			getHighlight.setSQL("SELECT int_sortid, int_highlight_sec_id FROM tbl_report_automation_highlights_section");
+            result = getHighlight.execute();
+            return result.getResult();
+		}
+		
+		catch (any exception){
+			error.errorLog(exception);
             return false;
         }
     }
@@ -148,24 +148,31 @@ component {
             updateSortOrder.setSQL("UPDATE tbl_report_automation_highlights_section SET int_sortid = :newId WHERE int_highlight_sec_id = :oldId");
             updateSortOrder.addParam( name = "newId", value = "#arguments.newId#", cfsqltype = "cf_sql_varchar" );
             updateSortOrder.addParam( name = "oldId", value = "#arguments.oldId#", cfsqltype = "cf_sql_varchar" );
-            LOCAL.result = updateSortOrder.execute();
-            return result;
-        }
+            result = updateSortOrder.execute();
+            return result.getResult();
+		}
 
-        catch (any exception){
-            error.errorLog(exception);
+		catch (any exception){
+			error.errorLog(exception);
             return false;
-        }
+		}
     }
 
     /**
-    * Function to create a record of new analytical overview.
-    * @author R S Devi Prasad
-    * @param numeric id - user id.
-    * @param numeric rid - report id of the company.
-    * @param any data - data of the analytical overiew of the company
-    * @return - Returns struct containing values of rows fetched from database.
+    * Function to delete a highlight data.
+    * @author Satyapriya Baral
+    * @param number highlightId - contains the highlight id.
+    * @return null.
     */
+    public any function deleteHighlight(highlightId)
+    {
+        try {
+			deleteHighlight = new Query();
+			deleteHighlight.setSQL("DELETE FROM tbl_report_automation_highlights_section WHERE int_highlight_sec_id = :highlightId ");
+            deleteHighlight.addParam( name = "highlightId", value = "#arguments.highlightId#", cfsqltype = "cf_sql_varchar" );
+            result = deleteHighlight.execute();
+            return result.getResult();
+		}
 
     public any function setOverview(numeric id, numeric rid, any data) {
         try {

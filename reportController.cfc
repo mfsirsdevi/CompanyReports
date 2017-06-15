@@ -8,7 +8,7 @@
 
 component {
     reportObject = CreateObject("component", "model.reportModel");
-    error = CreateObject("component", "log.error");
+	include "../include/include.cfm";	
 
     /**
     * Function to display report for the user by reading the company id and report id.
@@ -35,14 +35,16 @@ component {
     * @param string body - contains the highlight body.
     * @param string tag - contains the highlight tag.
     * @param string rid - contains the recordId.
-    * @param string sid - contains the sortingId.
     * @return struct of all highlited data.
     */
-    remote function addHighlight(string subject, string body, string tag, string rid, numeric sid) {
+    remote function addHighlight(string subject, string body, string tag, string rid) {
 
         try {
             LOCAL.createTag = reportObject.addTag(tag, rid);
-            LOCAL.createHighlight = reportObject.addHighlight(subject, body, sid, #createTag.getprefix().identitycol#);
+            LOCAL.getTotalData = reportObject.getTotalHighlight();
+            LOCAL.total = "#LOCAL.getTotalData.recordcount#";
+            LOCAL.sId = "#LOCAL.getTotalData.int_highlight_sec_id[LOCAL.total]#";
+            LOCAL.createHighlight = reportObject.addHighlight(subject, body, LOCAL.sid+1, #LOCAL.createTag.getprefix().identitycol#);
             showHighlight(ARGUMENTS.rid);
         }
 
@@ -63,20 +65,20 @@ component {
         try {
             LOCAL.getData = reportObject.getHighlightData(rid);
             LOCAL.highlightData = [];
-            for(i=1 ; i <= LOCAL.getData.getResult().recordcount ; i++) {
-                    obj = {
-                        "id" = "#LOCAL.getData.getResult().int_highlight_sec_id[i]#",
-                        "sortId" = "#LOCAL.getData.getResult().int_sortid[i]#",
-                        "subject" = "#LOCAL.getData.getResult().str_subject[i]#",
-                        "body" = "#LOCAL.getData.getResult().str_text[i]#"
-                    };
-                    arrayAppend(LOCAL.highlightData, obj);
-            }
-            WriteOutput("#serializeJSON(highlightData)#");
-        }
-
-        catch (any exception){
-            error.errorLog(exception);
+            for(i=1 ; i <= LOCAL.getData.recordcount ; i++) {
+					obj = {
+                        "id" = "#LOCAL.getData.int_highlight_sec_id[i]#",
+						"sortId" = "#LOCAL.getData.int_sortid[i]#",
+						"subject" = "#LOCAL.getData.str_subject[i]#",
+						"body" = "#LOCAL.getData.str_text[i]#"
+					};
+					arrayAppend(LOCAL.highlightData, obj);
+			}
+			WriteOutput("#serializeJSON(highlightData)#");
+		}
+		
+		catch (any exception){
+			error.errorLog(exception);
             return false;
         }
     }
@@ -101,28 +103,6 @@ component {
     }
 
     /**
-    * Function to get all highlight data.
-    * @author Satyapriya Baral
-    * @param null
-    * @return struct - containing data to be displayed or the errors.
-    */
-    remote function getTotalHighlight() {
-
-        try {
-            LOCAL.getData = reportObject.getTotalHighlight();
-            LOCAL.total = "#LOCAL.getData.getResult().recordcount#";
-            LOCAL.data = [];
-            obj = {"total" = "#LOCAL.getData.getResult().int_highlight_sec_id[LOCAL.total]#"};
-            arrayAppend(LOCAL.data, obj);
-            WriteOutput("#serializeJSON(data)#");
-        }
-        catch (any exception){
-            error.errorLog(exception);
-            return false;
-        }
-    }
-
-    /**
     * Function to update highlight data sortId.
     * @author Satyapriya Baral
     * @param number rid - report id of the report.
@@ -133,16 +113,36 @@ component {
 
         try {
             LOCAL.getData = reportObject.getHighlightData(rid);
-            for(i=1 ; i <= LOCAL.getData.getResult().recordcount ; i++) {
-                LOCAL.item = listGetAt(arguments.sortData, i);
+            for(i=1 ; i <= LOCAL.getData.recordcount ; i++) {
+                LOCAL.item = listGetAt(ARGUMENTS.sortData, i);
                 LOCAL.id = listGetAt(item,2,"_");
-                LOCAL.sortOrder = (LOCAL.getData.getResult().recordcount - i)+1;
+                LOCAL.sortOrder = (LOCAL.getData.recordcount - i)+1;
                 updateSortOrder = reportObject.updateSortOrder(LOCAL.sortOrder, LOCAL.id);
             }
+		}
+		
+		catch (any exception){
+			error.errorLog(exception);
+            return false;
         }
+    }
 
-        catch (any exception){
-            error.errorLog(exception);
+    /**
+    * Function to delete a highlight data.
+    * @author Satyapriya Baral
+    * @param number highlightId - contains the highlight id.
+    * @param string rid - contains the recordId.
+    * @return null.
+    */
+    remote function deleteHighlight(numeric highlightId, numeric rid) {
+
+        try {
+            LOCAL.deleteHighlight = reportObject.deleteHighlight(highlightId);
+            showHighlight(rid);
+		}
+		
+		catch (any exception){
+			error.errorLog(exception);
             return false;
         }
     }

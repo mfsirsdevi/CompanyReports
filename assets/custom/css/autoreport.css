@@ -13,9 +13,58 @@ p {
 .HighlightDiv {
     text-align: center;
     width: 100%;
-    margin: 10px 0 0 0;
-    border: 1px solid;
+    margin: -10px 0 20px 0;
+    border: 1px solid #cccccc;
     position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.HighlightTopHeader {
+    margin: -10px 0 20px 0;
+    border: 1px solid #cccccc;
+}
+
+fieldset {
+    padding: 0;
+    margin: auto;
+    border: 1px solid #cccccc;
+}
+
+#highlightData {
+    width: 92%;
+    margin: 20px auto;
+    text-align: left;
+}
+
+.highlightHeader {
+    width: 99%;
+    margin: 0 auto;
+}
+
+.subjectStyle {
+    color: #455075;
+    background-color: #ffffff;
+    margin-bottom: auto;
+}
+
+.deleteSymbol {
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    margin-top: -10px;
+    margin-right: -15px;
+}
+
+.bodyStyle p {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.tinyMceStyle{
+    width: 95%;
+    margin: 0 auto;
 }
 
 .Highlight {
@@ -34,9 +83,15 @@ p {
 
 .save-btn {
     float: right;
-    right: 10px;
-    margin: 10px 10px 0 0;
+    right: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 20px 10px 0 0;
     position: absolute;
+    color:#1c94c4;
+    padding: 10px 15px 10px 15px; 
+    border-radius: 5px;
+    background-color: #fafafa;
 }
 
 .old {
@@ -45,7 +100,11 @@ p {
     margin-top: 5px;
 }
 
-.old h5 {
+.hr-color {
+    background-color: #d52d30;
+}
+
+.oldHeading {
     display: inline;
     margin: 0;
     padding: 0;
@@ -56,7 +115,6 @@ p {
 #updateData {
     visibility: hidden;
 }
-
 .color-red {
     color: #d52d30;
 }
@@ -149,6 +207,13 @@ hr {
 }
 
 .content {
+    display: none;
+    padding: 5px;
+    border: 1px solid #cccccc;;
+    margin-top: -5px;
+}
+
+.content-inside {
     display: none;
     padding: 5px;
 }
