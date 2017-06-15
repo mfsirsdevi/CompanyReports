@@ -14,18 +14,19 @@ component {
     * @param null
     * @return - Returns object of all data found.
     */
-    public any function analystDetails()
+    public query function analystDetails()
     {
         try {
             LOCAL.analystDetails = new Query();
-            analystDetails.setSQL("SELECT int_analystid, str_analyst, str_mail, str_phone, bit_active FROM dbo.tbl_analyst");
-            LOCAL.result = analystDetails.execute();
-            return result;
+            LOCAL.analystDetails.setSQL("SELECT int_analystid, str_analyst, str_mail, str_phone, bit_active FROM dbo.tbl_analyst");
+            LOCAL.result = LOCAL.analystDetails.execute();
+            return result.getResult();
         }
 
         catch (any exception){
             error.errorLog(exception);
-            return false;
+            LOCAL.errorData = queryNew("error, varchar");
+			return LOCAL.errorData;
         }
     }
 

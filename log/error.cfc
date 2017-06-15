@@ -30,7 +30,7 @@ component {
 			WriteOutput('----------------------------------------------------------------------#NL#');
 		}
 		
-		myFile = expandPath( "../../log/errorLog.txt" );
+		myFile = expandPath( "#REQUEST.webRoot#log/errorLog.txt" );
 		fileObj = FileOpen( myFile, "append");
 		fileWriteLine(fileObj,"#data#");
 		fileClose(fileObj);

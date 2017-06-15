@@ -31,15 +31,11 @@ component {
 		
 		catch (any exception){
 			error.errorLog(exception);
-			return false;
+			errorData = queryNew("error, varchar");
+            return errorData;
 		}
 	}
 
-        catch (any exception){
-            error.errorLog(exception);
-            return false;
-        }
-    }
 
     /**
     * Function to get all company search data per page
@@ -50,25 +46,26 @@ component {
     * @param numeric selectAnalyst - contains the analyst id that is searched.
     * @return - Returns searched info details.
     */
-    public any function companyPerPageSearch(numeric start, numeric end, string search, numeric selectAnalyst)
+    public query function companyPerPageSearch(required numeric start, required numeric end, string search, numeric selectAnalyst)
     {
         try {
             LOCAL.companyDetails = new Query();
             LOCAL.startIndex = ARGUMENTS.start - 1;
-            companyDetails.setSQL("SELECT int_companyid, str_companyname, str_analyst FROM dbo.tbl_company WHERE str_companyname LIKE :search AND int_analystid LIKE :analystId ORDER BY int_companyid OFFSET #LOCAL.startIndex# ROWS FETCH NEXT 2 ROWS ONLY");
-            companyDetails.addParam( name = "search", value = "%#ARGUMENTS.search#%", cfsqltype = "cf_sql_varchar" );
+            LOCAL.companyDetails.setSQL("SELECT int_companyid, str_companyname, str_analyst FROM dbo.tbl_company WHERE str_companyname LIKE :search AND int_analystid LIKE :analystId ORDER BY int_companyid OFFSET #LOCAL.startIndex# ROWS FETCH NEXT 2 ROWS ONLY");
+            LOCAL.companyDetails.addParam( name = "search", value = "%#ARGUMENTS.search#%", cfsqltype = "cf_sql_varchar" );
             if(ARGUMENTS.selectAnalyst EQ 0 || ARGUMENTS.selectAnalyst EQ "") {
-                companyDetails.addParam( name = "analystId", value = "%%", cfsqltype = "cf_sql_varchar" );
+                LOCAL.companyDetails.addParam( name = "analystId", value = "%%", cfsqltype = "cf_sql_varchar" );
             } else {
-                companyDetails.addParam( name = "analystId", value = "%#ARGUMENTS.selectAnalyst#%", cfsqltype = "cf_sql_varchar" );
+                LOCAL.companyDetails.addParam( name = "analystId", value = "%#ARGUMENTS.selectAnalyst#%", cfsqltype = "cf_sql_varchar" );
             }
-            LOCAL.result = companyDetails.execute();
-            return result;
+            LOCAL.result = LOCAL.companyDetails.execute();
+            return result.getResult();
         }
 
         catch (any exception){
             error.errorLog(exception);
-            return false;
+            LOCAL.errorData = queryNew("error, varchar");
+            return LOCAL.errorData;
         }
     }
 
@@ -78,19 +75,20 @@ component {
     * @param numeric companyId - contains the id of the company
     * @return - Returns query result of data.
     */
-	public any function getReportId(numeric companyId)
+	public query function getReportId(required numeric companyId)
 	{
 		try {
-			reportDetails = new Query();
-			reportDetails.setSQL("SELECT int_companyid, int_reportid FROM dbo.tbl_report_company WHERE int_companyid = :companyId");
-			reportDetails.addParam( name = "companyId", value = "#ARGUMENTS.companyId#", cfsqltype = "cf_sql_varchar" ); 
-			result = reportDetails.execute();
-			return result.getResult();
+			LOCAL.reportDetails = new Query();
+			LOCAL.reportDetails.setSQL("SELECT int_companyid, int_reportid FROM dbo.tbl_report_company WHERE int_companyid = :companyId");
+			LOCAL.reportDetails.addParam( name = "companyId", value = "#ARGUMENTS.companyId#", cfsqltype = "cf_sql_varchar" ); 
+			LOCAL.result = LOCAL.reportDetails.execute();
+			return LOCAL.result.getResult();
 		}
 		
 		catch (any exception){
 			error.errorLog(exception);
-			return false;
+			LOCAL.errorData = queryNew("error, varchar");
+            return LOCAL.errorData;
 		}
 	}
 }

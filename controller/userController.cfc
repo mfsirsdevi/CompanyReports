@@ -85,6 +85,7 @@ component {
 					SESSION.isLogged = "true";
 					SESSION.userEmail = "#ARGUMENTS.email#";
 					SESSION.user = "#LOCAL.isLogged.UserName#";
+					SESSION.id = "#LOCAL.isLogged.UserId#";
 					APPLICATION.currentUsers = listAppend(APPLICATION.currentUsers, #ARGUMENTS.email#);
 				}
 			}

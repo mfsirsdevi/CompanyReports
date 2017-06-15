@@ -37,20 +37,22 @@ component {
     * @param string rid - contains the recordId.
     * @return struct of all highlited data.
     */
-    remote function addHighlight(string subject, string body, string tag, string rid) {
-
+    remote function addHighlight(string subject, string body, string tag, string rid) returnformat="JSON"
+    {
         try {
-            LOCAL.createTag = reportObject.addTag(tag, rid);
+            LOCAL.createTag = reportObject.addTag(ARGUMENTS.tag, ARGUMENTS.rid);
             LOCAL.getTotalData = reportObject.getTotalHighlight();
             LOCAL.total = "#LOCAL.getTotalData.recordcount#";
             LOCAL.sId = "#LOCAL.getTotalData.int_highlight_sec_id[LOCAL.total]#";
-            LOCAL.createHighlight = reportObject.addHighlight(subject, body, LOCAL.sid+1, #LOCAL.createTag.getprefix().identitycol#);
+            LOCAL.createHighlight = reportObject.addHighlight(ARGUMENTS.subject, ARGUMENTS.body, 
+                    LOCAL.sid+1, #LOCAL.createTag.getPrefix().identitycol#);
             showHighlight(ARGUMENTS.rid);
         }
 
         catch (any exception){
             error.errorLog(exception);
-            return false;
+            LOCAL.errorData = [];
+            return serializeJSON(LOCAL.errorData);
         }
     }
 
@@ -60,8 +62,8 @@ component {
     * @param string rid - contains the recordId.
     * @return json data of highlight
     */
-    remote function showHighlight(numeric rid) {
-
+    remote function showHighlight(numeric rid) returnformat="JSON"
+    {
         try {
             LOCAL.getData = reportObject.getHighlightData(rid);
             LOCAL.highlightData = [];
@@ -79,7 +81,8 @@ component {
 		
 		catch (any exception){
 			error.errorLog(exception);
-            return false;
+            LOCAL.errorData = [];
+            return serializeJSON(LOCAL.errorData);
         }
     }
 
@@ -89,8 +92,8 @@ component {
     * @param string rid - report id of the report.
     * @return struct - containing data of highlight
     */
-    remote function getHighlightData(numeric rid) {
-
+    public query function getHighlightData(required numeric rid) 
+    {
         try {
             LOCAL.getData = reportObject.getHighlightData(rid);
             return getData;
@@ -98,7 +101,8 @@ component {
 
         catch (any exception){
             error.errorLog(exception);
-            return false;
+            LOCAL.errorData = queryNew("error, varchar");
+			return LOCAL.errorData;
         }
     }
 
@@ -109,8 +113,8 @@ component {
     * @param string sortData - contains sort data.
     * @return null.
     */
-    remote function updateHighlight(string sortData, numeric rid) {
-
+    remote function updateHighlight(string sortData, numeric rid) returnformat="JSON"
+    {
         try {
             LOCAL.getData = reportObject.getHighlightData(rid);
             for(i=1 ; i <= LOCAL.getData.recordcount ; i++) {
@@ -123,7 +127,8 @@ component {
 		
 		catch (any exception){
 			error.errorLog(exception);
-            return false;
+            LOCAL.errorData = [];
+            return serializeJSON(LOCAL.errorData);
         }
     }
 
@@ -134,8 +139,8 @@ component {
     * @param string rid - contains the recordId.
     * @return null.
     */
-    remote function deleteHighlight(numeric highlightId, numeric rid) {
-
+    remote function deleteHighlight(numeric highlightId, numeric rid) returnformat="JSON"
+    {
         try {
             LOCAL.deleteHighlight = reportObject.deleteHighlight(highlightId);
             showHighlight(rid);
@@ -143,7 +148,8 @@ component {
 		
 		catch (any exception){
 			error.errorLog(exception);
-            return false;
+            LOCAL.errorData = [];
+            return serializeJSON(LOCAL.errorData);
         }
     }
 
