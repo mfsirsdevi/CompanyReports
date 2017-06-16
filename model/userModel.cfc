@@ -29,13 +29,13 @@ component {
 			LOCAL.result = LOCAL.newUser.execute();
 			return true;
 		}
-		
+
 		catch (any exception){
 			error.errorLog(exception);
 			return false;
 		}
 	}
-	
+
 	/**
     * Function to check user exists or not.
     *
@@ -46,19 +46,19 @@ component {
 	{
 		try {
 			LOCAL.checkUser = new Query();
-			LOCAL.checkUser.setSQL("SELECT UserName, UserEmail, UserPassword, UserTokenId FROM dbo.tbl_user_info WHERE UserEmail = :email");
+			LOCAL.checkUser.setSQL("SELECT UserId, UserName, UserEmail, UserPassword, UserTokenId FROM dbo.tbl_user_info WHERE UserEmail = :email");
 			LOCAL.checkUser.addParam( name = "email", value = "#ARGUMENTS.email#", cfsqltype = "cf_sql_varchar" );
 			LOCAL.userResult = LOCAL.checkUser.execute();
 			return LOCAL.userResult.getResult();
 		}
-		
+
 		catch (any exception){
 			error.errorLog(exception);
 			errorData = queryNew("error, varchar");
 			return errorData;
 		}
 	}
-	
+
 	/**
     * Function to update data.
     *
@@ -78,13 +78,13 @@ component {
 			LOCAL.result = LOCAL.update.execute();
 			return true;
 		}
-		
+
 		catch (any exception){
 			error.errorLog(exception);
 			return false;
 		}
 	}
-	
+
 	/**
     * Function to get all users Data.
     *
@@ -99,7 +99,7 @@ component {
 			LOCAL.result = LOCAL.userDetails.execute();
 			return LOCAL.result.getResult();
 		}
-		
+
 		catch (any exception){
 			error.errorLog(exception);
 			errorData = queryNew("error, varchar");

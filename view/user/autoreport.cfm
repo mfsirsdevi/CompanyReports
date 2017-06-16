@@ -101,12 +101,13 @@
           <div class="col-10"><p class="detail-heading">Credit Rating Chart</p></div>
           <div class="col-2"><p class="rating"><cfoutput>#reportData.str_creditscore#</cfoutput></p></div>
         </div>
-      </div> 
+      </div>
     </div>
     <hr class="color-blue">
     <div class="row">
       <div class="col-12">
-        <div class="header top-header"><p>Analitycal Overview</p><span class="pull-right">+</span>
+        <div class="header top-header">
+          <p>Analitycal Overview</p><span class="pull-right">+</span>
         </div>
         <div class="content">
           <div class="header"><p>Analitycal Overview</p><span class="pull-right">+</span></div>
@@ -132,53 +133,63 @@
         </div>
       </div>
     </div>
-  
-
-   <div class="header top-header"><p>Highlight</p><span class="pull-right">+</span></div>
-    <div class="content">
-      <div class="header highlightHeader"><p>Highights</p><span class="pull-right">+</span></div>
-        <div class="content-inside">
-    	  <cfform id="saveHighlightForm">
-			    <div class="HighlightDiv">
-					  <button class="save-btn" type="button" id="saveHighlight" name="savebtn">Save</button>
-					  <div class="subjectHeader">
-					    <h5 class="Highlight">Highlight Subject</h5>
-					    <cfinput class="HighlightSubject" id="subject" type="text" name="Subject" />
-					  </div>
-					  <h5 class="Highlight">Highlight Body</h5>
-            <div class="tinyMceStyle">
-              <textarea rows="20" class="highlight-text"></textarea>
-            </div>
-            <cfinput id="recordId" type="hidden" name="recordId" value="#rid#"/>
-					  <h5 class="Highlight">Highlight Index Tags:(separate words with commas)</h5>
-					  <cfinput class="HighlightSubject" id="tag" type="text" name="highlightTag" />
-          </div>
-					<div class="old">
-            <fieldset>
-						  <legend><h5 class="oldHeading">Old Highlights</h5></legend>
-              <div id="highlightData">
-                <cfloop from="1" to="#VARIABLES.highlightData.recordcount#" index="i">
-                  <div id="item_<cfoutput>#VARIABLES.highlightData.int_highlight_sec_id[i]    #</cfoutput>">
-                    <h5 class="subjectStyle"><cfoutput>#VARIABLES.highlightData.str_subject[i]#</cfoutput></h5>
-                    <hr class="hr-color">
-                    <div class="bodyStyle"><cfoutput>#VARIABLES.highlightData.str_text[i]#</cfoutput>
-                      <span class="deleteSymbol">&#x2716;</span>
-                    </div>                 
-                  </div>
-						    </cfloop>
+    <div class="row">
+      <div class="col-12">
+      <div class="header top-header"><p>Highlight</p><span class="pull-right">+</span></div>
+      <div class="content">
+        <div class="header highlightHeader"><p>Highights</p><span class="pull-right">+</span></div>
+          <div class="content-inside">
+      	  <cfform id="saveHighlightForm">
+  			    <div class="HighlightDiv">
+  					  <button class="save-btn" type="button" id="saveHighlight" name="savebtn">Save</button>
+  					  <div class="subjectHeader">
+  					    <h5 class="Highlight">Highlight Subject</h5>
+  					    <cfinput class="HighlightSubject" id="subject" type="text" name="Subject" />
+  					  </div>
+  					  <h5 class="Highlight">Highlight Body</h5>
+              <div class="tinyMceStyle">
+                <textarea rows="20" class="highlight-text"></textarea>
               </div>
-              </fieldset>
-					  </div>
-			  </cfform>
-        </div>
+              <cfinput id="recordId" type="hidden" name="recordId" value="#rid#"/>
+  					  <h5 class="Highlight">Highlight Index Tags:(separate words with commas)</h5>
+  					  <cfinput class="HighlightSubject" id="tag" type="text" name="highlightTag" />
+            </div>
+  					<div class="old">
+              <fieldset>
+  						  <legend><h5 class="oldHeading">Old Highlights</h5></legend>
+                <div id="highlightData">
+                  <cfloop from="1" to="#VARIABLES.highlightData.recordcount#" index="i">
+                    <div id="item_<cfoutput>#VARIABLES.highlightData.int_highlight_sec_id[i]    #</cfoutput>">
+                      <h5 class="subjectStyle"><cfoutput>#VARIABLES.highlightData.str_subject[i]#</cfoutput></h5>
+                      <hr class="hr-color">
+                      <div class="bodyStyle"><cfoutput>#VARIABLES.highlightData.str_text[i]#</cfoutput>
+                        <span class="deleteSymbol">&#x2716;</span>
+                      </div>
+                    </div>
+  						    </cfloop>
+                </div>
+                </fieldset>
+  					  </div>
+  			  </cfform>
+          </div>
+      </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <cfinclude template="../sections/InterestCoverageSection.cfm" />
+      </div>
     </div>
   </div>
 </div>
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/plugins/jQuery/jquery-2.2.3.min.js"></script>
-	<script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/autoreport.js?"></script>
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/plugins/jQuery/jquery-2.2.3.min.js"></script>
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/js/jQuery-ui/jquery-ui.js"></script>
-	<script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/highlight.js?ver=1342ssssss"></script>
+  <script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/autoreport.js?"></script>
+	<script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/highlight.js"></script>
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/js/jquery-validation-1.16.0/dist/jquery.validate.js"></script>
+  <!--Load the AJAX API-->
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript" src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/autoChart.js"></script>
 </body>
 </html>
