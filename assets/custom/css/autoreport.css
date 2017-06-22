@@ -10,6 +10,20 @@ p {
     margin: 10px 0;
 }
 
+#hideColumn {
+    width: 900px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+#hideColumn label + label {
+    margin: 0 10px;
+}
+
+#char_div {
+    width: 100%;
+}
+
 .HighlightDiv {
     text-align: center;
     width: 100%;
@@ -89,7 +103,7 @@ fieldset {
     margin: 20px 10px 0 0;
     position: absolute;
     color:#1c94c4;
-    padding: 10px 15px 10px 15px; 
+    padding: 10px 15px 10px 15px;
     border-radius: 5px;
     background-color: #fafafa;
 }

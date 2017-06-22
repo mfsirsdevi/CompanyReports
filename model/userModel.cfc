@@ -29,13 +29,13 @@ component {
 			LOCAL.result = LOCAL.newUser.execute();
 			return true;
 		}
-		
+
 		catch (any exception){
 			error.errorLog(exception);
 			return false;
 		}
 	}
-	
+
 	/**
     * Function to check user exists or not.
     *
@@ -51,14 +51,14 @@ component {
 			LOCAL.userResult = LOCAL.checkUser.execute();
 			return LOCAL.userResult.getResult();
 		}
-		
+
 		catch (any exception){
 			error.errorLog(exception);
 			errorData = queryNew("error, varchar");
 			return errorData;
 		}
 	}
-	
+
 	/**
     * Function to update data.
     *
@@ -78,13 +78,13 @@ component {
 			LOCAL.result = LOCAL.update.execute();
 			return true;
 		}
-		
+
 		catch (any exception){
 			error.errorLog(exception);
 			return false;
 		}
 	}
-	
+
 	/**
     * Function to get all users Data.
     *
@@ -99,7 +99,7 @@ component {
 			LOCAL.result = LOCAL.userDetails.execute();
 			return LOCAL.result.getResult();
 		}
-		
+
 		catch (any exception){
 			error.errorLog(exception);
 			errorData = queryNew("error, varchar");

@@ -7,7 +7,7 @@
 */
 
 component {
-    include "../include/include.cfm";	
+    include "../include/include.cfm";
 
     /**
     * Function to create a record of new user registered.
@@ -127,7 +127,7 @@ component {
             LOCAL.result = LOCAL.getHighlight.execute();
             return LOCAL.result.getResult();
 		}
-		
+
 		catch (any exception){
 			error.errorLog(exception);
             LOCAL.errorData = queryNew("error, varchar");
@@ -217,16 +217,17 @@ component {
     * @return - Returns struct containing values of rows fetched from database.
     */
 
-    public any function updateOverview(numeric id, any data) {
+    public any function updateOverview(numeric id, numeric rid, any data) {
         try {
             LOCAL.setQuery = new Query();
             setQuery.setSQL("UPDATE [dbo].[tbl_report_automation_analytical_overview]
             SET [str_text] = :data
             ,[int_updatedby] = :id
             ,[dtm_updateddate] = GETDATE()
-            WHERE int_reportid = 8");
+            WHERE int_reportid = :rid");
             setQuery.addParam(name = "data", value = "#arguments.data#", cfsqltype = "cf_sql_varchar");
-            setQuery.addParam(name = "id", value = "#arguments.id#", cfsqltype = "cf_sql_varchar");
+            setQuery.addParam(name = "id", value = "#arguments.id#", cfsqltype = "cf_sql_integer");
+            setQuery.addParam(name = "rid", value = "#arguments.rid#", cfsqltype = "cf_sql_integer");
             LOCAL.result = setQuery.execute();
             return result;
         }

@@ -8,7 +8,7 @@
 
 component {
     reportObject = CreateObject("component", "model.reportModel");
-	include "../include/include.cfm";	
+	include "../include/include.cfm";
 
     /**
     * Function to display report for the user by reading the company id and report id.
@@ -44,7 +44,7 @@ component {
             LOCAL.getTotalData = reportObject.getTotalHighlight();
             LOCAL.total = "#LOCAL.getTotalData.recordcount#";
             LOCAL.sId = "#LOCAL.getTotalData.int_highlight_sec_id[LOCAL.total]#";
-            LOCAL.createHighlight = reportObject.addHighlight(ARGUMENTS.subject, ARGUMENTS.body, 
+            LOCAL.createHighlight = reportObject.addHighlight(ARGUMENTS.subject, ARGUMENTS.body,
                     LOCAL.sid+1, #LOCAL.createTag.getPrefix().identitycol#);
             showHighlight(ARGUMENTS.rid);
         }
@@ -78,7 +78,7 @@ component {
 			}
 			WriteOutput("#serializeJSON(highlightData)#");
 		}
-		
+
 		catch (any exception){
 			error.errorLog(exception);
             LOCAL.errorData = [];
@@ -92,7 +92,7 @@ component {
     * @param string rid - report id of the report.
     * @return struct - containing data of highlight
     */
-    public query function getHighlightData(required numeric rid) 
+    public query function getHighlightData(required numeric rid)
     {
         try {
             LOCAL.getData = reportObject.getHighlightData(rid);
@@ -124,7 +124,7 @@ component {
                 updateSortOrder = reportObject.updateSortOrder(LOCAL.sortOrder, LOCAL.id);
             }
 		}
-		
+
 		catch (any exception){
 			error.errorLog(exception);
             LOCAL.errorData = [];
@@ -145,7 +145,7 @@ component {
             LOCAL.deleteHighlight = reportObject.deleteHighlight(highlightId);
             showHighlight(rid);
 		}
-		
+
 		catch (any exception){
 			error.errorLog(exception);
             LOCAL.errorData = [];
@@ -168,7 +168,7 @@ component {
             if(getData.getResult().recordcount EQ 0)
                 reportObject.setOverview(id, rid, data);
             else
-                reportObject.updateOverview(id, data);
+                reportObject.updateOverview(id, rid, data);
         }
 
         catch (any exception) {

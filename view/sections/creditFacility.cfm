@@ -21,10 +21,10 @@
             <div class="creditFacilityDataSection" rcf_id="<cfoutput>#VARIABLES.creditFacilityData.rcf_id[i]#</cfoutput>" report_id="">
                 <div class="creditFacilityHeader creditFacilityHeaderStyle" rcf_id="<cfoutput>#VARIABLES.creditFacilityData.rcf_id[i]#</cfoutput>">Credit Facility </div>
                 <div class="" id="creditFieldsSection" style="margin-bottom: 2%;margin-top: 2%;">
-                    <cfset VARIABLES.sortDetails = companyObject.getSortDetails(rcfId = "#VARIABLES.creditFacilityData.rcf_id[i]#") />
+                  <!---  <cfset VARIABLES.sortDetails = companyObject.getSortDetails(rcfId = "#VARIABLES.creditFacilityData.rcf_id[i]#") />
                     <cfdump var="#sortDetails#">
                     <cfset VARIABLES.columnDetails = companyObject.getColumnDetails() />
-                    <cfdump var="#columnDetails#">
+                    <cfdump var="#columnDetails#">--->
                     <div class="creditFieldDisplay" id="credit_field_4_view" field_id="4" style="display:block">
                         <span class="credit_field bold">Original Facility Date :</span>  <span class="credit_field credit_field_view_text"></span>
                     </div>

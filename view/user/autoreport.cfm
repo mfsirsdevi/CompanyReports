@@ -106,12 +106,13 @@
           <div class="col-10"><p class="detail-heading">Credit Rating Chart</p></div>
           <div class="col-2"><p class="rating"><cfoutput>#reportData.str_creditscore#</cfoutput></p></div>
         </div>
-      </div> 
+      </div>
     </div>
     <hr class="color-blue">
     <div class="row">
       <div class="col-12">
-        <div class="header top-header"><p>Analitycal Overview</p><span class="pull-right">+</span>
+        <div class="header top-header">
+          <p>Analitycal Overview</p><span class="pull-right">+</span>
         </div>
         <div class="content">
           <div class="header"><p>Analitycal Overview</p><span class="pull-right">+</span></div>
@@ -146,15 +147,12 @@
 					  <div class="subjectHeader">
 					    <h5 class="Highlight">Highlight Subject</h5>
 					    <cfinput class="HighlightSubject" id="subject" type="text" name="Subject" />
+              <cfinput id="recordId" type="hidden" name="recordId" value="#rid#" />
 					  </div>
 					  <h5 class="Highlight">Highlight Body</h5>
             <div class="tinyMceStyle">
               <textarea rows="20" class="highlight-text"></textarea>
             </div>
-            <cfinput id="recordId" type="hidden" name="recordId" value="#rid#"/>
-					  <h5 class="Highlight">Highlight Index Tags:(separate words with commas)</h5>
-					  <cfinput class="HighlightSubject" id="tag" type="text" name="highlightTag" />
-          </div>
 					<div class="old">
             <fieldset>
 						  <legend><h5 class="oldHeading">Old Highlights</h5></legend>
@@ -173,14 +171,23 @@
 					</div>
 		    </cfform>
       </div>
+      </div>
     <cfinclude template="../sections/creditFacility.cfm">
+    <div class="row">
+      <div class="col-12">
+        <cfinclude template="../sections/InterestCoverageSection.cfm" />
+      </div>
+    </div>
   </div>
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/plugins/jQuery/jquery-2.2.3.min.js"></script>
-	<script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/autoreport.js?"></script>
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/creditFacility.js?"></script>
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/plugins/jQuery/jquery-2.2.3.min.js"></script>
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/js/jQuery-ui/jquery-ui.js"></script>
-	<script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/highlight.js?ver=1342ssssss"></script>
+  <script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/autoreport.js?"></script>
+	<script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/highlight.js"></script>
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/js/jquery-validation-1.16.0/dist/jquery.validate.js"></script>
+  <!--Load the AJAX API-->
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript" src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/autoChart.js"></script>
 </body>
 </html>
