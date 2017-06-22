@@ -56,7 +56,9 @@ $(document).ready(function(){
   	$("#highlightData").sortable({
 		update: function(event, ui) {
 			var postData = $(this).sortable('toArray');
+      console.log(postData);
 			var sortData = postData.join(", ");
+      console.log(sortData);
 			var rid = $("#recordId").val();
 			$.ajax({
       			type:'post',

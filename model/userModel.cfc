@@ -46,7 +46,7 @@ component {
 	{
 		try {
 			LOCAL.checkUser = new Query();
-			LOCAL.checkUser.setSQL("SELECT UserName, UserEmail, UserPassword, UserTokenId FROM dbo.tbl_user_info WHERE UserEmail = :email");
+			LOCAL.checkUser.setSQL("SELECT UserId, UserName, UserEmail, UserPassword, UserTokenId FROM dbo.tbl_user_info WHERE UserEmail = :email");
 			LOCAL.checkUser.addParam( name = "email", value = "#ARGUMENTS.email#", cfsqltype = "cf_sql_varchar" );
 			LOCAL.userResult = LOCAL.checkUser.execute();
 			return LOCAL.userResult.getResult();

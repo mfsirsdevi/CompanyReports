@@ -7,38 +7,42 @@
     <link rel="stylesheet" href="../../assets/custom/css/main.css">
     <link rel="stylesheet" href="../../assets/custom/css/autoreport.css?ver=dkassdbd">
     <link rel="stylesheet" href="../../assets/vendors/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../assets/custom/css/creditFacility.css?ver=sdfhs">
+    <link rel="stylesheet" href="<cfoutput>#request.webRoot#</cfoutput>assets/template/js/jQuery-ui/jquery-ui.theme.css">
+    <link rel="stylesheet" href="<cfoutput>#request.webRoot#</cfoutput>assets/template/js/jQuery-ui/jquery-ui.css">
     <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
   </head>
 <body>
   <cfif  SESSION.isLogged EQ "false">
-            <cflocation url="#request.webRoot#view/login/login.cfm" addToken="false"></cflocation>
-    </cfif>
+    <cflocation url="#request.webRoot#view/login/login.cfm" addToken="false"></cflocation>
+  </cfif>
   <div id="wrapper" class="grid">
     <cfif IsDefined('url.cid') && IsDefined('url.rid')>
-    <cfset cid = val(url.cid) />
-    <cfset rid = val(url.rid) />
+      <cfset cid = val(url.cid) />
+      <cfset rid = val(url.rid) />
     <cfelse>
-    <cflocation url="#request.webRoot#view/errorPage.cfm">
+      <cflocation url="#request.webRoot#view/errorPage.cfm">
     </cfif>
     <cfset reportObject = CreateObject("component","controller.reportController") />
     <cfset modelObject = CreateObject("component","model.reportModel") />
     <cfset VARIABLES.reportData = reportObject.generateReport(cid = "#cid#", rid = "#rid#") />
     <cfset companyObject = CreateObject("component","controller.companyController") />
-        <cfset VARIABLES.analystData = companyObject.getAnalyst(cid = "#cid#") />
+    <cfset VARIABLES.analystData = companyObject.getAnalyst(cid = "#cid#") />
     <cfset VARIABLES.highlightData = reportObject.getHighlightData(rid = "#rid#") />
     <cfset VARIABLES.overviewData = modelObject.hasQuarterlyOverview(id = "#rid#")/>
     <cfset VARIABLES.previousData = modelObject.hasPreviousOverview(id = "#rid#")/>
     <div class="row">
-                <div class="col-6">
-                    Hi <cfoutput>#SESSION.user#</cfoutput>
-                </div>
-                <div class="col-6">
-                    <a class="signout" href="http://www.companyreports.com/controller/userController.cfc?method=signoutUser">signout</a>
-                </div>
-            </div>
+      <div class="col-6">
+        Hi <cfoutput>#SESSION.user#</cfoutput>
+      </div>
+      <div class="col-6">
+        <a class="signout" href="http://www.companyreports.com/controller/userController.cfc?method=signoutUser">signout</a>
+      </div>
+    </div>
     <div class="row">
       <h1 class="title"><i class="fa fa-lock color-red" aria-hidden="true"></i>
-      <span class="color-blue">Public</span> <span class="color-red">Company</span> <span class="color-brown title-end">Report</span></h1>
+        <span class="color-blue">Public</span> <span class="color-red">Company</span> <span class="color-brown title-end">Report</span>
+      </h1>
     </div>
     <div class="row">
       <h2 class="color-blue company-name"><cfoutput>#reportData.str_title#</cfoutput></h2>
@@ -48,18 +52,19 @@
         <strong>
             <p ><span class="color-blue">Analyst:</span> <span class="name">
           <cfif IsSimpleValue(analystData)>
-          <cfoutput>No Analyst</cfoutput>
+            <cfoutput>No Analyst</cfoutput>
           <cfelse>
-          <cfoutput>#analystData.str_analyst#</cfoutput>
+            <cfoutput>#analystData.str_analyst#</cfoutput>
           </cfif>
           </span></p>
-            <p><span class="color-blue">Phone: </span><cfif IsSimpleValue(analystData)>
-          <cfoutput>No Number</cfoutput>
+            <p><span class="color-blue">Phone: </span>
+          <cfif IsSimpleValue(analystData)>
+            <cfoutput>No Number</cfoutput>
           <cfelse>
-          <cfoutput>#analystData.str_phone#</cfoutput>
+            <cfoutput>#analystData.str_phone#</cfoutput>
           </cfif>
           </p>
-            <p>Report Period: <span class="color-red"><cfoutput>#reportData.str_summary#</cfoutput></span></p>
+          <p>Report Period: <span class="color-red"><cfoutput>#reportData.str_summary#</cfoutput></span></p>
         </strong>
       </div>
       <div class="col-6 logo">
@@ -132,13 +137,10 @@
         </div>
       </div>
     </div>
-  
-
-   <div class="header top-header"><p>Highlight</p><span class="pull-right">+</span></div>
-    <div class="content">
+    <!---Highlight Section--->  
       <div class="header highlightHeader"><p>Highights</p><span class="pull-right">+</span></div>
-        <div class="content-inside">
-    	  <cfform id="saveHighlightForm">
+      <div class="content-inside">
+        <cfform id="saveHighlightForm">
 			    <div class="HighlightDiv">
 					  <button class="save-btn" type="button" id="saveHighlight" name="savebtn">Save</button>
 					  <div class="subjectHeader">
@@ -167,15 +169,15 @@
                   </div>
 						    </cfloop>
               </div>
-              </fieldset>
-					  </div>
-			  </cfform>
-        </div>
-    </div>
+            </fieldset>
+					</div>
+		    </cfform>
+      </div>
+    <cfinclude template="../sections/creditFacility.cfm">
   </div>
-</div>
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/plugins/jQuery/jquery-2.2.3.min.js"></script>
 	<script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/autoreport.js?"></script>
+  <script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/creditFacility.js?"></script>
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/plugins/jQuery/jquery-2.2.3.min.js"></script>
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/js/jQuery-ui/jquery-ui.js"></script>
 	<script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/highlight.js?ver=1342ssssss"></script>
