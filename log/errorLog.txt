@@ -9,3 +9,30 @@ ERROR TYPE: Expression
 STACKTRACE: 	at cfreportController2ecfc2117055771$funcUPDATEHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:119) 
 ----------------------------------------------------------------------
 
+DATE/TIME: {ts '2017-06-22 17:01:40'} 
+ERROR MESSAGE: Datasource CompanyReports could not be found. 
+ERROR DETAILS:  
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-06-22 17:02:48'} 
+ERROR MESSAGE: Datasource CompanyReports could not be found. 
+ERROR DETAILS:  
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-06-22 17:03:23'} 
+ERROR MESSAGE: Datasource CompanyReports could not be found. 
+ERROR DETAILS:  
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
