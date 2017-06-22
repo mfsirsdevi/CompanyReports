@@ -138,7 +138,7 @@
         </div>
       </div>
     </div>
-    <!---Highlight Section--->  
+    <!---Highlight Section--->
       <div class="header highlightHeader"><p>Highights</p><span class="pull-right">+</span></div>
       <div class="content-inside">
         <cfform id="saveHighlightForm">
@@ -163,7 +163,7 @@
                     <hr class="hr-color">
                     <div class="bodyStyle"><cfoutput>#VARIABLES.highlightData.str_text[i]#</cfoutput>
                       <span class="deleteSymbol">&#x2716;</span>
-                    </div>                 
+                    </div>
                   </div>
 						    </cfloop>
               </div>
@@ -179,6 +179,7 @@
       </div>
     </div>
   </div>
+
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/plugins/jQuery/jquery-2.2.3.min.js"></script>
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/creditFacility.js?"></script>
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/plugins/jQuery/jquery-2.2.3.min.js"></script>
@@ -189,5 +190,6 @@
   <!--Load the AJAX API-->
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script type="text/javascript" src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/autoChart.js"></script>
+
 </body>
 </html>

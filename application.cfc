@@ -74,5 +74,4 @@ component {
         location(url = "../index.cfm" addtoken = "false");
         structClear(ARGUMENTS.SessionScope);
     }
-    writeDump(THIS);
 }
