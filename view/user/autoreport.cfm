@@ -27,8 +27,8 @@
     <cfset modelObject = CreateObject("component","model.reportModel") />
     <cfset VARIABLES.reportData = reportObject.generateReport(cid = "#cid#", rid = "#rid#") />
     <cfset companyObject = CreateObject("component","controller.companyController") />
-    <cfset VARIABLES.analystData = companyObject.getAnalyst(cid = "#cid#") />
-    <cfset VARIABLES.highlightData = reportObject.getHighlightData(rid = "#rid#") />
+    <cfset VARIABLES.analystData  = companyObject.getAnalyst(cid = "#cid#") />
+    <cfset VARIABLES.highlightData= reportObject.getHighlightData(rid = "#rid#") />
     <cfset VARIABLES.overviewData = modelObject.hasQuarterlyOverview(id = "#rid#")/>
     <cfset VARIABLES.previousData = modelObject.hasPreviousOverview(id = "#rid#")/>
     <div class="row">
