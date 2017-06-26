@@ -5,9 +5,9 @@
     <title>Auto Report</title>
     <link rel="stylesheet" href="../../assets/vendors/normalize.css">
     <link rel="stylesheet" href="../../assets/custom/css/main.css">
-    <link rel="stylesheet" href="../../assets/custom/css/autoreport.css?ver=dkassdbd">
+    <link rel="stylesheet" href="../../assets/custom/css/autoreport.css?ver=dkavvssdbd">
     <link rel="stylesheet" href="../../assets/vendors/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../../assets/custom/css/creditFacility.css?ver=sdhs">
+    <link rel="stylesheet" href="../../assets/custom/css/creditFacility.css?ver=sdcdshs">
     <link rel="stylesheet" href="<cfoutput>#request.webRoot#</cfoutput>assets/template/js/jQuery-ui/jquery-ui.theme.css">
     <link rel="stylesheet" href="<cfoutput>#request.webRoot#</cfoutput>assets/template/js/jQuery-ui/jquery-ui.css">
     <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>

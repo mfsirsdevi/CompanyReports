@@ -172,7 +172,7 @@ $(document).ready(function(){
     });
 
     /**
-    * Function to trigger new credit details window on click
+    * Function to customize dialog with data
     *
     * @param Null
     * @return Null
@@ -182,43 +182,33 @@ $(document).ready(function(){
         console.log(rcfid);
         var op="";
         $.ajax({
-                type:'post',
-                url: "../../../controller/companyController.cfc?method=getCustomLayoutDetails" ,
-                data:{'rcfid':rcfid},
-                success:function(data){
-                 console.log(data);
-                 jsonOBJ = jQuery.parseJSON(data);
+            type:'post',
+            url: "../../../controller/companyController.cfc?method=getCustomLayoutDetails" ,
+            data:{'rcfid':rcfid},
+            success:function(data){
+                jsonOBJ = jQuery.parseJSON(data);
                 var arr = $.map(jsonOBJ, function(el) { return el });
-                console.log(arr);
-        $( ".credit_field_check" ).each(function( index ) {
-//console.log( index  );
- // data2 = $(this).parent().parent().attr('field_id');
- // $(this).attr('checked', false); // Unchecks it
- $('.fieldName_'+index).text(arr[index].columnNameText);
-  $('.fieldName_'+index).attr("id", arr[index].id);
- if(arr[index].customizeId == 1) {
- $(this).attr('checked', true); 
-} else {$(this).attr('checked', false); }
- //  op+=arr[index].columnNameText;
- // div = $(this).parent();
- // div.find('.field_check').html(" ");
- //                div.find('.field_check').append(op);
-  //console.log(data2);
-});
-       // $('.field_check').text(arr[1].columnNameText);
+                $( ".creditFieldCheck" ).each(function( index ) {
+                    $('.fieldName_'+index).text(arr[index].columnNameText);
+                    $('.fieldName_'+index).attr("id", arr[index].id);
+                    if(arr[index].customizeId == 1) {
+                        $(this).prop('checked', true); 
+                    } else {
+                        $(this).prop('checked', false); 
+                    }
+                });
             },
-                error: function( xhr, errorType ){
+            error: function( xhr, errorType ){
                 if (errorType == "error"){
                     alert("error !!");
                 }
             }
-            })
-       
+        })
         jQuery( ".CustomiseLayout" ).dialog( 'open' );
     });
 
     /**
-    * Opens a dialog to add credit details
+    * Opens a dialog to customize hide or show data
     *
     * @param Null
     * @return Null
@@ -231,30 +221,24 @@ $(document).ready(function(){
         buttons: { 
             Save: function() {
                 var obj = {};
-                $( ".credit_field_check" ).each(function( index ) {
+                $( ".creditFieldCheck" ).each(function( index ) {
                     var value = ($('.fieldName_'+index).attr('id'));
-//console.log( index  );
- // data2 = $(this).parent().parent().attr('field_id');
- // $(this).attr('checked', false); // Unchecks it
- // $('.fieldName_'+index).text(arr[index].columnNameText);
-
- if($(this).prop('checked') == true) {
-    $("#column_" + value).css("display","block");
-    obj[value] = 1;
- console.log("its true");
-} else {console.log("its false");
-obj[value] = 0;
- $("#column_" + value).css("display","none"); } });
+                    if($(this).prop('checked') == true) {
+                        $("#column_" + value).css("display","block");
+                        obj[value] = 1;
+                    } else {console.log("its false");
+                        $("#column_" + value).css("display","none");
+                        obj[value] = 0;
+                    }
+                });
+                $( ".CustomiseLayout" ).dialog( "close" ); 
                 var tinymceDate = JSON.stringify(obj);
-                                $.ajax({
+                $.ajax({
                     type:'post',
                     url: "../../../controller/companyController.cfc?method=editCustomize" ,
                     data:{'obj':tinymceDate},
                     dataType : 'json',
-                    success:function(data){ 
-                        console.log(data);
-
-                    },
+                    success:function(data){ },
                     //if any error occurs show an error message.
                     error: function( xhr, errorType ){
                         if (errorType == "error"){
@@ -262,6 +246,13 @@ obj[value] = 0;
                         }
                     }
                 })
+             } 
+        },
+        close: function(ev, ui) { 
+            $(this).hide();
+        }
+    });
+});
 //                 if($("#satya").prop('checked') == true){
 //     console.log("correct");
 // } else {console.log("correctdffsd");}
@@ -291,13 +282,7 @@ obj[value] = 0;
             //             }
             //         }
             //     })
-             } 
-        },
-        close: function(ev, ui) { 
-            $(this).hide();
-        }
-    });
-});
+
 
     // $( "#editCreditLayout" ).on('click', function() {
     //     var id = $(this).attr('id');

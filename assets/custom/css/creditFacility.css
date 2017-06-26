@@ -203,7 +203,7 @@ input:checked + .slider:before {
   margin-left: 20px;
 }
 
-.edit_layout_section {
+.customizeLayoutSection {
     width: 50%;
     float: left;
     margin-top: 2%;
@@ -217,7 +217,7 @@ input:checked + .slider:before {
     margin-bottom: 20px;
 }
 
-.field_check {
+.fieldCheck {
     width: 60%;
     margin-top: 7px;
 }

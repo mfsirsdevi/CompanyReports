@@ -4,21 +4,6 @@
 * Purpose: contains the view for credit facility section.
 * Date: 18-06-2017
 -->   
-<!---<cfloop from="1" to="#VARIABLES.highlightData.recordcount#" index="i">
-                  <div id="item_<cfoutput>#VARIABLES.highlightData.int_highlight_sec_id[i]    #</cfoutput>">
-                    <h5 class="subjectStyle"><cfoutput>#VARIABLES.highlightData.str_subject[i]#</cfoutput></h5>
-                    <hr class="hr-color">
-                    <div class="bodyStyle"><cfoutput>#VARIABLES.highlightData.str_text[i]#</cfoutput>
-                      <span class="deleteSymbol">&#x2716;</span>
-                    </div>                 
-                  </div><span class="credit_field bold">Amendment Date :</span>
-                            </cfloop>--->
-                            <!--- <cfset VARIABLES.facilityColumnName = "something">
-                            <cfset something = "anything">
-
-                            <cfset newValue = evaluate("#VARIABLES.facilityColumnName#")>
-                            Evaluate("qNames.#colname#[#index#]")
-                            <cfdump var="#newValue#"> --->
 <div class="header top-header"><p>Revolving Credit Facility</p><span class="pull-right">+</span></div>
     <div class="content revolvingCreditFacility">
     <cfset VARIABLES.creditFacilityData = companyObject.getCreditFacilityData(cid = "#cid#") />
@@ -46,36 +31,33 @@
                         </cfif>
                         <div class="creditFieldSubject">
                             <span class="creditField bold"><cfoutput>#VARIABLES.columnName#</cfoutput> :</span>
-                        <span class="creditFieldValue">
-                        <cfif VARIABLES.facilityColumnName EQ "date_amendment">
-                            <cfset VARIABLES.adendmentDetails = companyObject.getAmendment(rcfId = "#VARIABLES.creditFacilityData.rcf_id[i]#") />
-                            <cfloop from="1" to="#VARIABLES.adendmentDetails.recordcount#" index="k">
-                                <cfoutput>#DateTimeFormat(VARIABLES.adendmentDetails.date_amendment[k], "yyyy.MM.dd")#</cfoutput>,
-                            </cfloop>
-                        <cfelseif VARIABLES.facilityColumnName EQ "str_lenders">
-                            <cfset VARIABLES.lendersDetails = companyObject.getLenders(rcfId = "#VARIABLES.creditFacilityData.rcf_id[i]#") />
-                            <cfloop from="1" to="#VARIABLES.lendersDetails.recordcount#" index="k">
-                                <cfoutput>#VARIABLES.lendersDetails.str_lenders[k]#</cfoutput>,
-                            </cfloop>
-                        <cfelseif VARIABLES.facilityColumnName EQ "str_agent_bank">
-                            <cfset VARIABLES.agentBankDetails = companyObject.getAgentBank(rcfId = "#VARIABLES.creditFacilityData.rcf_id[i]#") />
-                            <cfloop from="1" to="#VARIABLES.agentBankDetails.recordcount#" index="k"> 
-                                <cfoutput>#VARIABLES.agentBankDetails.str_agent_bank[k]#</cfoutput>,
-                            </cfloop>
-                        <cfelseif VARIABLES.facilityColumnName EQ "str_convenants">
-                            <cfset VARIABLES.convenantsDetails = companyObject.getConvenants(rcfId = "#VARIABLES.creditFacilityData.rcf_id[i]#") />
-                            <cfloop from="1" to="#VARIABLES.convenantsDetails.recordcount#" index="k">
-                                <cfoutput>#VARIABLES.convenantsDetails.str_convenants[k]#</cfoutput>,
-                            </cfloop>
-                        <cfelseif VARIABLES.facilityColumnName EQ "str_financial_convenants_data">
-                            <cfset VARIABLES.financialConvenantsDetails = companyObject.getFinancialConvenants(rcfId = "#VARIABLES.creditFacilityData.rcf_id[i]#") />
-                            <cfloop from="1" to="#VARIABLES.financialConvenantsDetails.recordcount#" index="k">
-                                <cfoutput>#VARIABLES.financialConvenantsDetails.str_financial_convenants_data[k]#</cfoutput>,
-                            </cfloop>
-                        <cfelse>
-                            <cfset value = VARIABLES.creditFacilityData[#VARIABLES.facilityColumnName#][i]>
-                            <cfoutput>#value#</cfoutput>
-                        </cfif></span>
+                            <span class="creditFieldValue">
+                                <cfset VARIABLES.multiColumnDetails = companyObject.getMultiColumnDetails(rcfId = "#VARIABLES.creditFacilityData.rcf_id[i]#") />
+                                <cfif VARIABLES.facilityColumnName EQ "date_amendment">
+                                    <cfloop from="1" to="#VARIABLES.multiColumnDetails.amendment.recordcount#" index="k">
+                                        <cfoutput>#DateTimeFormat(VARIABLES.multiColumnDetails.amendment.date_amendment[k], "yyyy.MM.dd")#</cfoutput>,
+                                    </cfloop>
+                                <cfelseif VARIABLES.facilityColumnName EQ "str_lenders">
+                                    <cfloop from="1" to="#VARIABLES.multiColumnDetails.lenders.recordcount#" index="k">
+                                        <cfoutput>#VARIABLES.multiColumnDetails.lenders.str_lenders[k]#</cfoutput>,
+                                    </cfloop>
+                                <cfelseif VARIABLES.facilityColumnName EQ "str_agent_bank">
+                                    <cfloop from="1" to="#VARIABLES.multiColumnDetails.agentBank.recordcount#" index="k"> 
+                                        <cfoutput>#VARIABLES.multiColumnDetails.agentBank.str_agent_bank[k]#</cfoutput>,
+                                    </cfloop>
+                                <cfelseif VARIABLES.facilityColumnName EQ "str_convenants">
+                                    <cfloop from="1" to="#VARIABLES.multiColumnDetails.convenants.recordcount#" index="k">
+                                        <cfoutput>#VARIABLES.multiColumnDetails.convenants.str_convenants[k]#</cfoutput>,
+                                    </cfloop>
+                                <cfelseif VARIABLES.facilityColumnName EQ "str_financial_convenants_data">
+                                    <cfloop from="1" to="#VARIABLES.multiColumnDetails.financialConvenants.recordcount#" index="k">
+                                        <cfoutput>#VARIABLES.multiColumnDetails.financialConvenants.str_financial_convenants_data[k]#</cfoutput>,
+                                    </cfloop>
+                                <cfelse>
+                                    <cfset value = VARIABLES.creditFacilityData[#VARIABLES.facilityColumnName#][i]>
+                                    <cfoutput>#value#</cfoutput>
+                                </cfif>
+                            </span>
                         </div>
                         </div>
                     </cfloop> 
@@ -323,254 +305,206 @@
             </fieldset>
         </form>
     </div>
-                    
-<div id="CustomiseLayout" class="CustomiseLayout" style="display:none";">
-                    <div class="edit_layout_section">
-                        <div class="field_custom_header">
-                            <div class="pullleft bold">Fields</div>
-                            <div class="bold pullright">Toggle</div>
-                        </div>
-                        <div class="field_custom_section">
-                                                       <div id="credit_field_15_check" field_id="15">
-                                        <div class="pullleft field_check fieldName_0">
-                                             Letter of Credit Sublimit
-                                        </div>
-                                        <label class="switch">
-                                            <input type="checkbox" class="credit_field_check" name="switch" value="1" checked="">
-                                            <div class="slider round"></div>
-                                        </label>
-                                    </div>
-                                    <div id="credit_field_20_check" field_id="20">
-                                        <div class="pullleft field_check fieldName_1">
-                                             Financial Covenants - Database
-                                        </div>
-                                        <label class="switch">
-                                            <input type="checkbox" class="credit_field_check" name="switch" value="1" checked="">
-                                            <div class="slider round"></div>
-                                        </label>
-                                    </div>
-                                
-                                    <div id="credit_field_11_check" field_id="11">
-                                        <div class="pullleft field_check fieldName_2">
-                                             Interest Rate
-                                        </div>
-                                        <label class="switch">
-                                            <input type="checkbox" class="credit_field_check" name="switch" value="1" checked="">
-                                            <div class="slider round"></div>
-                                        </label>
-                                    </div>
-                                
-                                    <div id="credit_field_6_check" field_id="6">
-                                        <div class="pullleft field_check fieldName_3">
-                                             Maturity Date
-                                        </div>
-                                        <label class="switch">
-                                            <input type="checkbox" class="credit_field_check" name="switch" value="1" checked="">
-                                            <div class="slider round"></div>
-                                        </label>
-                                    </div>
-                                
-                                    <div id="credit_field_5_check" field_id="5">
-                                        <div class="pullleft field_check fieldName_4">
-                                             Amendment Date
-                                        </div>
-                                        <label class="switch">
-                                            <input type="checkbox" class="credit_field_check" id = "satya" name="switch" value="1" checked="">
-                                            <div class="slider round"></div>
-                                        </label>
-                                    </div>
-                               
-                                    <div id="credit_field_4_check" field_id="4">
-                                        <div class="pullleft field_check fieldName_5">
-                                             Original Facility Date
-                                        </div>
-                                        <label class="switch">
-                                            <input type="checkbox" class="credit_field_check" name="switch" value="1" checked="">
-                                            <div class="slider round"></div>
-                                        </label>
-                                    </div>
-                                
-                                    <div id="credit_field_21_check" field_id="21">
-                                        <div class="pullleft field_check fieldName_6">
-                                             Financial Covenants - text
-                                        </div>
-                                        <label class="switch">
-                                            <input type="checkbox" class="credit_field_check" name="switch" value="1" checked="">
-                                            <div class="slider round"></div>
-                                        </label>
-                                    </div>
-                                
-                                    <div id="credit_field_10_check" field_id="10">
-                                        <div class="pullleft field_check fieldName_7">
-                                             Availability
-                                        </div>
-                                        <label class="switch">
-                                            <input type="checkbox" class="credit_field_check" name="switch" value="1" checked="">
-                                            <div class="slider round"></div>
-                                        </label>
-                                    </div>
-                                
-                                    <div id="credit_field_13_check" field_id="13">
-                                        <div class="pullleft field_check fieldName_8">
-                                             Security
-                                        </div>
-                                        <label class="switch">
-                                            <input type="checkbox" class="credit_field_check" name="switch" value="1" checked="">
-                                            <div class="slider round"></div>
-                                        </label>
-                                    </div>
-                                
-                                    <div id="credit_field_19_check" field_id="19">
-                                        <div class="pullleft field_check fieldName_9">
-                                             Availability Comment
-                                        </div>
-                                        <label class="switch">
-                                            <input type="checkbox" class="credit_field_check" name="switch" value="1" checked="">
-                                            <div class="slider round"></div>
-                                        </label>
-                                    </div>
-                                
-                                    <div id="credit_field_15_check" field_id="15">
-                                        <div class="pullleft field_check fieldName_10">
-                                             Letter of Credit Sublimit
-                                        </div>
-                                        <label class="switch">
-                                            <input type="checkbox" class="credit_field_check" name="switch" value="1" checked="">
-                                            <div class="slider round"></div>
-                                        </label>
-                                    </div>
-                                                                        <div id="credit_field_15_check" field_id="15">
-                                        <div class="pullleft field_check fieldName_11">
-                                             Letter of Credit Sublimit
-                                        </div>
-                                        <label class="switch">
-                                            <input type="checkbox" class="credit_field_check" name="switch" value="1" checked="">
-                                            <div class="slider round"></div>
-                                        </label>
-                                    </div>
-                                                                        
-                                
-                        </div>
+    <div id="CustomiseLayout" class="CustomiseLayout" style="display:none";">
+        <div class="customizeLayoutSection">
+            <div class="fieldHeader">
+                <div class="pullleft bold">Fields</div>
+                <div class="bold pullright">Toggle</div>
+            </div>
+            <div class="fieldBody">
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_0">
                     </div>
-
-                    <div class="edit_layout_section">
-                        <div class="field_custom_header">
-                            <div class="pullleft bold">Fields</div>
-                            <div class="bold pullright">Toggle</div>
-                        </div>
-                        <div class="field_custom_section">
-                            <div id="credit_field_15_check" field_id="15">
-                                        <div class="pullleft field_check fieldName_12">
-                                             Letter of Credit Sublimit
-                                        </div>
-                                        <label class="switch">
-                                            <input type="checkbox" class="credit_field_check" name="switch" value="1" checked="">
-                                            <div class="slider round"></div>
-                                        </label>
-                                    </div>
-                                    <div id="credit_field_9_check" field_id="9">
-                                        <div class="pullleft field_check fieldName_13">
-                                             Maximum Borrowings
-                                        </div>
-                                        <label class="switch">
-                                            <input type="checkbox" class="credit_field_check" name="switch" value="0" checked=false>
-                                            <div class="slider round"></div>
-                                        </label>
-                                    </div>
-                                
-                                    <div id="credit_field_27_check" field_id="27">
-                                        <div class="pullleft field_check fieldName_14">
-                                             Availability Date Type
-                                        </div>
-                                        <label class="switch">
-                                            <input type="checkbox" class="credit_field_check" name="switch" value="1" checked="true">
-                                            <div class="slider round"></div>
-                                        </label>
-                                    </div>
-                                
-                                    <div id="credit_field_16_check" field_id="16">
-                                        <div class="pullleft field_check fieldName_15">
-                                             Borrowing Base
-                                        </div>
-                                        <label class="switch">
-                                            <input type="checkbox" class="credit_field_check" name="switch" value="1" checked="false">
-                                            <div class="slider round"></div>
-                                        </label>
-                                    </div>
-                                
-                                    <div id="credit_field_8_check" field_id="8">
-                                        <div class="pullleft field_check fieldName_16">
-                                             Other Lenders
-                                        </div>
-                                        <label class="switch">
-                                            <input type="checkbox" class="credit_field_check" name="switch" value="1" >
-                                            <div class="slider round"></div>
-                                        </label>
-                                    </div>
-                                
-                                    <div id="credit_field_18_check" field_id="18">
-                                        <div class="pullleft field_check fieldName_17">
-                                             Credit Facility Comments
-                                        </div>
-                                        <label class="switch">
-                                            <input type="checkbox" class="credit_field_check" name="switch" value="1" checked="">
-                                            <div class="slider round"></div>
-                                        </label>
-                                    </div>
-                                
-                                    <div id="credit_field_28_check" field_id="28">
-                                        <div class="pullleft field_check fieldName_18">
-                                             Availability NON-QUARTER-END (as of) Period Duration
-                                        </div>
-                                        <label class="switch">
-                                            <input type="checkbox" class="credit_field_check" name="switch" value="1" checked="">
-                                            <div class="slider round"></div>
-                                        </label>
-                                    </div>
-                                
-                                    <div id="credit_field_12_check" field_id="12">
-                                        <div class="pullleft field_check fieldName_19">
-                                             Interest Rate Comment
-                                        </div>
-                                        <label class="switch">
-                                            <input type="checkbox" class="credit_field_check" name="switch" value="1" checked="">
-                                            <div class="slider round"></div>
-                                        </label>
-                                    </div>
-                                
-                                    <div id="credit_field_7_check" field_id="7">
-                                        <div class="pullleft field_check fieldName_20">
-                                             Agent Bank
-                                        </div>
-                                        <label class="switch">
-                                            <input type="checkbox" class="credit_field_check" name="switch" value="1" checked="">
-                                            <div class="slider round"></div>
-                                        </label>
-                                    </div>
-                                
-                                    <div id="credit_field_14_check" field_id="14">
-                                        <div class="pullleft field_check fieldName_21">
-                                             Security Comment
-                                        </div>
-                                        <label class="switch">
-                                            <input type="checkbox" class="credit_field_check" name="switch" value="1" checked="">
-                                            <div class="slider round"></div>
-                                        </label>
-                                    </div>
-                                
-                                    <div id="credit_field_26_check" field_id="26">
-                                        <div class="pullleft field_check fieldName_22">
-                                             Availability (as of) Date
-                                        </div>
-                                        <label class="switch">
-                                            <input type="checkbox" class="credit_field_check" name="switch" value="1" checked="">
-                                            <div class="slider round"></div>
-                                        </label>
-                                    </div>
-                                             
-                                
-                        </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="1" checked>
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_1">
                     </div>
-
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="1" checked>
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_2">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="1" checked>
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_3">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="1" checked>
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_4">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" id = "satya" name="switch" value="1" checked>
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_5">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="1" checked>
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_6">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="1" checked>
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_7">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="1" checked>
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_8">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="1" checked>
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_9">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="1" checked>
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_10">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="1" checked>
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_11">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="1" checked>
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="customizeLayoutSection">
+            <div class="fieldHeader">
+                <div class="pullleft bold">Fields</div>
+                <div class="bold pullright">Toggle</div>
+            </div>
+            <div class="fieldBody">
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_12">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="1" checked>
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_13">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="0" checked=false>
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_14">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="1" checked="true">
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_15">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="1" checked="false">
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_16">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="1" >
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_17">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="1" checked>
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_18">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="1" checked>
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_19">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="1" checked>
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_20">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="1" checked>
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_21">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="1" checked>
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_22">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="1" checked>
+                        <div class="slider round"></div>
+                    </label>
+                </div>           
+            </div>
+        </div>
     </div>
 </div>

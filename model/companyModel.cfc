@@ -379,9 +379,10 @@ component {
         }
     }
 
-        /**
+    /**
     * Function to get amendment details of perticular record
     * @author Satyapriya Baral
+    * @param numeric rcfid - contains the rcfid of the record
     * @return - Returns query result of data.
     */
 
@@ -403,8 +404,9 @@ component {
     }
 
     /**
-    * Function to get all column details
+    * Function to get lenders details
     * @author Satyapriya Baral
+    * @param numeric rcfid - contains the rcfid of the record
     * @return - Returns query result of data.
     */
 
@@ -426,8 +428,9 @@ component {
     }
 
     /**
-    * Function to get all column details
+    * Function to get agent bank details
     * @author Satyapriya Baral
+    * @param numeric rcfid - contains the rcfid of the record
     * @return - Returns query result of data.
     */
 
@@ -449,8 +452,9 @@ component {
     }
 
     /**
-    * Function to get all column details
+    * Function to get convenant data
     * @author Satyapriya Baral
+    * @param numeric rcfid - contains the rcfid of the record
     * @return - Returns query result of data.
     */
 
@@ -499,23 +503,46 @@ component {
     * @author Satyapriya Baral
     * @param numeric newId - contains the new sort Id.
     * @param numeric oldId - contains the old sort Id.
-    * @return struct of results found
+    * @return a boolean value
     */
-    public struct function updateSortOrder(required numeric newId, required numeric oldId)
+    public bollen function updateSortOrder(required numeric newId, required numeric oldId)
     {
         try {
             LOCAL.updateSortOrder = new Query();
             LOCAL.updateSortOrder.setSQL("UPDATE tbl_cf_sort SET int_cf_sort_id = :newId WHERE int_sort_credit_id = :oldId");
-            LOCAL.updateSortOrder.addParam( name = "newId", value = "#arguments.newId#", cfsqltype = "cf_sql_varchar" );
-            LOCAL.updateSortOrder.addParam( name = "oldId", value = "#arguments.oldId#", cfsqltype = "cf_sql_varchar" );
+            LOCAL.updateSortOrder.addParam( name = "newId", value = "#ARGUMENTS.newId#", cfsqltype = "cf_sql_integer" );
+            LOCAL.updateSortOrder.addParam( name = "oldId", value = "#ARGUMENTS.oldId#", cfsqltype = "cf_sql_integer" );
             LOCAL.result = LOCAL.updateSortOrder.execute();
-            return LOCAL.result;
+            return true;
         }
 
         catch (any exception){
             error.errorLog(exception);
-            return {};
+            return false;
         }
     }
 
+    /**
+    * Function to update the customize details.
+    * @author Satyapriya Baral
+    * @param numeric customizeId - contains the id of the customize field.
+    * @param numeric customizeData - contains the data of customize details.
+    * @return a boolean value
+    */
+    public boolean function updateCustomize(required numeric customizeId, required numeric customizeData)
+    {
+        try {
+            LOCAL.updateCustomize = new Query();
+            LOCAL.updateCustomize.setSQL("UPDATE tbl_cf_sort SET int_cf_costomize_sort_id = :newId WHERE int_sort_credit_id = :oldId");
+            LOCAL.updateCustomize.addParam( name = "newId", value = "#ARGUMENTS.customizeData#", cfsqltype = "cf_sql_integer" );
+            LOCAL.updateCustomize.addParam( name = "oldId", value = "#ARGUMENTS.customizeId#", cfsqltype = "cf_sql_integer" );
+            LOCAL.result = LOCAL.updateCustomize.execute();
+            return true;
+        }
+
+        catch (any exception){
+            error.errorLog(exception);
+            return false;
+        }
+    }
 }
