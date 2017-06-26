@@ -142,6 +142,161 @@ $(document).ready(function(){
             $(this).hide();
         }
     });
+
+    /**
+    * Ajax call to sort the highlight data
+    *
+    * @param Null
+    * @return Null
+    */
+    $(".creditFieldsSection").sortable({
+         update: function(event, ui) {
+             var postData = $(this).sortable('toArray');
+       console.log(postData);
+            var sortData = postData.join(", ");
+       console.log(sortData);
+             var rcfid = $(this).parent().attr('rcf_id');
+             console.log(rcfid);
+            $.ajax({
+                type:'post',
+                url: "../../../controller/companyController.cfc?method=updateCreditFacilitySortOrder" ,
+                data:{'sortData':sortData, 'rcfid':rcfid},
+                success:function(data){ },
+                error: function( xhr, errorType ){
+                if (errorType == "error"){
+                    alert("error !!");
+                }
+            }
+            })
+         }
+    });
+
+    /**
+    * Function to trigger new credit details window on click
+    *
+    * @param Null
+    * @return Null
+    */
+    $('.customLayout').click(function(){
+        var rcfid = $(this).attr('rcf_id');
+        console.log(rcfid);
+        var op="";
+        $.ajax({
+                type:'post',
+                url: "../../../controller/companyController.cfc?method=getCustomLayoutDetails" ,
+                data:{'rcfid':rcfid},
+                success:function(data){
+                 console.log(data);
+                 jsonOBJ = jQuery.parseJSON(data);
+                var arr = $.map(jsonOBJ, function(el) { return el });
+                console.log(arr);
+        $( ".credit_field_check" ).each(function( index ) {
+//console.log( index  );
+ // data2 = $(this).parent().parent().attr('field_id');
+ // $(this).attr('checked', false); // Unchecks it
+ $('.fieldName_'+index).text(arr[index].columnNameText);
+  $('.fieldName_'+index).attr("id", arr[index].id);
+ if(arr[index].customizeId == 1) {
+ $(this).attr('checked', true); 
+} else {$(this).attr('checked', false); }
+ //  op+=arr[index].columnNameText;
+ // div = $(this).parent();
+ // div.find('.field_check').html(" ");
+ //                div.find('.field_check').append(op);
+  //console.log(data2);
+});
+       // $('.field_check').text(arr[1].columnNameText);
+            },
+                error: function( xhr, errorType ){
+                if (errorType == "error"){
+                    alert("error !!");
+                }
+            }
+            })
+       
+        jQuery( ".CustomiseLayout" ).dialog( 'open' );
+    });
+
+    /**
+    * Opens a dialog to add credit details
+    *
+    * @param Null
+    * @return Null
+    */
+    $( ".CustomiseLayout" ).dialog({
+        autoOpen: false,
+        height: 700,
+        width: 900,
+        title: "Custom Layout",
+        buttons: { 
+            Save: function() {
+                var obj = {};
+                $( ".credit_field_check" ).each(function( index ) {
+                    var value = ($('.fieldName_'+index).attr('id'));
+//console.log( index  );
+ // data2 = $(this).parent().parent().attr('field_id');
+ // $(this).attr('checked', false); // Unchecks it
+ // $('.fieldName_'+index).text(arr[index].columnNameText);
+
+ if($(this).prop('checked') == true) {
+    $("#column_" + value).css("display","block");
+    obj[value] = 1;
+ console.log("its true");
+} else {console.log("its false");
+obj[value] = 0;
+ $("#column_" + value).css("display","none"); } });
+                var tinymceDate = JSON.stringify(obj);
+                                $.ajax({
+                    type:'post',
+                    url: "../../../controller/companyController.cfc?method=editCustomize" ,
+                    data:{'obj':tinymceDate},
+                    dataType : 'json',
+                    success:function(data){ 
+                        console.log(data);
+
+                    },
+                    //if any error occurs show an error message.
+                    error: function( xhr, errorType ){
+                        if (errorType == "error"){
+                            alert("error !!");
+                        }
+                    }
+                })
+//                 if($("#satya").prop('checked') == true){
+//     console.log("correct");
+// } else {console.log("correctdffsd");}
+            //     $( "#newCreditFacilityDialog" ).dialog( "close" ); 
+            //     var obj = {};
+            //     //gets all data of tinymce
+            //     $('#newCreditFacilityForm textarea').each(function(){
+            //         edit_field_id  = $(this).attr("id");
+            //         obj[edit_field_id] = tinymce.get(edit_field_id).getContent();
+            //     }); 
+            //     var tinymceDate = JSON.stringify(obj);
+            //     var jsonText = JSON.stringify($('form').serializeObject());
+            //     console.log(jsonText);
+            //     //ajax call to submit data to the database
+            //     $.ajax({
+            //         type:'post',
+            //         url: "../../../controller/companyController.cfc?method=addCreditFacility" ,
+            //         data:{'formData':jsonText, 'obj':tinymceDate},
+            //         dataType : 'json',
+            //         success:function(data){ 
+
+            //         },
+            //         //if any error occurs show an error message.
+            //         error: function( xhr, errorType ){
+            //             if (errorType == "error"){
+            //                 alert("error !!");
+            //             }
+            //         }
+            //     })
+             } 
+        },
+        close: function(ev, ui) { 
+            $(this).hide();
+        }
+    });
 });
 
     // $( "#editCreditLayout" ).on('click', function() {

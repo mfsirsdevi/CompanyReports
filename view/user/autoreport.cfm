@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../assets/custom/css/main.css">
     <link rel="stylesheet" href="../../assets/custom/css/autoreport.css?ver=dkassdbd">
     <link rel="stylesheet" href="../../assets/vendors/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../../assets/custom/css/creditFacility.css?ver=sdfhs">
+    <link rel="stylesheet" href="../../assets/custom/css/creditFacility.css?ver=sdhs">
     <link rel="stylesheet" href="<cfoutput>#request.webRoot#</cfoutput>assets/template/js/jQuery-ui/jquery-ui.theme.css">
     <link rel="stylesheet" href="<cfoutput>#request.webRoot#</cfoutput>assets/template/js/jQuery-ui/jquery-ui.css">
     <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
@@ -153,12 +153,15 @@
             <div class="tinyMceStyle">
               <textarea rows="20" class="highlight-text"></textarea>
             </div>
+            <h5 class="Highlight">Highlight Index Tags:(separate words with commas)</h5>    
+             <cfinput class="HighlightSubject" id="tag" type="text" name="highlightTag" />   
+          </div>
 					<div class="old">
             <fieldset>
 						  <legend><h5 class="oldHeading">Old Highlights</h5></legend>
               <div id="highlightData">
                 <cfloop from="1" to="#VARIABLES.highlightData.recordcount#" index="i">
-                  <div id="item_<cfoutput>#VARIABLES.highlightData.int_highlight_sec_id[i]    #</cfoutput>">
+                  <div id="item_<cfoutput>#VARIABLES.highlightData.int_highlight_sec_id[i]#</cfoutput>">
                     <h5 class="subjectStyle"><cfoutput>#VARIABLES.highlightData.str_subject[i]#</cfoutput></h5>
                     <hr class="hr-color">
                     <div class="bodyStyle"><cfoutput>#VARIABLES.highlightData.str_text[i]#</cfoutput>
@@ -170,7 +173,6 @@
             </fieldset>
 					</div>
 		    </cfform>
-      </div>
       </div>
     <cfinclude template="../sections/creditFacility.cfm">
     <div class="row">

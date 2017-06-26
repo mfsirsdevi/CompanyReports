@@ -224,6 +224,42 @@ component {
     }
 
     /**
+    * Function to get sort details of respective record
+    * @author Satyapriya Baral
+    * @param numeric rcfid - contains the rcfid of the record
+    * @return - Returns query result of data.
+    */
+
+    remote function getCustomLayoutDetails(required numeric rcfId) returnformat="JSON"
+    {
+        try {
+            //WriteOutput("#serializeJSON(ARGUMENTS.rcfid)#");
+            LOCAL.sortDetails = companyObject.getSortDetails(ARGUMENTS.rcfid);
+           
+            LOCAL.columnDetails = companyObject.getCreditFacilityColumns();
+            LOCAL.columnFeatureData = [];
+            for(i=1 ; i <= LOCAL.sortDetails.recordcount ; i++) {
+                //LOCAL. = LOCAL.columnDetails.str_credit_facility_columns[#LOCAL.sortDetails.int_cf_id[i]#]>
+                    obj = {
+                        "id" = "#LOCAL.sortDetails.int_sort_credit_id[i]#",
+                        "columnId" = "#LOCAL.sortDetails.int_cf_id[i]#",
+                        "sortId" = "#LOCAL.sortDetails.int_cf_sort_id[i]#",
+                        "customizeId" = "#LOCAL.sortDetails.int_cf_costomize_sort_id[i]#",
+                        "columnName" = "#LOCAL.columnDetails.str_credit_facility_columns[LOCAL.sortDetails.int_cf_id[i]]#",
+                        "columnNameText" = "#LOCAL.columnDetails.str_column_names[LOCAL.sortDetails.int_cf_id[i]]#"
+                    };
+                    arrayAppend(LOCAL.columnFeatureData, obj);
+            }
+            WriteOutput("#serializeJSON(LOCAL.columnFeatureData)#");
+        } 
+
+        catch (any exception){
+            error.errorLog(exception);
+            LOCAL.errorData = queryNew("error, varchar");
+            return LOCAL.errorData;
+        }
+    }
+    /**
     * Function to get all column details
     * @author Satyapriya Baral
     * @return - Returns query result of data.
@@ -239,6 +275,149 @@ component {
             error.errorLog(exception);
             LOCAL.errorData = queryNew("error, varchar");
             return LOCAL.errorData;
+        }
+    }
+
+    /**
+    * Function to get amendment details of perticular record
+    * @author Satyapriya Baral
+    * @return - Returns query result of data.
+    */
+
+    public query function getAmendment(required numeric rcfid) 
+    {
+        try {
+            return companyObject.getAmendment(ARGUMENTS.rcfid);
+        } 
+
+        catch (any exception){
+            error.errorLog(exception);
+            LOCAL.errorData = queryNew("error, varchar");
+            return LOCAL.errorData;
+        }
+    }
+
+    /**
+    * Function to get all column details
+    * @author Satyapriya Baral
+    * @return - Returns query result of data.
+    */
+
+    public query function getLenders(required numeric rcfid) 
+    {
+        try {
+            return companyObject.getLenders(ARGUMENTS.rcfid);
+        } 
+
+        catch (any exception){
+            error.errorLog(exception);
+            LOCAL.errorData = queryNew("error, varchar");
+            return LOCAL.errorData;
+        }
+    }
+
+    /**
+    * Function to get all column details
+    * @author Satyapriya Baral
+    * @return - Returns query result of data.
+    */
+
+    public query function getAgentBank(required numeric rcfid) 
+    {
+        try {
+            return companyObject.getAgentBank(ARGUMENTS.rcfid);
+        } 
+
+        catch (any exception){
+            error.errorLog(exception);
+            LOCAL.errorData = queryNew("error, varchar");
+            return LOCAL.errorData;
+        }
+    }
+
+    /**
+    * Function to get all column details
+    * @author Satyapriya Baral
+    * @return - Returns query result of data.
+    */
+
+    public query function getConvenants(required numeric rcfid) 
+    {
+        try {
+            return companyObject.getConvenants(rcfid);
+        } 
+
+        catch (any exception){
+            error.errorLog(exception);
+            LOCAL.errorData = queryNew("error, varchar");
+            return LOCAL.errorData;
+        }
+    }
+
+    /**
+    * Function to get all column details
+    * @author Satyapriya Baral
+    * @return - Returns query result of data.
+    */
+
+    public query function getFinancialConvenants(required numeric rcfid) 
+    {
+        try {
+            return companyObject.getFinancialConvenants(rcfid);
+        } 
+
+        catch (any exception){
+            error.errorLog(exception);
+            LOCAL.errorData = queryNew("error, varchar");
+            return LOCAL.errorData;
+        }
+    }
+
+    /**
+    * Function to update highlight data sortId.
+    * @author Satyapriya Baral
+    * @param number rid - report id of the report.
+    * @param string sortData - contains sort data.
+    * @return null.
+    */
+    remote function updateCreditFacilitySortOrder(required string sortData, required numeric rcfid) returnformat="JSON"
+    {
+        try {
+            LOCAL.getData = companyObject.getSortDetails(ARGUMENTS.rcfid);
+            for(i=1 ; i <= LOCAL.getData.recordcount ; i++) {
+                LOCAL.item = listGetAt(ARGUMENTS.sortData, i);
+                LOCAL.id = listGetAt(item,2,"_");
+                // LOCAL.sortOrder = (LOCAL.getData.recordcount - i)+1;
+                updateSortOrder = companyObject.updateSortOrder(i, LOCAL.id);
+            }
+        }
+
+        catch (any exception){
+            error.errorLog(exception);
+            LOCAL.errorData = [];
+            return serializeJSON(LOCAL.errorData);
+        }
+    }
+
+    /**
+    * Function to add Credit Facility
+    * @author Satyapriya Baral
+    * @param string formData - contains the formData
+    * @param string obj - contains all tinymce data
+    * @return - Returns query result of data.
+    */
+    remote any function editCustomize(required string obj)
+    {
+        try {
+            LOCAL.textareaData = deserializeJSON(ARGUMENTS.obj);
+            LOCAL.array = StructKeyArray(LOCAL.textareaData);
+            writeDump(LOCAL.array);
+
+        }
+
+        catch (any exception){
+            error.errorLog(exception);
+            return false;
         }
     }
 }
