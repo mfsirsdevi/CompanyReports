@@ -16,13 +16,17 @@
   <cfif  SESSION.isLogged EQ "false">
     <cflocation url="#request.webRoot#view/login/login.cfm" addToken="false"></cflocation>
   </cfif>
+
   <div id="wrapper" class="grid">
+
     <cfif IsDefined('url.cid') && IsDefined('url.rid')>
       <cfset cid = val(url.cid) />
       <cfset rid = val(url.rid) />
+
     <cfelse>
       <cflocation url="#request.webRoot#view/errorPage.cfm">
     </cfif>
+
     <cfset reportObject = CreateObject("component","controller.reportController") />
     <cfset modelObject = CreateObject("component","model.reportModel") />
     <cfset VARIABLES.reportData = reportObject.generateReport(cid = "#cid#", rid = "#rid#") />
@@ -31,10 +35,12 @@
     <cfset VARIABLES.highlightData= reportObject.getHighlightData(rid = "#rid#") />
     <cfset VARIABLES.overviewData = modelObject.hasQuarterlyOverview(id = "#rid#")/>
     <cfset VARIABLES.previousData = modelObject.hasPreviousOverview(id = "#rid#")/>
+
     <div class="row">
       <div class="col-6">
         Hi <cfoutput>#SESSION.user#</cfoutput>
       </div>
+
       <div class="col-6">
         <a class="signout" href="http://www.companyreports.com/controller/userController.cfc?method=signoutUser">signout</a>
       </div>
@@ -185,7 +191,7 @@
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/plugins/jQuery/jquery-2.2.3.min.js"></script>
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/js/jQuery-ui/jquery-ui.js"></script>
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/autoreport.js?"></script>
-	<script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/highlight.js"></script>
+	<!--- <script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/highlight.js"></script> --->
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/js/jquery-validation-1.16.0/dist/jquery.validate.js"></script>
   <!--Load the AJAX API-->
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>

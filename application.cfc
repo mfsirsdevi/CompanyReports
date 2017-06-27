@@ -61,8 +61,9 @@ component {
     * @param null.
     */
     function onError(required any exception, required string eventName) {
-        WriteLog(type = "error", file = "CompanyLog", application = "yes", text = "Event Name: #ARGUMENTS.eventName# ||  Message: #ARGUMENTS.Exception.message# || MessageDetails: #ARGUMENTS.Exception.detail# || Template: #arguments.exception.tagContext[1].template# || Line: #arguments.exception.tagContext[1].line# || Raw Trace: #arguments.exception.tagContext[1].raw_trace#");
-        location(url = "#request.webRoot#view/errorPage.cfm");
+        // WriteLog(type = "error", file = "CompanyLog", application = "yes", text = "Event Name: #ARGUMENTS.eventName# ||  Message: #ARGUMENTS.Exception.message# || MessageDetails: #ARGUMENTS.Exception.detail# || Template: #arguments.exception.tagContext[1].template# || Line: #arguments.exception.tagContext[1].line# || Raw Trace: #arguments.exception.tagContext[1].raw_trace#");
+        writeDump(exception);
+        // location(url = "#request.webRoot#view/errorPage.cfm");
     }
     /**
     * Function to set variables on session end.

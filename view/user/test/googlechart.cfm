@@ -5,7 +5,7 @@
     <script type="text/javascript">
 
       // Load the Visualization API and the corechart package.--- &  set a callback
-      google.charts.load('current', {'packages':['corechart'], callback: drawChart });
+      google.charts.load('current', {'packages':['line','corechart'], callback: drawChart });
 
       // Callback that creates and populates a data table,
       // instantiates the pie chart, passes in the data and
@@ -29,10 +29,12 @@
         // Set chart options
         var options = {'title':'How Much Pizza I Ate Last Night',
                        'width':500,
-                       'height':300};
+                       'height':300,
+                       curveType: "function"
+                   	};
 
        // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
         chart.draw(data, options);
 
 		
@@ -51,11 +53,12 @@
         		['HRA', 7000]
         	]);
         var options1 = {
-        	'title' : 'The Salary Structure',
-        	'width' : 800,
-        	'height': 300
+        	title : 'The Salary Structure',
+        	width : 800,
+        	height : 300,
+        	// curveType : "function"
         }
-        var chart1 = new google.visualization.LineChart(document.getElementById('draw_here'));
+        var chart1 = new google.visualization.PieChart(document.getElementById('draw_here'));
         chart1.draw(data1,options1);
       }
     </script>

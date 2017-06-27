@@ -282,4 +282,64 @@ component {
             return false;
         }
     }
+
+    /**
+    * Function to retrieve the period ranges
+    * @author Chandra Sekhar Sahoo
+    * @param null
+    * @return - Returns struct containing values of periods and bit value of hidden fields
+    */
+
+    public query function getPeriods() {
+        try {
+            LOCAL.periods = new Query();
+            LOCAL.periods.setSQL("SELECT tfp.int_period_id, tfp.dte_period_end_dt, tfp.bit_hidden, tfdn.num_metric_value
+                                    FROM dbo.tbl_fa_period tfp
+                                    INNER JOIN dbo.tbl_fa_data_numeric tfdn
+                                    ON tfdn.int_period_id = tfp.int_period_id
+                                    ");
+            LOCAL.results = LOCAL.periods.execute().getResult();
+            return LOCAL.results;
+        }
+        catch(any e){
+            error.errorLog(e);
+            // rethrow;
+            return queryNew("error, varchar");
+        }
+    }
+
+    /**
+    * Function to update the hidden fields in chart / save chart preferences
+    * @author Chandra Sekhar Sahoo
+    * @param hidden_dates(array) - contains the rows that are not to be shown in chart/ set hidden fileds to 1 (true)
+    * @param not_hidden_dates(array) - contains the rows that are shown chart/ set bit_hidden field to 0 (false)
+    * @return - boolean true or false
+    */
+
+    public boolean function updateChartPref(required string hidden_dates, required string not_hidden_dates) {
+        try {
+            LOCAL.not_hidden_dates = arrayToList(deserializeJSON(ARGUMENTS.not_hidden_dates));
+            LOCAL.hidden_dates =   arrayToList(deserializeJSON(ARGUMENTS.hidden_dates));
+
+            LOCAL.prefx = new Query();
+            LOCAL.prefx.addParam( name="nhd", value="#LOCAL.not_hidden_dates#", cfsqltype="cf_sql_integer", list="yes");
+            LOCAL.prefx.setSQL("UPDATE dbo.tbl_fa_period
+                                SET bit_hidden = 0
+                                WHERE int_period_id IN (:nhd)");
+            LOCAL.prefx.execute().getResult();
+
+            LOCAL.prefy = new Query();
+            LOCAL.prefy.addParam( name="hd", value="#LOCAL.hidden_dates#", cfsqltype="cf_sql_integer", list="yes" );
+            LOCAL.prefy.setSQL("UPdATE dbo.tbl_fa_period
+                                SET bit_hidden = 1
+                                WHERE int_period_id IN (:hd)");
+            LOCAL.prefy.execute().getResult();
+            return true;
+        }
+        catch(any exception) {
+            error.errorLog(e);
+            return false;
+        }
+    }
+
 }

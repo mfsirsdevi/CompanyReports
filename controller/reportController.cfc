@@ -176,4 +176,37 @@ component {
             return false;
         }
     }
+
+    /**
+    * Function to retrieve all the periods from [tbl_fa_period]
+    * @author chandra sekhar sahoo
+    * @return date JSON struct.
+    */
+    remote function getDates() returnformat="JSON" {
+        try {
+            return serializeJSON(reportObject.getPeriods());
+        }
+        catch(any exception) {
+            error.errorLog(exception);
+            return serializeJSON(queryNew('error, varchar'));
+        }
+    }
+
+
+    /**
+    * Function to save preferences of Google Chart Date ranges & value
+    * @author chandra sekhar sahoo
+    * @param hidden_dates(array) - contains the rows that are not to be shown in chart/ set hidden fileds to 1 (true)
+    * @param not_hidden_dates(array) - contains the rows that are shown chart/ set bit_hidden field to 0 (false)
+    * @return boolean - true false
+    */
+    remote boolean function updateChartPreference(required string hidden_dates,required string not_hidden_dates) returnformat="JSON" {
+        try{
+            return reportObject.updateChartPref(ARGUMENTS.hidden_dates, ARGUMENTS.not_hidden_dates);
+        }
+        catch(any exception){
+            error.errorLog(exception);
+            return false;
+        }
+    }
 }

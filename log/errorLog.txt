@@ -36,3 +36,57 @@ ERROR TYPE: Database
 STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
 ----------------------------------------------------------------------
 
+DATE/TIME: {ts '2017-06-26 14:42:12'} 
+ERROR MESSAGE: The method getPeriods was not found in component D:\credintel\CompanyReports\model\reportModel.cfc. 
+ERROR DETAILS: Ensure that the method is defined, and that it is spelled correctly. 
+ERROR TEMPLATE: D:\credintel\CompanyReports\controller\reportController.cfc 
+ERROR LINE: 187 
+ERROR TYPE: Application 
+STACKTRACE: 	at cfreportController2ecfc1571273036$funcGETDATES.runFunction(D:\credintel\CompanyReports\controller\reportController.cfc:187) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-06-26 14:45:33'} 
+ERROR MESSAGE: The method getPeriods was not found in component D:\credintel\CompanyReports\model\reportModel.cfc. 
+ERROR DETAILS: Ensure that the method is defined, and that it is spelled correctly. 
+ERROR TEMPLATE: D:\credintel\CompanyReports\controller\reportController.cfc 
+ERROR LINE: 187 
+ERROR TYPE: Application 
+STACKTRACE: 	at cfreportController2ecfc1571273036$funcGETDATES.runFunction(D:\credintel\CompanyReports\controller\reportController.cfc:187) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-06-26 14:46:26'} 
+ERROR MESSAGE: The value returned from the getPeriods function is not of type query. 
+ERROR DETAILS: If the component name is specified as a return type, it is possible that either a definition file for the component cannot be found or is not accessible. 
+ERROR TEMPLATE: D:\credintel\CompanyReports\controller\reportController.cfc 
+ERROR LINE: 187 
+ERROR TYPE: query 
+STACKTRACE: 	at cfreportController2ecfc1571273036$funcGETDATES.runFunction(D:\credintel\CompanyReports\controller\reportController.cfc:187) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-06-26 14:49:26'} 
+ERROR MESSAGE: The value returned from the getPeriods function is not of type query. 
+ERROR DETAILS: If the component name is specified as a return type, it is possible that either a definition file for the component cannot be found or is not accessible. 
+ERROR TEMPLATE: D:\credintel\CompanyReports\controller\reportController.cfc 
+ERROR LINE: 187 
+ERROR TYPE: query 
+STACKTRACE: 	at cfreportController2ecfc1571273036$funcGETDATES.runFunction(D:\credintel\CompanyReports\controller\reportController.cfc:187) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-06-26 15:11:02'} 
+ERROR MESSAGE: [Table (rows 7 columns INT_PERIOD_ID, DTE_PERIOD_END_DT, BIT_HIDDEN): [INT_PERIOD_ID: coldfusion.sql.QueryColumn@445d3b38] [DTE_PERIOD_END_DT: coldfusion.sql.QueryColumn@44dafc98] [BIT_HIDDEN: coldfusion.sql.QueryColumn@4fd8279] ] is not indexable by 1 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\credintel\CompanyReports\controller\reportController.cfc 
+ERROR LINE: 207 
+ERROR TYPE: java.lang.IllegalArgumentException 
+STACKTRACE: 	at cfreportController2ecfc1571273036$funcQUERYTOSTRUCT.runFunction(D:\credintel\CompanyReports\controller\reportController.cfc:207) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-06-26 15:11:45'} 
+ERROR MESSAGE: [Table (rows 7 columns INT_PERIOD_ID, DTE_PERIOD_END_DT, BIT_HIDDEN): [INT_PERIOD_ID: coldfusion.sql.QueryColumn@3c743fe0] [DTE_PERIOD_END_DT: coldfusion.sql.QueryColumn@740daa21] [BIT_HIDDEN: coldfusion.sql.QueryColumn@2d1c980d] ] is not indexable by 1 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\credintel\CompanyReports\controller\reportController.cfc 
+ERROR LINE: 207 
+ERROR TYPE: java.lang.IllegalArgumentException 
+STACKTRACE: 	at cfreportController2ecfc1571273036$funcQUERYTOSTRUCT.runFunction(D:\credintel\CompanyReports\controller\reportController.cfc:207) 
+----------------------------------------------------------------------
+
