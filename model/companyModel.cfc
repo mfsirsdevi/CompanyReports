@@ -288,7 +288,7 @@ component {
     {
         try {
             LOCAL.getRecords = new Query();
-            LOCAL.getRecords.setSQL("SELECT int_cf_id, str_credit_facility_columns FROM dbo.tbl_credit_facility_columns"); 
+            LOCAL.getRecords.setSQL("SELECT int_cf_id, str_credit_facility_columns, str_column_names FROM dbo.tbl_credit_facility_columns"); 
             LOCAL.result = LOCAL.getRecords.execute();
             return LOCAL.result.getResult();
         }
@@ -366,18 +366,183 @@ component {
     {
         try {
             LOCAL.getRecord = new Query();
-            LOCAL.getRecord.setSQL("SELECT int_cf_id, int_cf_sort_id, int_cf_costomize_sort_id, rcf_id, int_companyid FROM dbo.tbl_cf_sort WHERE rcf_id = :companyId");
-                LOCAL.newRecord.addParam( name = "cfId", value = "#ARGUMENTS.columnDetails.int_cf_id[i]#", cfsqltype = "cf_sql_integer" );
-                LOCAL.newRecord.addParam( name = "sortId", value = "#i#", cfsqltype = "cf_sql_integer" );
-                LOCAL.newRecord.addParam( name = "customizeId", value = 1, cfsqltype = "cf_sql_integer" );
-                LOCAL.newRecord.addParam( name = "recId", value = "#ARGUMENTS.id#", cfsqltype = "cf_sql_integer" );
-                LOCAL.newRecord.addParam( name = "companyId", value = "#ARGUMENTS.companyId#", cfsqltype = "cf_sql_integer" );
+            LOCAL.getRecord.setSQL("SELECT int_sort_credit_id, int_cf_id, int_cf_sort_id, int_cf_costomize_sort_id, rcf_id, int_companyid FROM dbo.tbl_cf_sort WHERE rcf_id = :rcfId ORDER BY int_cf_sort_id ASC");
+            LOCAL.getRecord.addParam( name = "rcfId", value = "#ARGUMENTS.rcfId#", cfsqltype = "cf_sql_integer" );
+            LOCAL.result = LOCAL.getRecord.execute();
+            return LOCAL.result.getResult();
+        }  
+
+        catch (any exception){
+            error.errorLog(exception);
+            LOCAL.errorData = queryNew("error, varchar");
+            return LOCAL.errorData;
+        }
+    }
+
+    /**
+    * Function to get amendment details of perticular record
+    * @author Satyapriya Baral
+    * @param numeric rcfid - contains the rcfid of the record
+    * @return - Returns query result of data.
+    */
+
+    public query function getAmendment(required numeric rcfid) 
+    {
+        try {
+            LOCAL.getRecord = new Query();
+            LOCAL.getRecord.setSQL("SELECT date_amendment FROM dbo.tbl_amendment WHERE rcf_id = :rcfid");
+            LOCAL.getRecord.addParam( name = "rcfid", value = "#ARGUMENTS.rcfid#", cfsqltype = "cf_sql_integer" );
+            LOCAL.result = LOCAL.getRecord.execute();
+            return LOCAL.result.getResult();
         } 
 
         catch (any exception){
             error.errorLog(exception);
             LOCAL.errorData = queryNew("error, varchar");
             return LOCAL.errorData;
+        }
+    }
+
+    /**
+    * Function to get lenders details
+    * @author Satyapriya Baral
+    * @param numeric rcfid - contains the rcfid of the record
+    * @return - Returns query result of data.
+    */
+
+    public query function getLenders(required numeric rcfid) 
+    {
+        try {
+            LOCAL.getRecord = new Query();
+            LOCAL.getRecord.setSQL("SELECT str_lenders FROM dbo.tbl_lenders WHERE rcf_id = :rcfid");
+            LOCAL.getRecord.addParam( name = "rcfid", value = "#ARGUMENTS.rcfid#", cfsqltype = "cf_sql_integer" );
+            LOCAL.result = LOCAL.getRecord.execute();
+            return LOCAL.result.getResult();
+        } 
+
+        catch (any exception){
+            error.errorLog(exception);
+            LOCAL.errorData = queryNew("error, varchar");
+            return LOCAL.errorData;
+        }
+    }
+
+    /**
+    * Function to get agent bank details
+    * @author Satyapriya Baral
+    * @param numeric rcfid - contains the rcfid of the record
+    * @return - Returns query result of data.
+    */
+
+    public query function getAgentBank(required numeric rcfid) 
+    {
+        try {
+            LOCAL.getRecord = new Query();
+            LOCAL.getRecord.setSQL("SELECT str_agent_bank FROM dbo.tbl_agent_bank WHERE rcf_id = :rcfid");
+            LOCAL.getRecord.addParam( name = "rcfid", value = "#ARGUMENTS.rcfid#", cfsqltype = "cf_sql_integer" );
+            LOCAL.result = LOCAL.getRecord.execute();
+            return LOCAL.result.getResult();
+        } 
+
+        catch (any exception){
+            error.errorLog(exception);
+            LOCAL.errorData = queryNew("error, varchar");
+            return LOCAL.errorData;
+        }
+    }
+
+    /**
+    * Function to get convenant data
+    * @author Satyapriya Baral
+    * @param numeric rcfid - contains the rcfid of the record
+    * @return - Returns query result of data.
+    */
+
+    public query function getConvenants(required numeric rcfid) 
+    {
+        try {
+            LOCAL.getRecord = new Query();
+            LOCAL.getRecord.setSQL("SELECT str_convenants FROM dbo.tbl_simultaneous_financial_convenants WHERE rcf_id = :rcfid");
+            LOCAL.getRecord.addParam( name = "rcfid", value = "#ARGUMENTS.rcfid#", cfsqltype = "cf_sql_integer" );
+            LOCAL.result = LOCAL.getRecord.execute();
+            return LOCAL.result.getResult();
+        } 
+
+        catch (any exception){
+            error.errorLog(exception);
+            LOCAL.errorData = queryNew("error, varchar");
+            return LOCAL.errorData;
+        }
+    }
+
+    /**
+    * Function to get all column details
+    * @author Satyapriya Baral
+    * @return - Returns query result of data.
+    */
+
+    public query function getFinancialConvenants(required numeric rcfid) 
+    {
+        try {
+            LOCAL.getRecord = new Query();
+            LOCAL.getRecord.setSQL("SELECT str_financial_convenants_data FROM dbo.tbl_financial_convenants WHERE rcf_id = :rcfid");
+            LOCAL.getRecord.addParam( name = "rcfid", value = "#ARGUMENTS.rcfid#", cfsqltype = "cf_sql_integer" );
+            LOCAL.result = LOCAL.getRecord.execute();
+            return LOCAL.result.getResult();
+        } 
+
+        catch (any exception){
+            error.errorLog(exception);
+            LOCAL.errorData = queryNew("error, varchar");
+            return LOCAL.errorData;
+        }
+    }
+
+    /**
+    * Function to update the sort order of the hilight data.
+    * @author Satyapriya Baral
+    * @param numeric newId - contains the new sort Id.
+    * @param numeric oldId - contains the old sort Id.
+    * @return a boolean value
+    */
+    public bollen function updateSortOrder(required numeric newId, required numeric oldId)
+    {
+        try {
+            LOCAL.updateSortOrder = new Query();
+            LOCAL.updateSortOrder.setSQL("UPDATE tbl_cf_sort SET int_cf_sort_id = :newId WHERE int_sort_credit_id = :oldId");
+            LOCAL.updateSortOrder.addParam( name = "newId", value = "#ARGUMENTS.newId#", cfsqltype = "cf_sql_integer" );
+            LOCAL.updateSortOrder.addParam( name = "oldId", value = "#ARGUMENTS.oldId#", cfsqltype = "cf_sql_integer" );
+            LOCAL.result = LOCAL.updateSortOrder.execute();
+            return true;
+        }
+
+        catch (any exception){
+            error.errorLog(exception);
+            return false;
+        }
+    }
+
+    /**
+    * Function to update the customize details.
+    * @author Satyapriya Baral
+    * @param numeric customizeId - contains the id of the customize field.
+    * @param numeric customizeData - contains the data of customize details.
+    * @return a boolean value
+    */
+    public boolean function updateCustomize(required numeric customizeId, required numeric customizeData)
+    {
+        try {
+            LOCAL.updateCustomize = new Query();
+            LOCAL.updateCustomize.setSQL("UPDATE tbl_cf_sort SET int_cf_costomize_sort_id = :newId WHERE int_sort_credit_id = :oldId");
+            LOCAL.updateCustomize.addParam( name = "newId", value = "#ARGUMENTS.customizeData#", cfsqltype = "cf_sql_integer" );
+            LOCAL.updateCustomize.addParam( name = "oldId", value = "#ARGUMENTS.customizeId#", cfsqltype = "cf_sql_integer" );
+            LOCAL.result = LOCAL.updateCustomize.execute();
+            return true;
+        }
+
+        catch (any exception){
+            error.errorLog(exception);
+            return false;
         }
     }
 }

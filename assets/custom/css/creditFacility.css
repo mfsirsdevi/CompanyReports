@@ -11,6 +11,51 @@
     
 }
 
+.bold {
+    font-weight: bold;
+}
+
+.creditFields {
+    float: left;
+    text-align: left;
+    width: 49%;
+    display: block;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.creditFieldsBig {
+    float: left;
+    text-align: left;
+    width: 100%;
+    display: block;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+span p {
+    display: inline;
+}
+
+.creditFieldValue {
+    color: rgb(51, 51, 51);
+    cursor: move;
+    text-align: left;
+    text-decoration: none solid rgb(51, 51, 51);
+    column-rule-color: rgb(51, 51, 51);
+    caret-color: rgb(51, 51, 51);
+    border: 0px none rgb(51, 51, 51);
+    font: normal normal normal normal 12px Roboto, sans-serif;
+    outline: rgb(51, 51, 51) none 0px;
+}
+
+.creditFieldSubject {
+    display: inline-block;
+    font-family:'Roboto', sans-serif;
+    color: #333333;
+    font: normal normal bold normal 12px Roboto, sans-serif;
+}
+
 .creditHeaderFieldset {
 	border: 0px;
 	padding: 20px;
@@ -85,4 +130,98 @@
     text-align: center;
     padding-top: 2px;
     padding-bottom: 2px;
+}
+
+.creditFieldsSection {
+    display: inline-block;
+    margin-bottom: 2%;
+    margin-top: 2%;
+}
+
+.editCredit {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 20px;
+}
+
+.customizeLayoutSection {
+    width: 50%;
+    float: left;
+    margin-top: 2%;
+    padding: 20px 30px 20px 50px;
+}
+
+.pullleft {
+    float: left;
+    padding-left: 5px;
+    width: 68%;
+    margin-bottom: 20px;
+}
+
+.fieldCheck {
+    width: 60%;
+    margin-top: 7px;
+}
+
+.pullright {
+    margin-bottom: 20px;
 }

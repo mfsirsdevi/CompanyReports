@@ -4,40 +4,76 @@
 * Purpose: contains the view for credit facility section.
 * Date: 18-06-2017
 -->   
-<!---<cfloop from="1" to="#VARIABLES.highlightData.recordcount#" index="i">
-                  <div id="item_<cfoutput>#VARIABLES.highlightData.int_highlight_sec_id[i]    #</cfoutput>">
-                    <h5 class="subjectStyle"><cfoutput>#VARIABLES.highlightData.str_subject[i]#</cfoutput></h5>
-                    <hr class="hr-color">
-                    <div class="bodyStyle"><cfoutput>#VARIABLES.highlightData.str_text[i]#</cfoutput>
-                      <span class="deleteSymbol">&#x2716;</span>
-                    </div>                 
-                  </div>
-                            </cfloop>--->
 <div class="header top-header"><p>Revolving Credit Facility</p><span class="pull-right">+</span></div>
     <div class="content revolvingCreditFacility">
     <cfset VARIABLES.creditFacilityData = companyObject.getCreditFacilityData(cid = "#cid#") />
-    <cfdump var="#creditFacilityData#">
+    <cfset VARIABLES.columnDetails = companyObject.getColumnDetails() />
         <cfloop from="1" to="#VARIABLES.creditFacilityData.recordcount#" index="i">
             <div class="creditFacilityDataSection" rcf_id="<cfoutput>#VARIABLES.creditFacilityData.rcf_id[i]#</cfoutput>" report_id="">
-                <div class="creditFacilityHeader creditFacilityHeaderStyle" rcf_id="<cfoutput>#VARIABLES.creditFacilityData.rcf_id[i]#</cfoutput>">Credit Facility </div>
-                <div class="" id="creditFieldsSection" style="margin-bottom: 2%;margin-top: 2%;">
-                  <!---  <cfset VARIABLES.sortDetails = companyObject.getSortDetails(rcfId = "#VARIABLES.creditFacilityData.rcf_id[i]#") />
-                    <cfdump var="#sortDetails#">
-                    <cfset VARIABLES.columnDetails = companyObject.getColumnDetails() />
-                    <cfdump var="#columnDetails#">--->
-                    <div class="creditFieldDisplay" id="credit_field_4_view" field_id="4" style="display:block">
-                        <span class="credit_field bold">Original Facility Date :</span>  <span class="credit_field credit_field_view_text"></span>
-                    </div>
-                    <div class="edit_credit_div">
-                        <button type="button" class="creditButtonStyle" id="editCreditFacility" report_id="26521" rcf_id="">Edit Credit Facility</button>
-                        <button type="button" class="creditButtonStyle" rcf_id="">Customise Layout</button>
-                    </div>       
+                <div class="creditFacilityHeader creditFacilityHeaderStyle" rcf_id="<cfoutput>#VARIABLES.creditFacilityData.rcf_id[i]#</cfoutput>">Credit Facility #<cfoutput>#i#</cfoutput></div>
+                <div class="creditFieldsSection" id="creditFieldsSectionId">
+                    <cfset VARIABLES.sortDetails = companyObject.getSortDetails(rcfId = "#VARIABLES.creditFacilityData.rcf_id[i]#") />
+                    <cfloop from="1" to="#VARIABLES.sortDetails.recordcount#" index="j">
+                        <cfset VARIABLES.facilityColumnName = VARIABLES.columnDetails.str_credit_facility_columns[#VARIABLES.sortDetails.int_cf_id[j]#]/>
+                        <cfset VARIABLES.columnName = VARIABLES.columnDetails.str_column_names[#VARIABLES..sortDetails.int_cf_id[j]#]/>
+                        <cfif VARIABLES.facilityColumnName EQ "availability_comment" || VARIABLES.facilityColumnName EQ "interest_rate_comment" || VARIABLES.facilityColumnName EQ "security_comment" || VARIABLES.facilityColumnName EQ "comments">
+                            <cfif VARIABLES.sortDetails.int_cf_costomize_sort_id[j] EQ 1>
+                                <div class="creditFieldsBig" id="column_<cfoutput>#VARIABLES.sortDetails.int_sort_credit_id[j]#</cfoutput>" style="display: block;">
+                            <cfelse>
+                                <div class="creditFieldsBig" id="column_<cfoutput>#VARIABLES.sortDetails.int_sort_credit_id[j]#</cfoutput>" style="display:none;">
+                            </cfif>
+                        <cfelse>
+                            <cfif VARIABLES.sortDetails.int_cf_costomize_sort_id[j] EQ 1>
+                                <div class="creditFields" id="column_<cfoutput>#VARIABLES.sortDetails.int_sort_credit_id[j]#</cfoutput>" style="display: block;">
+                            <cfelse>
+                                <div class="creditFields" id="column_<cfoutput>#VARIABLES.sortDetails.int_sort_credit_id[j]#</cfoutput>" style="display:none;">
+                            </cfif>
+                        </cfif>
+                        <div class="creditFieldSubject">
+                            <span class="creditField bold"><cfoutput>#VARIABLES.columnName#</cfoutput> :</span>
+                            <span class="creditFieldValue">
+                                <cfset VARIABLES.multiColumnDetails = companyObject.getMultiColumnDetails(rcfId = "#VARIABLES.creditFacilityData.rcf_id[i]#") />
+                                <cfif VARIABLES.facilityColumnName EQ "date_amendment">
+                                    <cfloop from="1" to="#VARIABLES.multiColumnDetails.amendment.recordcount#" index="k">
+                                        <cfoutput>#DateTimeFormat(VARIABLES.multiColumnDetails.amendment.date_amendment[k], "yyyy.MM.dd")#</cfoutput>,
+                                    </cfloop>
+                                <cfelseif VARIABLES.facilityColumnName EQ "str_lenders">
+                                    <cfloop from="1" to="#VARIABLES.multiColumnDetails.lenders.recordcount#" index="k">
+                                        <cfoutput>#VARIABLES.multiColumnDetails.lenders.str_lenders[k]#</cfoutput>,
+                                    </cfloop>
+                                <cfelseif VARIABLES.facilityColumnName EQ "str_agent_bank">
+                                    <cfloop from="1" to="#VARIABLES.multiColumnDetails.agentBank.recordcount#" index="k"> 
+                                        <cfoutput>#VARIABLES.multiColumnDetails.agentBank.str_agent_bank[k]#</cfoutput>,
+                                    </cfloop>
+                                <cfelseif VARIABLES.facilityColumnName EQ "str_convenants">
+                                    <cfloop from="1" to="#VARIABLES.multiColumnDetails.convenants.recordcount#" index="k">
+                                        <cfoutput>#VARIABLES.multiColumnDetails.convenants.str_convenants[k]#</cfoutput>,
+                                    </cfloop>
+                                <cfelseif VARIABLES.facilityColumnName EQ "str_financial_convenants_data">
+                                    <cfloop from="1" to="#VARIABLES.multiColumnDetails.financialConvenants.recordcount#" index="k">
+                                        <cfoutput>#VARIABLES.multiColumnDetails.financialConvenants.str_financial_convenants_data[k]#</cfoutput>,
+                                    </cfloop>
+                                <cfelse>
+                                    <cfset value = VARIABLES.creditFacilityData[#VARIABLES.facilityColumnName#][i]>
+                                    <cfoutput>#value#</cfoutput>
+                                </cfif>
+                            </span>
+                        </div>
+                        </div>
+                    </cfloop> 
+                    <div class="editCredit">
+                        <button type="button" class="creditButtonStyle" id="editCreditFacility" report_id="" rcf_id="<cfoutput>#VARIABLES.creditFacilityData.rcf_id[i]#</cfoutput>">Edit Credit Facility</button>
+                        <button type="button" class="creditButtonStyle customLayout" id="customLayout" rcf_id="<cfoutput>#VARIABLES.creditFacilityData.rcf_id[i]#</cfoutput>">Customise Layout</button>
+                    </div>     
                 </div>
+
             </div>
         </cfloop>
     <!---On click of this button modal will pop up for adding credit facility--->
-    <button type="button" class="creditButtonStyle" id="addCreditLayout">Add New Credit Facility</button>
-    <div id="newCreditFacilityDialog" style="display:none";">
+    <div class="editCredit">
+        <button type="button" class="creditButtonStyle" id="addCreditLayout">Add New Credit Facility</button>
+    </div>
+    <div id="newCreditFacilityDialog" style="display:none;">
         <form id="newCreditFacilityForm">
             <fieldset class="creditHeaderFieldset">
                 <!---input field for getting the company Id--->
@@ -268,5 +304,207 @@
                 </div>
             </fieldset>
         </form>
+    </div>
+    <div id="CustomiseLayout" class="CustomiseLayout" style="display:none";">
+        <div class="customizeLayoutSection">
+            <div class="fieldHeader">
+                <div class="pullleft bold">Fields</div>
+                <div class="bold pullright">Toggle</div>
+            </div>
+            <div class="fieldBody">
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_0">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="1" checked>
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_1">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="1" checked>
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_2">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="1" checked>
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_3">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="1" checked>
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_4">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" id = "satya" name="switch" value="1" checked>
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_5">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="1" checked>
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_6">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="1" checked>
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_7">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="1" checked>
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_8">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="1" checked>
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_9">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="1" checked>
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_10">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="1" checked>
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_11">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="1" checked>
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="customizeLayoutSection">
+            <div class="fieldHeader">
+                <div class="pullleft bold">Fields</div>
+                <div class="bold pullright">Toggle</div>
+            </div>
+            <div class="fieldBody">
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_12">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="1" checked>
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_13">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="0" checked=false>
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_14">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="1" checked="true">
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_15">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="1" checked="false">
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_16">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="1" >
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_17">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="1" checked>
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_18">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="1" checked>
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_19">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="1" checked>
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_20">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="1" checked>
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_21">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="1" checked>
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="creditFields">
+                    <div class="pullleft fieldCheck fieldName_22">
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="creditFieldCheck" name="switch" value="1" checked>
+                        <div class="slider round"></div>
+                    </label>
+                </div>           
+            </div>
+        </div>
     </div>
 </div>

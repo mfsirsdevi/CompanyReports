@@ -224,11 +224,45 @@ component {
     }
 
     /**
-    * Function to get all column details
+    * Function to get customize details of respective record
     * @author Satyapriya Baral
+    * @param numeric rcfid - contains the rcfid of the record
     * @return - Returns query result of data.
     */
 
+    remote function getCustomLayoutDetails(required numeric rcfId) returnformat="JSON"
+    {
+        try {
+            LOCAL.sortDetails = companyObject.getSortDetails(ARGUMENTS.rcfid);
+            LOCAL.columnDetails = companyObject.getCreditFacilityColumns();
+            LOCAL.columnFeatureData = [];
+            //createing a json data for returning to the ajax call.
+            for(i=1 ; i <= LOCAL.sortDetails.recordcount ; i++) {
+                    obj = {
+                        "id" = "#LOCAL.sortDetails.int_sort_credit_id[i]#",
+                        "columnId" = "#LOCAL.sortDetails.int_cf_id[i]#",
+                        "sortId" = "#LOCAL.sortDetails.int_cf_sort_id[i]#",
+                        "customizeId" = "#LOCAL.sortDetails.int_cf_costomize_sort_id[i]#",
+                        "columnName" = "#LOCAL.columnDetails.str_credit_facility_columns[LOCAL.sortDetails.int_cf_id[i]]#",
+                        "columnNameText" = "#LOCAL.columnDetails.str_column_names[LOCAL.sortDetails.int_cf_id[i]]#"
+                    };
+                    arrayAppend(LOCAL.columnFeatureData, obj);
+            }
+            return ("#serializeJSON(LOCAL.columnFeatureData)#");
+        } 
+
+        catch (any exception){
+            error.errorLog(exception);
+            LOCAL.errorData = queryNew("error, varchar");
+            return LOCAL.errorData;
+        }
+    }
+
+    /**
+    * Function to get all column detailsfield_custom_headerfield_custom_section
+    * @author Satyapriya Baral
+    * @return - Returns query result of data.
+    */
     public query function getColumnDetails() 
     {
         try {
@@ -239,6 +273,79 @@ component {
             error.errorLog(exception);
             LOCAL.errorData = queryNew("error, varchar");
             return LOCAL.errorData;
+        }
+    }
+
+    /**
+    * Function to get some credit facility column details of perticular record
+    * @author Satyapriya Baral
+    * @param numeric rcfid - contains the rcfid of the record
+    * @return - Returns query result of data.
+    */
+    public struct function getMultiColumnDetails(required numeric rcfid) 
+    {
+        try {
+            //creating struct to return all data of columns
+            LOCAL.columnDetails = structNew();
+            LOCAL.columnDetails.amendment = companyObject.getAmendment(ARGUMENTS.rcfid);
+            LOCAL.columnDetails.lenders = companyObject.getLenders(ARGUMENTS.rcfid);
+            LOCAL.columnDetails.agentBank = companyObject.getAgentBank(ARGUMENTS.rcfid);
+            LOCAL.columnDetails.convenants = companyObject.getConvenants(ARGUMENTS.rcfid);
+            LOCAL.columnDetails.financialConvenants = companyObject.getFinancialConvenants(ARGUMENTS.rcfid);
+            return LOCAL.columnDetails;
+        } 
+
+        catch (any exception){
+            error.errorLog(exception);
+            return {};
+        }
+    }
+
+    /**
+    * Function to update highlight data sortId.
+    * @author Satyapriya Baral
+    * @param number rcfid - report id of the report.
+    * @param string sortData - contains sort data.
+    * @return null.
+    */
+    remote function updateCreditFacilitySortOrder(required string sortData, required numeric rcfid) returnformat="JSON"
+    {
+        try {
+            LOCAL.getData = companyObject.getSortDetails(ARGUMENTS.rcfid);
+            for(i=1 ; i <= LOCAL.getData.recordcount ; i++) {
+                LOCAL.item = listGetAt(ARGUMENTS.sortData, i);
+                LOCAL.id = listGetAt(item,2,"_");
+                LOCAL.updateSortOrder = companyObject.updateSortOrder(i, LOCAL.id);
+            }
+        }
+
+        catch (any exception){
+            error.errorLog(exception);
+            LOCAL.errorData = [];
+            return serializeJSON(LOCAL.errorData);
+        }
+    }
+
+    /**
+    * Function to edit customize data
+    * @author Satyapriya Baral
+    * @param string obj - contains details of customize fields
+    * @return - Returns query result of data.
+    */
+    remote boolean function editCustomize(required string obj)
+    {
+        try {
+            LOCAL.customizeData = deserializeJSON(ARGUMENTS.obj);
+            LOCAL.array = StructKeyArray(LOCAL.customizeData);
+            for(i=1 ; i<=arrayLen(LOCAL.array) ; i++) {
+                companyObject.updateCustomize(LOCAL.array[i], LOCAL.customizeData[LOCAL.array[i]]);
+            }
+            return true;
+        }
+
+        catch (any exception){
+            error.errorLog(exception);
+            return false;
         }
     }
 }
