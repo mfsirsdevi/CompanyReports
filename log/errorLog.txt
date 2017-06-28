@@ -873,3 +873,21 @@ ERROR TYPE: Database
 STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
 ----------------------------------------------------------------------
 
+DATE/TIME: {ts '2017-06-28 19:11:49'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver][SQLServer]Invalid column name 'str_column_names'. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-06-28 19:11:58'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver][SQLServer]Invalid column name 'str_column_names'. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
