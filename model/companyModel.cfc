@@ -109,11 +109,11 @@ component {
             LOCAL.newRecord.addParam( name = "originalFacilityDate", value = "#ARGUMENTS.formData.originalFacilityDate#", cfsqltype = "cf_sql_date" );
             LOCAL.newRecord.addParam( name = "maturityDate", value = "#ARGUMENTS.formData.maturityDate#", cfsqltype = "cf_sql_date" );
             LOCAL.newRecord.addParam( name = "letterOfCreditSublimit", value = "#ARGUMENTS.formData.letterOfCreditSublimit#", null="#YesNoFormat(!Len(ARGUMENTS.formData.letterOfCreditSublimit))#", cfsqltype = "cf_sql_float" );
-            LOCAL.newRecord.addParam( name = "letterOfCreditSublimitCurrencyId", value = "#ARGUMENTS.formData.letterOfCreditSublimitCurrencyId#", cfsqltype = "cf_sql_integer" );
+            LOCAL.newRecord.addParam( name = "letterOfCreditSublimitCurrencyId", value = "#ARGUMENTS.formData.letterOfCreditSublimitCurrencyId#", null="#YesNoFormat(!Len(ARGUMENTS.formData.letterOfCreditSublimitCurrencyId))#",cfsqltype = "cf_sql_integer" );
             LOCAL.newRecord.addParam( name = "maximumBorrowings", value = "#ARGUMENTS.formData.maximumBorrowings#", null="#YesNoFormat(!Len(ARGUMENTS.formData.maximumBorrowings))#", cfsqltype = "cf_sql_float" );
-            LOCAL.newRecord.addParam( name = "maximumBorrowingsCurrencyId", value = "#ARGUMENTS.formData.maximumBorrowingsCurrencyId#", cfsqltype = "cf_sql_integer" );
+            LOCAL.newRecord.addParam( name = "maximumBorrowingsCurrencyId", value = "#ARGUMENTS.formData.maximumBorrowingsCurrencyId#", null="#YesNoFormat(!Len(ARGUMENTS.formData.maximumBorrowingsCurrencyId))#",cfsqltype = "cf_sql_integer" );
             LOCAL.newRecord.addParam( name = "availability", value = "#ARGUMENTS.formData.availability#", null="#YesNoFormat(!Len(ARGUMENTS.formData.availability))#", cfsqltype = "cf_sql_float" );
-            LOCAL.newRecord.addParam( name = "availabilityCurrencyId", value = "#ARGUMENTS.formData.availabilityCurrencyId#", cfsqltype = "cf_sql_integer" );
+            LOCAL.newRecord.addParam( name = "availabilityCurrencyId", value = "#ARGUMENTS.formData.availabilityCurrencyId#", null="#YesNoFormat(!Len(ARGUMENTS.formData.availabilityCurrencyId))#", cfsqltype = "cf_sql_integer" );
             LOCAL.newRecord.addParam( name = "interestRateType", value = "#ARGUMENTS.formData.interestRateType#", cfsqltype = "cf_sql_varchar" );
             LOCAL.newRecord.addParam( name = "interestRate", value = "#ARGUMENTS.formData.interestRate[2]#", null="#YesNoFormat(!Len(ARGUMENTS.formData.interestRate[2]))#", cfsqltype = "cf_sql_float" );
             LOCAL.newRecord.addParam( name = "interestRateLow", value = "#ARGUMENTS.formData.interestRateLow#", null="#YesNoFormat(!Len(ARGUMENTS.formData.interestRateLow))#", cfsqltype = "cf_sql_float");
@@ -138,6 +138,50 @@ component {
     }
 
     /**
+    * Function to update credit facility details
+    * @author Satyapriya Baral
+    *
+    * @param struct formData - contains all data of the form that is submitted.
+    * @param struct textareaData - contains all data of tinymce that are submitted.
+    * @return - Returns query result of data.
+    */
+    public boolean function editCreditFacility(required struct formData, required struct textareaData)
+    {
+        try {
+            LOCAL.editRecord = new Query();
+            LOCAL.editRecord.setSQL("UPDATE dbo.revolvingcreditfacility SET original_facility_date = :originalFacilityDate, maturity_date = :maturityDate, letter_of_credit_sublimit = :letterOfCreditSublimit, letter_of_credit_sublimit_currency_id = :letterOfCreditSublimitCurrencyId, maximum_borrowings = :maximumBorrowings, maximum_borrowings_currency_id = :maximumBorrowingsCurrencyId, Availbility = :availability, availability_currency_id = :availabilityCurrencyId, interest_rate_type = :interestRateType, interest_rate = :interestRate, interest_rate_low = :interestRateLow, interest_rate_high = :interestRateHigh, security = :security, availability_date = :availabilityDate, availability_period_duration = :availabilityDateType, availability_non_quarter_end_period_duration = :availabilityNonQuarterEndPeriodDuration, availability_comment = :availabilityComment, interest_rate_comment = :interestComment, security_comment = :securityComment, borrowing_base = :borrowingBase, comments = :creditFacilityComment WHERE rcf_id = :rcfid");
+            LOCAL.editRecord.addParam( name = "originalFacilityDate", value = "#ARGUMENTS.formData.originalFacilityDate#", cfsqltype = "cf_sql_date" );
+            LOCAL.editRecord.addParam( name = "maturityDate", value = "#ARGUMENTS.formData.maturityDate#", cfsqltype = "cf_sql_date" );
+            LOCAL.editRecord.addParam( name = "letterOfCreditSublimit", value = "#ARGUMENTS.formData.letterOfCreditSublimit#", null="#YesNoFormat(!Len(ARGUMENTS.formData.letterOfCreditSublimit))#", cfsqltype = "cf_sql_float" );
+            LOCAL.editRecord.addParam( name = "letterOfCreditSublimitCurrencyId", value = "#ARGUMENTS.formData.letterOfCreditSublimitCurrencyId#", null="#YesNoFormat(!Len(ARGUMENTS.formData.letterOfCreditSublimitCurrencyId))#",cfsqltype = "cf_sql_integer" );
+            LOCAL.editRecord.addParam( name = "maximumBorrowings", value = "#ARGUMENTS.formData.maximumBorrowings#", null="#YesNoFormat(!Len(ARGUMENTS.formData.maximumBorrowings))#", cfsqltype = "cf_sql_float" );
+            LOCAL.editRecord.addParam( name = "maximumBorrowingsCurrencyId", value = "#ARGUMENTS.formData.maximumBorrowingsCurrencyId#", null="#YesNoFormat(!Len(ARGUMENTS.formData.maximumBorrowingsCurrencyId))#",cfsqltype = "cf_sql_integer" );
+            LOCAL.editRecord.addParam( name = "availability", value = "#ARGUMENTS.formData.availability#", null="#YesNoFormat(!Len(ARGUMENTS.formData.availability))#", cfsqltype = "cf_sql_float" );
+            LOCAL.editRecord.addParam( name = "availabilityCurrencyId", value = "#ARGUMENTS.formData.availabilityCurrencyId#", null="#YesNoFormat(!Len(ARGUMENTS.formData.availabilityCurrencyId))#", cfsqltype = "cf_sql_integer" );
+            LOCAL.editRecord.addParam( name = "interestRateType", value = "#ARGUMENTS.formData.interestRateType#", cfsqltype = "cf_sql_varchar" );
+            LOCAL.editRecord.addParam( name = "interestRate", value = "#ARGUMENTS.formData.interestRate[2]#", null="#YesNoFormat(!Len(ARGUMENTS.formData.interestRate[2]))#", cfsqltype = "cf_sql_float" );
+            LOCAL.editRecord.addParam( name = "interestRateLow", value = "#ARGUMENTS.formData.interestRateLow#", null="#YesNoFormat(!Len(ARGUMENTS.formData.interestRateLow))#", cfsqltype = "cf_sql_float");
+            LOCAL.editRecord.addParam( name = "interestRateHigh", value = "#ARGUMENTS.formData.interestRateHigh#", null="#YesNoFormat(!Len(ARGUMENTS.formData.interestRateHigh))#", cfsqltype = "cf_sql_float" );
+            LOCAL.editRecord.addParam( name = "security", value = "#ARGUMENTS.formData.security#", cfsqltype = "cf_sql_varchar" );
+            LOCAL.editRecord.addParam( name = "availabilityDate", value = "#ARGUMENTS.formData.availabilityDate#", cfsqltype = "cf_sql_date" );
+            LOCAL.editRecord.addParam( name = "availabilityDateType", value = "#ARGUMENTS.formData.availabilityDateType#", cfsqltype = "cf_sql_varchar" );
+            LOCAL.editRecord.addParam( name = "availabilityNonQuarterEndPeriodDuration", value = "#ARGUMENTS.formData.availabilityNonQuarterEndPeriodDuration#", cfsqltype = "cf_sql_varchar" );
+            LOCAL.editRecord.addParam( name = "availabilityComment", value = "#ARGUMENTS.textareaData.availability_comment#", cfsqltype = "cf_sql_varchar" );
+            LOCAL.editRecord.addParam( name = "interestComment", value = "#ARGUMENTS.textareaData.interest_rate_comment#", cfsqltype = "cf_sql_varchar" );
+            LOCAL.editRecord.addParam( name = "securityComment", value = "#ARGUMENTS.textareaData.security_comment#", cfsqltype = "cf_sql_varchar" );
+            LOCAL.editRecord.addParam( name = "borrowingBase", value = "#ARGUMENTS.textareaData.borrowing_base#", cfsqltype = "cf_sql_varchar" );
+            LOCAL.editRecord.addParam( name = "creditFacilityComment", value = "#ARGUMENTS.textareaData.comments#", cfsqltype = "cf_sql_varchar" );
+            LOCAL.editRecord.addParam( name = "rcfid", value = "#ARGUMENTS.formData.rcfid#", cfsqltype = "cf_sql_integer" );
+            LOCAL.result = LOCAL.editRecord.execute();
+            return true;
+        }
+        
+        catch (any exception){
+            error.errorLog(exception);
+            return false;
+        }
+    }
+    /**
     * Function to add lenders
     * @author Satyapriya Baral
     *
@@ -148,6 +192,10 @@ component {
     public boolean function addLenders(required array lenders, required numeric id)
     {
         try {
+            LOCAL.deleteRecord = new Query();
+            LOCAL.deleteRecord.setSQL("DELETE FROM dbo.tbl_lenders WHERE rcf_id = :id");
+            LOCAL.deleteRecord.addParam( name = "id", value = "#ARGUMENTS.id#", cfsqltype = "cf_sql_integer" );
+            LOCAL.deleteRecord.execute();
             LOCAL.lenth = ArrayLen(ARGUMENTS.lenders);
             for(i=1; i<=LOCAL.lenth; i++) {
                 LOCAL.newRecord = new Query();
@@ -176,6 +224,10 @@ component {
     public boolean function addAmendment(required array amendment, required numeric id)
     {
         try {
+            LOCAL.deleteRecord = new Query();
+            LOCAL.deleteRecord.setSQL("DELETE FROM dbo.tbl_amendment WHERE rcf_id = :id");
+            LOCAL.deleteRecord.addParam( name = "id", value = "#ARGUMENTS.id#", cfsqltype = "cf_sql_integer" );
+            LOCAL.deleteRecord.execute();
             LOCAL.lenth = ArrayLen(ARGUMENTS.amendment);
             for(i=1; i<=LOCAL.lenth; i++) {
                 LOCAL.newRecord = new Query();
@@ -204,6 +256,10 @@ component {
     public boolean function addAgentBank(required array agentBank, required numeric id)
     {
         try {
+            LOCAL.deleteRecord = new Query();
+            LOCAL.deleteRecord.setSQL("DELETE FROM dbo.tbl_agent_bank WHERE rcf_id = :id");
+            LOCAL.deleteRecord.addParam( name = "id", value = "#ARGUMENTS.id#", cfsqltype = "cf_sql_integer" );
+            LOCAL.deleteRecord.execute();
             LOCAL.lenth = ArrayLen(ARGUMENTS.agentBank);
             for(i=1; i<=LOCAL.lenth; i++) {
                 LOCAL.newRecord = new Query();
@@ -232,6 +288,10 @@ component {
     public boolean function addSimultaneous(required array simultaneous, required numeric id)
     {
         try {
+            LOCAL.deleteRecord = new Query();
+            LOCAL.deleteRecord.setSQL("DELETE FROM dbo.tbl_simultaneous_financial_convenants WHERE rcf_id = :id");
+            LOCAL.deleteRecord.addParam( name = "id", value = "#ARGUMENTS.id#", cfsqltype = "cf_sql_integer" );
+            LOCAL.deleteRecord.execute();
             LOCAL.lenth = ArrayLen(ARGUMENTS.simultaneous);
             for(i=1; i<=LOCAL.lenth; i++) {
                 LOCAL.newRecord = new Query();
@@ -260,6 +320,10 @@ component {
     public boolean function addFinancial(required array financial, required numeric id)
     {
         try {
+            LOCAL.deleteRecord = new Query();
+            LOCAL.deleteRecord.setSQL("DELETE FROM dbo.tbl_financial_convenants WHERE rcf_id = :id");
+            LOCAL.deleteRecord.addParam( name = "id", value = "#ARGUMENTS.id#", cfsqltype = "cf_sql_integer" );
+            LOCAL.deleteRecord.execute();
             LOCAL.lenth = ArrayLen(ARGUMENTS.financial);
             for(i=1; i<=LOCAL.lenth; i++) {
                 LOCAL.newRecord = new Query();
@@ -356,12 +420,35 @@ component {
     }
 
     /**
+    * Function to get credit facility data
+    * @author Satyapriya Baral
+    * @param numeric cid - contains the id of the company
+    * @return - Returns query result of data.
+    */
+
+    public query function getCreditFacilitySpecificData(required numeric rcfid) 
+    {
+        try {
+            LOCAL.getRecord = new Query();
+            LOCAL.getRecord.setSQL("SELECT rcf_id, int_companyid, original_facility_date, maturity_date, letter_of_credit_sublimit, letter_of_credit_sublimit_currency_id, maximum_borrowings, maximum_borrowings_currency_id, Availbility, availability_currency_id, interest_rate_type, interest_rate, interest_rate_low, interest_rate_high, security, availability_date, availability_period_duration, availability_non_quarter_end_period_duration, availability_comment, interest_rate_comment, security_comment, borrowing_base, comments FROM dbo.revolvingcreditfacility WHERE rcf_id = :rcfId");
+            LOCAL.getRecord.addParam( name = "rcfID", value = "#ARGUMENTS.rcfid#", cfsqltype = "cf_sql_integer" );
+            LOCAL.result = LOCAL.getRecord.execute();
+            return LOCAL.result.getResult();
+        } 
+
+        catch (any exception){
+            error.errorLog(exception);
+            LOCAL.errorData = queryNew("error, varchar");
+            return LOCAL.errorData;
+        }
+    }
+
+    /**
     * Function to get sort details of respective record
     * @author Satyapriya Baral
     * @param numeric rcfid - contains the rcfid of the record
     * @return - Returns query result of data.
     */
-
     public query function getSortDetails(required numeric rcfId) 
     {
         try {
@@ -478,9 +565,9 @@ component {
     /**
     * Function to get all column details
     * @author Satyapriya Baral
+    * @param numeric rcfid - contains the rcfid of the record
     * @return - Returns query result of data.
     */
-
     public query function getFinancialConvenants(required numeric rcfid) 
     {
         try {
@@ -505,7 +592,7 @@ component {
     * @param numeric oldId - contains the old sort Id.
     * @return a boolean value
     */
-    public bollen function updateSortOrder(required numeric newId, required numeric oldId)
+    public boolean function updateSortOrder(required numeric newId, required numeric oldId)
     {
         try {
             LOCAL.updateSortOrder = new Query();

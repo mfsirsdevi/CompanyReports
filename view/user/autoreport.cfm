@@ -188,7 +188,12 @@
       </div>
     </div>
   </div>
+<<<<<<< HEAD
 
+=======
+  <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/plugins/jQuery/jquery-2.2.3.min.js"></script>
+  <script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/creditFacility.js?ver=asdfadsf"></script>
+>>>>>>> fc0142b8e360d0c732aafcd18a4bd3d5be2b659b
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/plugins/jQuery/jquery-2.2.3.min.js"></script>
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/js/jQuery-ui/jquery-ui.js"></script>
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/js/jquery-validation-1.16.0/dist/jquery.validate.js"></script>
