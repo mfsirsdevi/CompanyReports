@@ -121,7 +121,40 @@ function populatePeriodsUI(response){
 
     // global Assigning for using whenever calling the drawchart() fn
     chart_rows = dates_arr;
-    drawChart(cols, chart_rows);
+    getvAxisObj(cols, chart_rows); //get the vAxis values for chart & draw 
+}
+
+function getvAxisObj(cols, chart_rows){
+  var reportid = parseInt($("#report_id").val());
+  var companyid = parseInt($("#company_id").val());
+  $.ajax({
+    url: domain + "/controller/reportController.cfc?method=getvAxisValues",
+    data: {
+      cid : companyid,
+      rid : reportid
+    },
+    dataType: "JSON"
+  }).done(function(res){
+    var axis_array = res.DATA[0];
+    console.log(axis_array);
+    var min = axis_array[0];
+    var max = axis_array[1];
+    var interval = axis_array[2];
+    var tick = createTickArray(min, max, interval);
+    console.log(tick);
+    var axisObj = {
+      viewWindow: {
+        min: min,
+        max: max
+      },
+      ticks : tick
+    };
+    // draw chart for the provided values
+    drawChart(cols, chart_rows, axisObj);
+  }).fail(function(error){
+    console.log(error);
+  });
+
 }
 /**
   function for drawing the chart
@@ -195,7 +228,10 @@ function saveChartData(){
     });
 }
 
-// save the chart vAxis(vertical axis , min max interval between ticks etc..) values
+/**
+ * save the chart vAxis(vertical axis , min max interval between ticks etc..) values
+ * called in saveChartData();
+ */
 function saveChartvAxisValues() {
   var reportid = parseInt($("#report_id").val());
   var companyid = parseInt($("#company_id").val());
@@ -219,6 +255,9 @@ function saveChartvAxisValues() {
         alert("error on saving the chart vAxis Data. Please try again.");
     });
   }
+  else {
+    $("#chart-pref-dialog").dialog('open');
+  }
 }
 
 
@@ -229,7 +268,7 @@ function showOptions(){
   // fill the boxes with the previously populated value- TBD
 }
 
-//get the chart vAxis options & change the chart view using the min/max/interval values
+//get the chart vAxis options & draw the chart using the min/max/interval values
 function getCustomChartOptions(){
   if( $("#chart-customization-form").valid() ){
     
@@ -240,16 +279,7 @@ function getCustomChartOptions(){
     vmin = parseInt($("#v-min").val());
     vmax = parseInt($("#v-max").val());
     vinterval = parseInt($("#v-interval").val());
-    var ticks = [];
-
-    for(var i=vmin; i<=vmax; i+=vinterval){
-      ticks.push(i);
-    }
-    // added to the ticks values
-    if( $.inArray(vmax, ticks) == -1 ){
-      ticks.push(vmax);
-    }
-
+    var ticks = createTickArray(vmin, vmax, vinterval);
     // create the vAxis object for the google chart customization
     var vAxis = {
       viewWindow : {
@@ -264,4 +294,17 @@ function getCustomChartOptions(){
   }
   else 
     return false;
+}
+
+// creating returning the Tick Array of regular intervals for the google chart
+function createTickArray(min, max, interval){
+  var ticks = [];
+  for(var i=min; i<=max; i+=interval){
+    ticks.push(i);
+  }
+    // added to the ticks values
+  if( $.inArray(max, ticks) == -1 ){
+    ticks.push(max);
+  }
+  return ticks;
 }

@@ -355,20 +355,74 @@ component {
 
     public boolean function setChartvAxisValues(numeric cid, required numeric rid, required numeric min, required numeric max, required numeric interval) {
         try{
+            // test if the configuration exists for that company id & reort id combination
+            LOCAL.prefCheck = new Query();
+            LOCAL.prefCheck.addParam(name="cid", value="#ARGUMENTS.cid#", cfsqltype="cf_sql_integer");
+            LOCAL.prefCheck.addParam(name="rid", value="#ARGUMENTS.rid#", cfsqltype="cf_sql_integer");
+            LOCAL.prefCheck.setSQL("SELECT int_chart_id
+                                    FROM dbo.tbl_fa_chart_preferences
+                                    WHERE int_companyid = :cid 
+                                    AND int_reportid = :rid");
+            LOCAL.prefCheckResult = LOCAL.prefCheck.execute().getResult();
+
             LOCAL.pref = new Query();
             LOCAL.pref.addParam(name="cid", value="#ARGUMENTS.cid#", cfsqltype="cf_sql_integer");
             LOCAL.pref.addParam(name="rid", value="#ARGUMENTS.rid#", cfsqltype="cf_sql_integer");
             LOCAL.pref.addParam(name="min", value="#ARGUMENTS.min#", cfsqltype="cf_sql_integer");
             LOCAL.pref.addParam(name="max", value="#ARGUMENTS.max#", cfsqltype="cf_sql_integer");
             LOCAL.pref.addParam(name="interval", value="#ARGUMENTS.interval#", cfsqltype="cf_sql_integer");
-            LOCAL.pref.setSQL("INSERT INTO dbo.tbl_fa_chart_preferences  
-                                        (int_companyid, int_reportid, int_vAxis_min, int_vAxis_max, int_vAxis_interval)
-                                VALUES  (:cid, :rid, :min, :max, :interval)
-                                ");
+            
+            if(!LOCAL.prefCheckResult.recordCount) { //if no records / configuration exists .. 
+                // create one
+                LOCAL.pref.setSQL("INSERT INTO dbo.tbl_fa_chart_preferences  
+                                            (int_companyid, int_reportid, int_vAxis_min, int_vAxis_max, int_vAxis_interval)
+                                    VALUES  (:cid, :rid, :min, :max, :interval)
+                                    ");
+            }
+            else {
+                // or update the damn datas.. 
+                LOCAL.pref.setSQL( "UPDATE dbo.tbl_fa_chart_preferences
+                                    SET int_companyid = :cid, 
+                                        int_reportid = :rid, 
+                                        int_vAxis_min = :min, 
+                                        int_vAxis_max = :max, 
+                                        int_vAxis_interval = :interval
+                                    WHERE int_companyid = :cid 
+                                    AND int_reportid = :rid" );
+            }
+            LOCAL.pref.execute().getResult();
+            return true;
         }
         catch(any exception){
             error.errorLog(exception);
             return false;
         }
     }
+
+
+    /**
+    *  Function to get the vAxis Chart data from the chart_prerefences table.
+    *  @param cid - the corresponding company id 
+    *  @param rid - the corresponding report id
+    *  @return struct containing min, max, interval
+    */
+
+    public any function getvAxisValues(required numeric cid, required numeric rid) {
+        try{
+            LOCAL.vAxis = new Query();
+            LOCAL.vAxis.addParam(name="cid", value="#ARGUMENTS.cid#", cfsqltype="cf_sql_integer");
+            LOCAL.vAxis.addParam(name="rid", value="#ARGUMENTS.rid#", cfsqltype="cf_sql_integer");
+            LOCAL.vAxis.setSQL("SELECT int_vAxis_min, int_vAxis_max, int_vAxis_interval
+                                FROM dbo.tbl_fa_chart_preferences
+                                WHERE int_companyid = :cid 
+                                   AND int_reportid = :rid ");
+            return LOCAL.vAxis.execute().getResult();
+        }
+        catch(any e){
+            writedump(e);
+            error.errorLog(e);
+            return false;
+        }
+    }
+
 }

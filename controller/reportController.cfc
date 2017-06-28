@@ -221,14 +221,31 @@ component {
     * @param max - maximum value on the vAxis
     * @return boolean - true|false if operation successful or not.
     */
-
     remote boolean function setChartvAxisValues(numeric cid, required numeric rid,required numeric min, required numeric max, required numeric interval) returnFormat="JSON" {
         try{
-            return reportObject.saveChartvAxisValue(ARGUMENTS.min, ARGUMENTS.max, ARGUMENTS.interval);
+            reportObject.setChartvAxisValues(argumentCollection = ARGUMENTS);
+            return true;
+        }
+        catch(any exception){
+            writedump(exception);
+            error.errorLog(exception);
+            return false;
+        }
+    }
+
+    /**
+    *  Function to get the vAxis Chart data from the chart_prerefences table.
+    *  @param cid - the corresponding company id 
+    *  @param rid - the corresponding report id
+    *  @return struct containing min, max, interval
+    */
+    remote any function getvAxisValues(required numeric cid, required numeric rid) returnFormat="JSON" {
+        try{
+            return reportObject.getvAxisValues(ARGUMENTS.cid, ARGUMENTS.rid);
         }
         catch(any exception){
             error.errorLog(exception);
-            return false;
+            return '{error}';
         }
     }
 }
