@@ -56,9 +56,7 @@ $(document).ready(function(){
   	$("#highlightData").sortable({
 		update: function(event, ui) {
 			var postData = $(this).sortable('toArray');
-      console.log(postData);
 			var sortData = postData.join(", ");
-      console.log(sortData);
 			var rid = $("#recordId").val();
 			$.ajax({
       			type:'post',
@@ -81,7 +79,6 @@ $(document).ready(function(){
   	* @return Null
   	*/
 	$(document).on('click', '.deleteSymbol', function() {
-		console.log("highlightId");
 		var id = $(this).parent().parent().attr('id');
 		var highlightId = id.match(/\d+/)[0];
 		var rid = $("#recordId").val();

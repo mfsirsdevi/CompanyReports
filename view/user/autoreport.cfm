@@ -182,7 +182,7 @@
     </div>
   </div>
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/plugins/jQuery/jquery-2.2.3.min.js"></script>
-  <script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/creditFacility.js?"></script>
+  <script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/creditFacility.js?ver=asdfadsf"></script>
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/plugins/jQuery/jquery-2.2.3.min.js"></script>
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/js/jQuery-ui/jquery-ui.js"></script>
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/autoreport.js?"></script>
