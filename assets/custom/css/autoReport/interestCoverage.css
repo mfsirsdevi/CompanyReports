@@ -1,0 +1,17 @@
+#chart-customization-dialog label {
+    display: block;
+    padding: 10px;
+}
+
+/*label text styling of the googlechart customization menu*/
+#chart-customization-dialog label span{
+    display: inline-block;
+    width: 100px;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#chart-customization-dialog label input {
+    padding: 5px;
+    background-color: white;
+}

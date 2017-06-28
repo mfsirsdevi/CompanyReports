@@ -286,18 +286,19 @@ component {
     /**
     * Function to retrieve the period ranges
     * @author Chandra Sekhar Sahoo
-    * @param null
+    * @param reportid - the reportid for which to fetch the dates.
     * @return - Returns struct containing values of periods and bit value of hidden fields
     */
 
-    public query function getPeriods() {
+    public query function getPeriods(required numeric reportid) {
         try {
             LOCAL.periods = new Query();
+            LOCAL.periods.addParam(name="reportid", value="#arguments.reportid#", cfsqltype="cf_sql_integer");
             LOCAL.periods.setSQL("SELECT tfp.int_period_id, tfp.dte_period_end_dt, tfp.bit_hidden, tfdn.num_metric_value
                                     FROM dbo.tbl_fa_period tfp
                                     INNER JOIN dbo.tbl_fa_data_numeric tfdn
                                     ON tfdn.int_period_id = tfp.int_period_id
-                                    ");
+                                    WHERE tfp.int_reportid = :reportid");
             LOCAL.results = LOCAL.periods.execute().getResult();
             return LOCAL.results;
         }
@@ -307,6 +308,7 @@ component {
             return queryNew("error, varchar");
         }
     }
+
 
     /**
     * Function to update the hidden fields in chart / save chart preferences
@@ -342,4 +344,31 @@ component {
         }
     }
 
+
+    /**
+    * Function to save the chart vAxis(vertical axis , min max interval between ticks etc..) values
+    * @author chandra sekhar sahoo
+    * @param min - minimum value on the vAxis
+    * @param max - maximum value on the vAxis
+    * @return boolean - true|false if operation successful or not.
+    */
+
+    public boolean function setChartvAxisValues(numeric cid, required numeric rid, required numeric min, required numeric max, required numeric interval) {
+        try{
+            LOCAL.pref = new Query();
+            LOCAL.pref.addParam(name="cid", value="#ARGUMENTS.cid#", cfsqltype="cf_sql_integer");
+            LOCAL.pref.addParam(name="rid", value="#ARGUMENTS.rid#", cfsqltype="cf_sql_integer");
+            LOCAL.pref.addParam(name="min", value="#ARGUMENTS.min#", cfsqltype="cf_sql_integer");
+            LOCAL.pref.addParam(name="max", value="#ARGUMENTS.max#", cfsqltype="cf_sql_integer");
+            LOCAL.pref.addParam(name="interval", value="#ARGUMENTS.interval#", cfsqltype="cf_sql_integer");
+            LOCAL.pref.setSQL("INSERT INTO dbo.tbl_fa_chart_preferences  
+                                        (int_companyid, int_reportid, int_vAxis_min, int_vAxis_max, int_vAxis_interval)
+                                VALUES  (:cid, :rid, :min, :max, :interval)
+                                ");
+        }
+        catch(any exception){
+            error.errorLog(exception);
+            return false;
+        }
+    }
 }

@@ -177,14 +177,17 @@ component {
         }
     }
 
+    
     /**
     * Function to retrieve all the periods from [tbl_fa_period]
     * @author chandra sekhar sahoo
+    * @param reportid - the reportid for which to fetch the dates.
     * @return date JSON struct.
     */
-    remote function getDates() returnformat="JSON" {
+
+    remote function getDates(required numeric reportid) returnformat="JSON" {
         try {
-            return serializeJSON(reportObject.getPeriods());
+            return serializeJSON(reportObject.getPeriods(ARGUMENTS.reportid));
         }
         catch(any exception) {
             error.errorLog(exception);
@@ -203,6 +206,25 @@ component {
     remote boolean function updateChartPreference(required string hidden_dates,required string not_hidden_dates) returnformat="JSON" {
         try{
             return reportObject.updateChartPref(ARGUMENTS.hidden_dates, ARGUMENTS.not_hidden_dates);
+        }
+        catch(any exception){
+            error.errorLog(exception);
+            return false;
+        }
+    }
+
+
+    /**
+    * Function to save the chart vAxis(vertical axis , min max interval between ticks etc..) values
+    * @author chandra sekhar sahoo
+    * @param min - minimum value on the vAxis
+    * @param max - maximum value on the vAxis
+    * @return boolean - true|false if operation successful or not.
+    */
+
+    remote boolean function setChartvAxisValues(numeric cid, required numeric rid,required numeric min, required numeric max, required numeric interval) returnFormat="JSON" {
+        try{
+            return reportObject.saveChartvAxisValue(ARGUMENTS.min, ARGUMENTS.max, ARGUMENTS.interval);
         }
         catch(any exception){
             error.errorLog(exception);

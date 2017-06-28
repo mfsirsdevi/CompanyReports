@@ -1,3 +1,6 @@
+<input type="hidden" value="<cfoutput>#URL.rid#</cfoutput>" id="report_id">  <!--- uesd for getting in javascript --->
+<input type="hidden" value="<cfoutput>#URL.cid#</cfoutput>" id="company_id">  <!--- uesd for getting in javascript --->
+
 <div class="header top-header">
   <p>Interest Coverage</p><span class="pull-right">+</span>
 </div>
@@ -54,13 +57,34 @@
     </label>
 
   </div>
-  <form>
-      <button type="button" class="ui-button ui-widget ui-corner-all" onclick="saveChartData();">Save</button>
-  </form>
+  <!--- save chart preferences --->
+  <button type="button" class="ui-button" onclick="saveChartData();">Save</button>
+  
+  <!--- save cart data successful dialog --->
   <div id="chart-pref-dialog" title="Successful">
-      <p>
-          <span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 50px 0;"></span>
-          preferences updated successfully.
-      </p>
+      <p><span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 50px 0;"></span>
+          preferences updated successfully.</p>
+  </div>
+
+  <!--- customize min, max, interval --->
+  <button type="button" class="ui-button" onclick="showOptions();">Customize</button>
+
+  <!--- Chart customization Dialog --->
+  <div id="chart-customization-dialog">
+    <form id="chart-customization-form" onsubmit="return false;">
+      <label>
+        <span>Minimum</span>
+        <input type="number" id="v-min" name="v-min" value="" class="ui-widget ui-widget-content ui-corner-all" required>
+      </label>
+      <label>
+        <span>Maximum</span>
+        <input type="number" id="v-max" name="v-max" value="" class="ui-widget ui-widget-content ui-corner-all" required >
+      </label>
+      <label>
+        <span>Interval</span>
+        <input type="number" id="v-interval" name="v-interval" value="" class="ui-widget ui-widget-content ui-corner-all" required>
+      </label>
+      <input type="submit" style="display:none;">
+    </form>
   </div>
 </div>

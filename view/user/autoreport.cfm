@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../../assets/custom/css/autoreport.css?ver=dkavvssdbd">
     <link rel="stylesheet" href="../../assets/vendors/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../assets/custom/css/creditFacility.css?ver=sdcdshs">
+    <link rel="stylesheet" href="../../assets/custom/css/autoReport/interestCoverage.css">
     <link rel="stylesheet" href="<cfoutput>#request.webRoot#</cfoutput>assets/template/js/jQuery-ui/jquery-ui.theme.css">
     <link rel="stylesheet" href="<cfoutput>#request.webRoot#</cfoutput>assets/template/js/jQuery-ui/jquery-ui.css">
     <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
@@ -189,12 +190,12 @@
   </div>
 
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/plugins/jQuery/jquery-2.2.3.min.js"></script>
-  <script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/creditFacility.js?"></script>
-  <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/plugins/jQuery/jquery-2.2.3.min.js"></script>
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/js/jQuery-ui/jquery-ui.js"></script>
+  <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/js/jquery-validation-1.16.0/dist/jquery.validate.js"></script>
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/autoreport.js?"></script>
 	<!--- <script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/highlight.js"></script> --->
-  <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/js/jquery-validation-1.16.0/dist/jquery.validate.js"></script>
+  <!--- <script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/creditFacility.js?"></script> --->
+  
   <!--Load the AJAX API-->
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script type="text/javascript" src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/autoChart.js"></script>
