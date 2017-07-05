@@ -16,12 +16,12 @@ $(document).ready(function(){
 	$(document).on('click', '#saveHighlight', function() {
     var subject = $("#subject").val();
     var arr1 = [];
-    console.log(is_global_save_clicked);
-    if(is_global_save_clicked === false) {
+    console.log(is_global_save);
+    if(is_global_save === false) {
         setSectionModified("Highlight", false, "saveHighlight");
     }
     if(subject === ""){
-      if(is_global_save_clicked === false) {
+      if(is_global_save === false) {
         $("<div class='global_dialog' id='global_dialog'>Please Enter Subject</div>").dialog();
       } else {
         arr1[0] = "Please Enter Subject";
@@ -40,7 +40,7 @@ $(document).ready(function(){
       		data:{'subject':subject, 'body':body, 'tag':tag, 'rid':rid},
       		success:function(data){ 
             if(data === "false") {
-            if(is_global_save_clicked === false) { 
+            if(is_global_save === false) { 
             alert("error");
           }else{
             arr1[0] = "error occured somewhere";
@@ -64,7 +64,7 @@ $(document).ready(function(){
             }
       		},
 			error: function( xhr, errorType ){
-          if(is_global_save_clicked === false) { 
+          if(is_global_save === false) {
             alert("error");
           }else{
             arr1[0] = "error occured somewhere";

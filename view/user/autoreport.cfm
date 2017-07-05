@@ -19,7 +19,6 @@
   </cfif>
 
   <div id="wrapper" class="grid">
-<div class="loader"></div>
     <cfif IsDefined('url.cid') && IsDefined('url.rid')>
       <cfset cid = val(url.cid) />
       <cfset rid = val(url.rid) />
