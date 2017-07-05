@@ -4,19 +4,24 @@
 * Purpose: contains the view for credit facility section.
 * Date: 18-06-2017
 -->   
-<div class="header top-header"><p>Revolving Credit Facility</p><span class="pull-right">+</span></div>
+<div class="header top-header auto_report_section" section_name="Revolving Credit Facility"><p>Revolving Credit Facility</p><span class="pull-right">+</span></div>
     <div class="content revolvingCreditFacility">
     <cfset VARIABLES.creditFacilityData = companyObject.getCreditFacilityData(cid = "#cid#") />
     <cfset VARIABLES.columnDetails = companyObject.getColumnDetails() />
     <div id="headerData">
+        <!--- loop for getting all credit facility records --->
         <cfloop from="1" to="#VARIABLES.creditFacilityData.recordcount#" index="i">
             <div class="creditFacilityDataSection" rcf_id="<cfoutput>#VARIABLES.creditFacilityData.rcf_id[i]#</cfoutput>">
+                 <!--- Credit Facility Record Header --->
                 <div class="creditFacilityHeader creditFacilityHeaderStyle" rcf_id="<cfoutput>#VARIABLES.creditFacilityData.rcf_id[i]#</cfoutput>">Credit Facility #<cfoutput>#i#</cfoutput></div>
                 <div class="creditFieldsSection field_<cfoutput>#VARIABLES.creditFacilityData.rcf_id[i]#</cfoutput>" id="creditFieldsSectionId" recordNo="<cfoutput>#i#</cfoutput>">
+                    <!--- Getting record of sort details for displaying in sorting order --->
                     <cfset VARIABLES.sortDetails = companyObject.getSortDetails(rcfId = "#VARIABLES.creditFacilityData.rcf_id[i]#") />
+                    <!--- Looping through the records according to the sort details --->
                     <cfloop from="1" to="#VARIABLES.sortDetails.recordcount#" index="j">
                         <cfset VARIABLES.facilityColumnName = VARIABLES.columnDetails.str_credit_facility_columns[#VARIABLES.sortDetails.int_cf_id[j]#]/>
                         <cfset VARIABLES.columnName = VARIABLES.columnDetails.str_column_names[#VARIABLES..sortDetails.int_cf_id[j]#]/>
+                        <!--- Show and hide the records according to re required details --->
                         <cfif VARIABLES.facilityColumnName EQ "availability_comment" || VARIABLES.facilityColumnName EQ "interest_rate_comment" || VARIABLES.facilityColumnName EQ "security_comment" || VARIABLES.facilityColumnName EQ "comments">
                             <cfif VARIABLES.sortDetails.int_cf_costomize_sort_id[j] EQ 1>
                                 <div class="creditFieldsBig" id="column_<cfoutput>#VARIABLES.sortDetails.int_sort_credit_id[j]#</cfoutput>" style="display: block;">
@@ -33,6 +38,7 @@
                         <div class="creditFieldSubject">
                             <span class="creditField bold"><cfoutput>#VARIABLES.columnName#</cfoutput> :</span>
                             <span class="creditFieldValue">
+                                <!--- Getting the records of different table acording to the record id --->
                                 <cfset VARIABLES.multiColumnDetails = companyObject.getMultiColumnDetails(rcfId = "#VARIABLES.creditFacilityData.rcf_id[i]#") />
                                 <cfif VARIABLES.facilityColumnName EQ "date_amendment">
                                     <cfloop from="1" to="#VARIABLES.multiColumnDetails.amendment.recordcount#" index="k">
@@ -63,7 +69,9 @@
                         </div>
                     </cfloop> 
                     <div class="editCredit">
+                        <!---On click of this button modal will pop up for editing the records --->
                         <button type="button" class="creditButtonStyle editCreditFacility" id="editCreditFacility" rcf_id="<cfoutput>#VARIABLES.creditFacilityData.rcf_id[i]#</cfoutput>">Edit Credit Facility</button>
+                        <!---On click of this button modal will pop up for hide ans show elements in the records --->
                         <button type="button" class="creditButtonStyle customLayout" id="customLayout" rcf_id="<cfoutput>#VARIABLES.creditFacilityData.rcf_id[i]#</cfoutput>">Customise Layout</button>
                     </div>     
                 </div>

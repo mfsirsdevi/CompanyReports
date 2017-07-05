@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="../../assets/custom/css/main.css">
     <link rel="stylesheet" href="../../assets/custom/css/autoreport.css?ver=dkavvssdbd">
     <link rel="stylesheet" href="../../assets/vendors/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../../assets/custom/css/creditFacility.css?ver=sdcdshs">
+    <link rel="stylesheet" href="../../assets/custom/css/creditFacility.css?ver=sdhs">
     <link rel="stylesheet" href="../../assets/custom/css/autoReport/interestCoverage.css">
     <link rel="stylesheet" href="<cfoutput>#request.webRoot#</cfoutput>assets/template/js/jQuery-ui/jquery-ui.theme.css">
     <link rel="stylesheet" href="<cfoutput>#request.webRoot#</cfoutput>assets/template/js/jQuery-ui/jquery-ui.css">
-    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+    <!--- <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script> --->
   </head>
 <body>
   <cfif  SESSION.isLogged EQ "false">
@@ -19,7 +19,7 @@
   </cfif>
 
   <div id="wrapper" class="grid">
-
+<div class="loader"></div>
     <cfif IsDefined('url.cid') && IsDefined('url.rid')>
       <cfset cid = val(url.cid) />
       <cfset rid = val(url.rid) />
@@ -116,9 +116,10 @@
       </div>
     </div>
     <hr class="color-blue">
+    <div id="all_sections">
     <div class="row">
       <div class="col-12">
-        <div class="header top-header">
+        <div class="header top-header auto_report_section" section_name="Analytical Overview">
           <p>Analitycal Overview</p><span class="pull-right">+</span>
         </div>
         <div class="content">
@@ -146,8 +147,8 @@
       </div>
     </div>
     <!---Highlight Section--->
-      <div class="header highlightHeader"><p>Highights</p><span class="pull-right">+</span></div>
-      <div class="content-inside">
+      <div class="header highlightHeader auto_report_section" section_name="Highlight"><p>Highights</p><span class="pull-right">+</span></div>
+      <div class="content-inside" id="highlight_section">
         <cfform id="saveHighlightForm">
 			    <div class="HighlightDiv">
 					  <button class="save-btn" type="button" id="saveHighlight" name="savebtn">Save</button>
@@ -188,15 +189,17 @@
       </div>
     </div>
   </div>
+  </div>
 
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/plugins/jQuery/jquery-2.2.3.min.js"></script>
+  <script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/globalSaveModule.js"></script>
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/creditFacility.js?ver=asdfadsf"></script>
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/plugins/jQuery/jquery-2.2.3.min.js"></script>
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/js/jQuery-ui/jquery-ui.js"></script>
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/js/jquery-validation-1.16.0/dist/jquery.validate.js"></script>
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/autoreport.js?"></script>
-	<!--- <script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/highlight.js"></script> --->
-  <!--- <script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/creditFacility.js?"></script> --->
+	<script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/highlight.js"></script>
+  <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/plugins/tinymce/js/tinymce/tinymce.min.js"></script>
   
   <!--Load the AJAX API-->
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>

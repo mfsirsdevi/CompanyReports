@@ -4,6 +4,7 @@
 * Created : 12-june-2017
 * Author  : Satyapriya Baral
 */
+
 $(document).ready(function(){
 
 	/**
@@ -13,10 +14,23 @@ $(document).ready(function(){
   	* @return Null
   	*/
 	$(document).on('click', '#saveHighlight', function() {
-    	var subject = $("#subject").val();
+    var subject = $("#subject").val();
+    var arr1 = [];
+    console.log(is_global_save_clicked);
+    if(is_global_save_clicked === false) {
+        setSectionModified("Highlight", false, "saveHighlight");
+    }
+    if(subject === ""){
+      if(is_global_save_clicked === false) {
+        $("<div class='global_dialog' id='global_dialog'>Please Enter Subject</div>").dialog();
+      } else {
+        arr1[0] = "Please Enter Subject";
+        setActionCompleted("Highlight", arr1);
+      }
+    } else {
 		var body = $.trim(tinymce.editors[1].getContent());
-    	var tag = $("#tag").val();
-    	var rid = $("#recordId").val();
+    var tag = $("#tag").val();
+    var rid = $("#recordId").val();
     	//sets the div where crops to be displayed.
 		var div=$(this).parent().parent().children().children();
      	var op="";
@@ -25,6 +39,14 @@ $(document).ready(function(){
       		url: "http://www.companyreports.com/controller/reportController.cfc?method=addHighlight" ,
       		data:{'subject':subject, 'body':body, 'tag':tag, 'rid':rid},
       		success:function(data){ 
+            if(data === "false") {
+            if(is_global_save_clicked === false) { 
+            alert("error");
+          }else{
+            arr1[0] = "error occured somewhere";
+            setActionCompleted("Highlight", arr1);
+       }
+          } else {
 				$("#subject").val('');
 				tinymce.editors[1].setContent('');
 		  		jsonOBJ = jQuery.parseJSON(data);
@@ -38,14 +60,26 @@ $(document).ready(function(){
 		  		}
 		 		div.find('#highlightData').html(" ");
          		div.find('#highlightData').append(op);
+              setActionCompleted("Highlight");
+            }
       		},
 			error: function( xhr, errorType ){
-            	if (errorType == "error"){
-					alert("error !!");
-				}
+          if(is_global_save_clicked === false) { 
+            alert("error");
+          }else{
+            arr1[0] = "error occured somewhere";
+            setActionCompleted("Highlight", arr1);
+        }
+				//}
 			}
     	})
+    }
   	});
+
+$("#saveHighlightForm :input").keyup(function() {
+  //if($("#saveHighlightForm :input").val() != ""){
+    setSectionModified("Highlight", true, "saveHighlight");
+});
 
 	/**
   	* Ajax call to sort the highlight data

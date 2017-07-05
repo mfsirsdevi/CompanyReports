@@ -53,7 +53,6 @@ $('document').ready(function(){
  */
 var changeChartView = function() {
     var key = parseInt($(this).next().attr('id').match(/\d+/)[0]);
-    console.log(key);
     if (($.inArray(key, cols) == -1) && !this.checked) {
        cols.push(key);
     } else if(($.inArray(key, cols) > -1) && this.checked) {
@@ -136,12 +135,10 @@ function getvAxisObj(cols, chart_rows){
     dataType: "JSON"
   }).done(function(res){
     var axis_array = res.DATA[0];
-    console.log(axis_array);
     var min = axis_array[0];
     var max = axis_array[1];
     var interval = axis_array[2];
     var tick = createTickArray(min, max, interval);
-    console.log(tick);
     var axisObj = {
       viewWindow: {
         min: min,

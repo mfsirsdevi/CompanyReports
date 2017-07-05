@@ -1,7 +1,7 @@
 <input type="hidden" value="<cfoutput>#URL.rid#</cfoutput>" id="report_id">  <!--- uesd for getting in javascript --->
 <input type="hidden" value="<cfoutput>#URL.cid#</cfoutput>" id="company_id">  <!--- uesd for getting in javascript --->
 
-<div class="header top-header">
+<div class="header top-header auto_report_section" section_name="Interest Coverage">
   <p>Interest Coverage</p><span class="pull-right">+</span>
 </div>
 <div class="content">
