@@ -118,7 +118,7 @@
     <hr class="color-blue">
     <div class="row">
       <div class="col-12">
-        <div class="header top-header">
+        <div class="header top-header section_header" data-section-name="AnalyticsHeader">
           <p>Analitycal Overview</p><span class="pull-right">+</span>
         </div>
         <div class="content">
@@ -132,7 +132,7 @@
               </textarea>
             </cfif>
             <input id="uid" type="hidden" value="<cfoutput>#SESSION.id#</cfoutput>"/>
-            <button id="add-analysis">save</button>
+            <button id="add-analysis" class="section_global" data-section-name="credit analysis">save</button>
           </div>
           <div class="header"><p>Old Analytical Overview</p><span class="pull-right">+</span></div>
           <div class="content">
@@ -150,7 +150,7 @@
       <div class="content-inside">
         <cfform id="saveHighlightForm">
 			    <div class="HighlightDiv">
-					  <button class="save-btn" type="button" id="saveHighlight" name="savebtn">Save</button>
+					  <button class="save-btn section_global" type="button" id="saveHighlight" name="savebtn" data-section-name="highlight section">Save</button>
 					  <div class="subjectHeader">
 					    <h5 class="Highlight">Highlight Subject</h5>
 					    <cfinput class="HighlightSubject" id="subject" type="text" name="Subject" />
@@ -187,6 +187,8 @@
         <cfinclude template="../sections/InterestCoverageSection.cfm" />
       </div>
     </div>
+  <button type="button" onclick="globalSave();" >Save All Sections</button>
+    
   </div>
 
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/plugins/jQuery/jquery-2.2.3.min.js"></script>
@@ -195,8 +197,9 @@
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/js/jQuery-ui/jquery-ui.js"></script>
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/template/js/jquery-validation-1.16.0/dist/jquery.validate.js"></script>
   <script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/autoreport.js?"></script>
-	<!--- <script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/highlight.js"></script> --->
-  <!--- <script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/creditFacility.js?"></script> --->
+	<script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/highlight.js"></script>
+  <script src="../../assets/custom/js/globalSaveModule.js"></script>
+  <script src="<cfoutput>#request.webRoot#</cfoutput>assets/custom/js/creditFacility.js?"></script>
   
   <!--Load the AJAX API-->
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>

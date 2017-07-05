@@ -58,7 +58,7 @@
 
   </div>
   <!--- save chart preferences --->
-  <button type="button" class="ui-button" onclick="saveChartData();">Save</button>
+  <button type="button" class="ui-button section_global" id="ic_saveChart" onclick="saveChartData();" data-section-name="interest coverage">Save</button>
   
   <!--- save cart data successful dialog --->
   <div id="chart-pref-dialog" title="Successful">
