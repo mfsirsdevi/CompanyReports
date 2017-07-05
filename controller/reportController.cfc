@@ -51,7 +51,7 @@ component {
 
         catch (any exception){
             error.errorLog(exception);
-            LOCAL.errorData = [];
+            LOCAL.errorData = false;
             return serializeJSON(LOCAL.errorData);
         }
     }
@@ -81,7 +81,7 @@ component {
 
 		catch (any exception){
 			error.errorLog(exception);
-            LOCAL.errorData = [];
+            LOCAL.errorData = false;
             return serializeJSON(LOCAL.errorData);
         }
     }

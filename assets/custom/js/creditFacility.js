@@ -4,6 +4,7 @@
 * Created : 20-june-2017
 * Author  : Satyapriya Baral
 */
+
 $(document).ready(function(){
 
     //Function to append a div for adding amendment date
@@ -426,7 +427,6 @@ $(document).ready(function(){
              } 
          }
     });
-
     /**
     * Function to add related value of the fields
     *
