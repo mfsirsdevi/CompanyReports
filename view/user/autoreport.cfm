@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="../../assets/custom/css/autoReport/interestCoverage.css">
     <link rel="stylesheet" href="../../assets/template/js/jQuery-ui/jquery-ui.theme.css">
     <link rel="stylesheet" href="../../assets/template/js/jQuery-ui/jquery-ui.css">
-    <!--- <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script> --->
   </head>
 <body>
   <cfif  SESSION.isLogged EQ "false">
@@ -146,11 +145,11 @@
       </div>
     </div>
     <!---Highlight Section--->
-      <div class="header highlightHeader auto_report_section" section_name="Highlight"><p>Highights</p><span class="pull-right">+</span></div>
+      <div class="header highlightHeader auto_report_section"><p>Highights</p><span class="pull-right">+</span></div>
       <div class="content-inside" id="highlight_section">
         <cfform id="saveHighlightForm">
 			    <div class="HighlightDiv">
-					  <button class="save-btn section_global" type="button" id="saveHighlight" name="savebtn" data-section-name="highlight section">Save</button>
+					  <button class="save-btn section_global" type="button" id="saveHighlight" name="savebtn" data-section-name="Highlight">Save</button>
 					  <div class="subjectHeader">
 					    <h5 class="Highlight">Highlight Subject</h5>
 					    <cfinput class="HighlightSubject" id="subject" type="text" name="Subject" />
@@ -195,13 +194,10 @@
   <script src="../../assets/template/plugins/jQuery/jquery-2.2.3.min.js"></script>
   <script src="../../assets/custom/js/globalSaveModule.js"></script>
   <script src="../../assets/custom/js/creditFacility.js?ver=asdfadsf"></script>
-  <script src="../../assets/template/plugins/jQuery/jquery-2.2.3.min.js"></script>
   <script src="../../assets/template/js/jQuery-ui/jquery-ui.js"></script>
   <script src="../../assets/template/js/jquery-validation-1.16.0/dist/jquery.validate.js"></script>
   <script src="../../assets/custom/js/autoreport.js?"></script>
 	<script src="../../assets/custom/js/highlight.js"></script>
-  <script src="../../assets/custom/js/globalSaveModule.js"></script>
-  <script src="../../assets/custom/js/creditFacility.js?"></script>
   <script src="../../assets/template/plugins/tinymce/js/tinymce/tinymce.min.js"></script>
   
   <!--Load the AJAX Google Chart API-->

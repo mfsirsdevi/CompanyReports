@@ -18,7 +18,7 @@ $(document).ready(function(){
     var arr1 = [];
     console.log(is_global_save);
     if(is_global_save === false) {
-        setSectionModified("Highlight", false, "saveHighlight");
+        setSectionModified("Highlight", false);
     }
     if(subject === ""){
       if(is_global_save === false) {
@@ -77,8 +77,7 @@ $(document).ready(function(){
   	});
 
 $("#saveHighlightForm :input").keyup(function() {
-  //if($("#saveHighlightForm :input").val() != ""){
-    setSectionModified("Highlight", true, "saveHighlight");
+    setSectionModified("Highlight", true);
 });
 
 	/**
