@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="../../assets/custom/css/autoReport/interestCoverage.css">
     <link rel="stylesheet" href="../../assets/template/js/jQuery-ui/jquery-ui.theme.css">
     <link rel="stylesheet" href="../../assets/template/js/jQuery-ui/jquery-ui.css">
-    <!--- <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script> --->
   </head>
 <body>
   <cfif  SESSION.isLogged EQ "false">
@@ -146,7 +145,7 @@
       </div>
     </div>
     <!---Highlight Section--->
-      <div class="header highlightHeader auto_report_section" section_name="Highlight"><p>Highights</p><span class="pull-right">+</span></div>
+      <div class="header highlightHeader auto_report_section"><p>Highights</p><span class="pull-right">+</span></div>
       <div class="content-inside" id="highlight_section">
         <cfform id="saveHighlightForm">
 			    <div class="HighlightDiv">

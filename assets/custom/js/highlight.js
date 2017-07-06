@@ -77,7 +77,6 @@ $(document).ready(function(){
   	});
 
 $("#saveHighlightForm :input").keyup(function() {
-  //if($("#saveHighlightForm :input").val() != ""){
     setSectionModified("Highlight", true);
 });
 

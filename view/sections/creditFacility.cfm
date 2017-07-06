@@ -4,7 +4,7 @@
 * Purpose: contains the view for credit facility section.
 * Date: 18-06-2017
 -->   
-<div class="header top-header auto_report_section" section_name="Revolving Credit Facility"><p>Revolving Credit Facility</p><span class="pull-right">+</span></div>
+<div class="header top-header auto_report_section" ><p>Revolving Credit Facility</p><span class="pull-right">+</span></div>
     <div class="content revolvingCreditFacility">
     <cfset VARIABLES.creditFacilityData = companyObject.getCreditFacilityData(cid = "#cid#") />
     <cfset VARIABLES.columnDetails = companyObject.getColumnDetails() />
