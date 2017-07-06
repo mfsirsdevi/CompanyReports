@@ -1,7 +1,9 @@
 var interest_coverage_private = {
   vmin : undefined,
   vmax : undefined,
-  vinterval : undefined
+  vinterval : undefined,
+  dataMatrix : undefined,
+  hidden_cols : undefined
 }
 
 $('document').ready(function(){
@@ -218,6 +220,11 @@ function getvAxisObj(hidden_cols, dataMatrix){
       };
       // draw fresh chart for the retrieved values.
       drawChart( hidden_cols, dataMatrix, axisObj );
+
+      // save data in global variable for repeated use
+      interest_coverage_private.vmin = min;
+      interest_coverage_private.vmax = max;
+      interest_coverage_private.vinterval = interval;
     }
     else{
       // no rows in database defining the vAxis properties..
@@ -292,9 +299,6 @@ function saveChartData(){
     }).fail(function(){
       alert("couldn't save the data to DB.. please try again.");
     });
-
-    
-
 }
 
 /**
@@ -322,7 +326,7 @@ function saveChartvAxisValues() {
           else $("#chart-pref-dialog").dialog('open');  
       }
     }).fail(function(error){
-        if(is_global_save) setActionCompleted($("#ic_saveChart").data('section-name'),["some db error while saving"] );
+        if(is_global_save) setActionCompleted($("#ic_saveChart").data('section-name'),["Can't save the vertical AxisData for google chart in DB"] );
         else alert("error on saving the chart vAxis Data. Please try again.");
     });
   }

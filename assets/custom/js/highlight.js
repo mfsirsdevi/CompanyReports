@@ -18,7 +18,7 @@ $(document).ready(function(){
     var arr1 = [];
     console.log(is_global_save);
     if(is_global_save === false) {
-        setSectionModified("Highlight", false, "saveHighlight");
+        setSectionModified("Highlight", false);
     }
     if(subject === ""){
       if(is_global_save === false) {
@@ -36,7 +36,7 @@ $(document).ready(function(){
      	var op="";
     	$.ajax({
       		type:'post',
-      		url: "http://www.companyreports.com/controller/reportController.cfc?method=addHighlight" ,
+      		url: "../../controller/reportController.cfc?method=addHighlight" ,
       		data:{'subject':subject, 'body':body, 'tag':tag, 'rid':rid},
       		success:function(data){ 
             if(data === "false") {
@@ -78,7 +78,7 @@ $(document).ready(function(){
 
 $("#saveHighlightForm :input").keyup(function() {
   //if($("#saveHighlightForm :input").val() != ""){
-    setSectionModified("Highlight", true, "saveHighlight");
+    setSectionModified("Highlight", true);
 });
 
 	/**
@@ -94,7 +94,7 @@ $("#saveHighlightForm :input").keyup(function() {
 			var rid = $("#recordId").val();
 			$.ajax({
       			type:'post',
-      			url: "http://www.companyreports.com/controller/reportController.cfc?method=updateHighlight" ,
+      			url: "../../controller/reportController.cfc?method=updateHighlight" ,
       			data:{'sortData':sortData, 'rid':rid},
       			success:function(data){ },
 				error: function( xhr, errorType ){
@@ -120,7 +120,7 @@ $("#saveHighlightForm :input").keyup(function() {
      	var op="";
 		$.ajax({
       		type:'post',
-      		url: "http://www.companyreports.com/controller/reportController.cfc?method=deleteHighlight" ,
+      		url: "../../controller/reportController.cfc?method=deleteHighlight" ,
       		data:{'highlightId':highlightId, 'rid':rid},
       		success:function(data){
 		  		jsonOBJ = jQuery.parseJSON(data);

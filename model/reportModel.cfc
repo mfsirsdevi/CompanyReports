@@ -402,6 +402,7 @@ component {
 
     /**
     *  Function to get the vAxis Chart data from the chart_prerefences table.
+    *  @author - chandra sekhar sahoo
     *  @param cid - the corresponding company id 
     *  @param rid - the corresponding report id
     *  @return struct containing min, max, interval

@@ -8,7 +8,7 @@ function createSectionObj_global(button_id){
             section_modified : false,  //set by user.. true .. 
             save_button_id : button_id, //retrieved along with the collection
             action_completed : false, // at the end of save_call of section set this to true (automatically set to true when you set the call status)
-            errors_arr : null // if messages[].length == 0 no errors... function successful.
+            errors_arr : [] // if errors_arr[].length == 0 no errors... function successful.
     }
     return sectionObj;
 }
@@ -16,21 +16,20 @@ function createSectionObj_global(button_id){
 // set function call finished status from individual sections' ajax call
 function setActionCompleted(key, errors ){
     section_global[key].action_completed = true;
-    if( errors != undefined && errors.length > 0 ) {
-        section_global[key].errors_arr = errors ;
-    }
-    else {
-        section_global[key].errors_arr = [];
+    if( errors != undefined){
+        if( errors.constructor === Array &&  errors.length > 0 ) 
+             section_global[key].errors_arr = errors ;
+        else section_global[key].errors_arr = [errors] ; //in case the error argument is not an array.
     }
     if( allFunctionsFinished() ){
         removeLoader();
-        showGlobaMessageDialog();
         is_global_save = false;
+        showGlobaMessageDialog();
     }
 }
 
 function setSectionModified(key, status){
-    section_global[key].section_modified = true;
+    section_global[key].section_modified = status;
 }
 
 // when a custom section is created ..this functions should be called .. along with a parameter to section name
@@ -39,18 +38,23 @@ function createGlobalSection(section_name, save_button_id){
 }
 
 function showGlobaMessageDialog(){
-    var errorStr = "";
+    var statusMsg = "";
     for( i in section_global ){
         if(section_global[i].section_modified) {
-            errorStr += "<span><strong>" + i + "</strong> : </span>";
-            if(section_global[i].errors_arr.length > 0)
-                for(j=0; j<= section_global[i].errors_arr.length; j++ ) // iterate over the errors array
-                    errorStr +=  "<p style='color:red;text-align:right;margin:0px;'>" + section_global[i].errors_arr[j] + "</p>";
-            else    errorStr +=  "<span style='color:green;text-align:right;'>save successful</span>";    
+            statusMsg += "<div><strong>" + i + "</strong> :";
+            if(section_global[i].errors_arr.length > 0){
+                for(j=0; j< section_global[i].errors_arr.length; j++ ) // iterate over the errors array
+                    statusMsg +=  "<p style='color:red;text-align:right;margin:0px;'>" + section_global[i].errors_arr[j] + "</p>";
+                statusMsg += "</div>";
+            }
+            else    statusMsg +=  "<span style='color:green;text-align:right;'>save successful</span></div>";    
             section_global[i].section_modified = false;
+            section_global[i].action_completed = false;
+            section_global[i].errors_arr = [];
         }
     }
-    newStr = "<div>" + errorStr + "</div>";
+    newStr = "<div>" + statusMsg + "</div>";
+    console.log(section_global);
     $(newStr).dialog({modal:true,buttons: {
         Close : function() {
           $( this ).dialog( "close" );
