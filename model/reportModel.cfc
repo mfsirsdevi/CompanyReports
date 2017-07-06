@@ -282,4 +282,148 @@ component {
             return false;
         }
     }
+
+    /**
+    * Function to retrieve the period ranges
+    * @author Chandra Sekhar Sahoo
+    * @param reportid - the reportid for which to fetch the dates.
+    * @return - Returns struct containing values of periods and bit value of hidden fields
+    */
+
+    public query function getPeriods(required numeric reportid) {
+        try {
+            LOCAL.periods = new Query();
+            LOCAL.periods.addParam(name="reportid", value="#arguments.reportid#", cfsqltype="cf_sql_integer");
+            LOCAL.periods.setSQL("SELECT tfp.int_period_id, tfp.dte_period_end_dt, tfp.bit_hidden, tfdn.num_metric_value
+                                    FROM dbo.tbl_fa_period tfp
+                                    INNER JOIN dbo.tbl_fa_data_numeric tfdn
+                                    ON tfdn.int_period_id = tfp.int_period_id
+                                    WHERE tfp.int_reportid = :reportid");
+            LOCAL.results = LOCAL.periods.execute().getResult();
+            return LOCAL.results;
+        }
+        catch(any e){
+            error.errorLog(e);
+            // rethrow;
+            return queryNew("error, varchar");
+        }
+    }
+
+
+    /**
+    * Function to update the hidden fields in chart / save chart preferences
+    * @author Chandra Sekhar Sahoo
+    * @param hidden_dates(array) - contains the rows that are not to be shown in chart/ set hidden fileds to 1 (true)
+    * @param not_hidden_dates(array) - contains the rows that are shown chart/ set bit_hidden field to 0 (false)
+    * @return - boolean true or false
+    */
+
+    public boolean function updateChartPref(required string hidden_dates, required string not_hidden_dates) {
+        try {
+            LOCAL.not_hidden_dates = arrayToList(deserializeJSON(ARGUMENTS.not_hidden_dates));
+            LOCAL.hidden_dates =   arrayToList(deserializeJSON(ARGUMENTS.hidden_dates));
+
+            LOCAL.prefx = new Query();
+            LOCAL.prefx.addParam( name="nhd", value="#LOCAL.not_hidden_dates#", cfsqltype="cf_sql_integer", list="yes");
+            LOCAL.prefx.setSQL("UPDATE dbo.tbl_fa_period
+                                SET bit_hidden = 0
+                                WHERE int_period_id IN (:nhd)");
+            LOCAL.prefx.execute().getResult();
+
+            LOCAL.prefy = new Query();
+            LOCAL.prefy.addParam( name="hd", value="#LOCAL.hidden_dates#", cfsqltype="cf_sql_integer", list="yes" );
+            LOCAL.prefy.setSQL("UPdATE dbo.tbl_fa_period
+                                SET bit_hidden = 1
+                                WHERE int_period_id IN (:hd)");
+            LOCAL.prefy.execute().getResult();
+            return true;
+        }
+        catch(any exception) {
+            error.errorLog(e);
+            return false;
+        }
+    }
+
+
+    /**
+    * Function to save the chart vAxis(vertical axis , min max interval between ticks etc..) values
+    * @author chandra sekhar sahoo
+    * @param min - minimum value on the vAxis
+    * @param max - maximum value on the vAxis
+    * @return boolean - true|false if operation successful or not.
+    */
+
+    public boolean function setChartvAxisValues(numeric cid, required numeric rid, required numeric min, required numeric max, required numeric interval) {
+        try{
+            // test if the configuration exists for that company id & reort id combination
+            LOCAL.prefCheck = new Query();
+            LOCAL.prefCheck.addParam(name="cid", value="#ARGUMENTS.cid#", cfsqltype="cf_sql_integer");
+            LOCAL.prefCheck.addParam(name="rid", value="#ARGUMENTS.rid#", cfsqltype="cf_sql_integer");
+            LOCAL.prefCheck.setSQL("SELECT int_chart_id
+                                    FROM dbo.tbl_fa_chart_preferences
+                                    WHERE int_companyid = :cid 
+                                    AND int_reportid = :rid");
+            LOCAL.prefCheckResult = LOCAL.prefCheck.execute().getResult();
+
+            LOCAL.pref = new Query();
+            LOCAL.pref.addParam(name="cid", value="#ARGUMENTS.cid#", cfsqltype="cf_sql_integer");
+            LOCAL.pref.addParam(name="rid", value="#ARGUMENTS.rid#", cfsqltype="cf_sql_integer");
+            LOCAL.pref.addParam(name="min", value="#ARGUMENTS.min#", cfsqltype="cf_sql_integer");
+            LOCAL.pref.addParam(name="max", value="#ARGUMENTS.max#", cfsqltype="cf_sql_integer");
+            LOCAL.pref.addParam(name="interval", value="#ARGUMENTS.interval#", cfsqltype="cf_sql_integer");
+            
+            if(!LOCAL.prefCheckResult.recordCount) { //if no records / configuration exists .. 
+                // create one
+                LOCAL.pref.setSQL("INSERT INTO dbo.tbl_fa_chart_preferences  
+                                            (int_companyid, int_reportid, int_vAxis_min, int_vAxis_max, int_vAxis_interval)
+                                    VALUES  (:cid, :rid, :min, :max, :interval)
+                                    ");
+            }
+            else {
+                // or update the damn datas.. 
+                LOCAL.pref.setSQL( "UPDATE dbo.tbl_fa_chart_preferences
+                                    SET int_companyid = :cid, 
+                                        int_reportid = :rid, 
+                                        int_vAxis_min = :min, 
+                                        int_vAxis_max = :max, 
+                                        int_vAxis_interval = :interval
+                                    WHERE int_companyid = :cid 
+                                    AND int_reportid = :rid" );
+            }
+            LOCAL.pref.execute().getResult();
+            return true;
+        }
+        catch(any exception){
+            error.errorLog(exception);
+            return false;
+        }
+    }
+
+
+    /**
+    *  Function to get the vAxis Chart data from the chart_prerefences table.
+    *  @author - chandra sekhar sahoo
+    *  @param cid - the corresponding company id 
+    *  @param rid - the corresponding report id
+    *  @return struct containing min, max, interval
+    */
+
+    public any function getvAxisValues(required numeric cid, required numeric rid) {
+        try{
+            LOCAL.vAxis = new Query();
+            LOCAL.vAxis.addParam(name="cid", value="#ARGUMENTS.cid#", cfsqltype="cf_sql_integer");
+            LOCAL.vAxis.addParam(name="rid", value="#ARGUMENTS.rid#", cfsqltype="cf_sql_integer");
+            LOCAL.vAxis.setSQL("SELECT int_vAxis_min, int_vAxis_max, int_vAxis_interval
+                                FROM dbo.tbl_fa_chart_preferences
+                                WHERE int_companyid = :cid 
+                                   AND int_reportid = :rid ");
+            return LOCAL.vAxis.execute().getResult();
+        }
+        catch(any e){
+            writedump(e);
+            error.errorLog(e);
+            return false;
+        }
+    }
+
 }

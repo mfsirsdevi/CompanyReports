@@ -16,7 +16,7 @@ component {
 	public any function errorLog(any exception)
 	{
 		LOCAL.NL = CreateObject("java", "java.lang.System").getProperty("line.separator");
-		
+
 		// Details about the error to log //
 		savecontent variable="data"
 		{
@@ -29,7 +29,7 @@ component {
 			WriteOutput('STACKTRACE: #exception.TagContext[1].Raw_Trace# #LOCAL.NL#');
 			WriteOutput('----------------------------------------------------------------------#NL#');
 		}
-		
+
 		myFile = expandPath( "#REQUEST.webRoot#log/errorLog.txt" );
 		fileObj = FileOpen( myFile, "append");
 		fileWriteLine(fileObj,"#data#");

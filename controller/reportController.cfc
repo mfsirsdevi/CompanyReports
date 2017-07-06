@@ -51,7 +51,7 @@ component {
 
         catch (any exception){
             error.errorLog(exception);
-            LOCAL.errorData = [];
+            LOCAL.errorData = false;
             return serializeJSON(LOCAL.errorData);
         }
     }
@@ -81,7 +81,7 @@ component {
 
 		catch (any exception){
 			error.errorLog(exception);
-            LOCAL.errorData = [];
+            LOCAL.errorData = false;
             return serializeJSON(LOCAL.errorData);
         }
     }
@@ -174,6 +174,78 @@ component {
         catch (any exception) {
             error.errorLog(exception);
             return false;
+        }
+    }
+
+    
+    /**
+    * Function to retrieve all the periods from [tbl_fa_period]
+    * @author chandra sekhar sahoo
+    * @param reportid - the reportid for which to fetch the dates.
+    * @return date JSON struct.
+    */
+
+    remote function getDates(required numeric reportid) returnformat="JSON" {
+        try {
+            return serializeJSON(reportObject.getPeriods(ARGUMENTS.reportid));
+        }
+        catch(any exception) {
+            error.errorLog(exception);
+            return serializeJSON(queryNew('error, varchar'));
+        }
+    }
+
+
+    /**
+    * Function to save preferences of Google Chart Date ranges & value
+    * @author chandra sekhar sahoo
+    * @param hidden_dates(array) - contains the rows that are not to be shown in chart/ set hidden fileds to 1 (true)
+    * @param not_hidden_dates(array) - contains the rows that are shown chart/ set bit_hidden field to 0 (false)
+    * @return boolean - true false
+    */
+    remote boolean function updateChartPreference(required string hidden_dates,required string not_hidden_dates) returnformat="JSON" {
+        try{
+            return reportObject.updateChartPref(ARGUMENTS.hidden_dates, ARGUMENTS.not_hidden_dates);
+        }
+        catch(any exception){
+            error.errorLog(exception);
+            return false;
+        }
+    }
+
+
+    /**
+    * Function to save the chart vAxis(vertical axis , min max interval between ticks etc..) values
+    * @author chandra sekhar sahoo
+    * @param min - minimum value on the vAxis
+    * @param max - maximum value on the vAxis
+    * @return boolean - true|false if operation successful or not.
+    */
+    remote boolean function setChartvAxisValues(numeric cid, required numeric rid,required numeric min, required numeric max, required numeric interval) returnFormat="JSON" {
+        try{
+            reportObject.setChartvAxisValues(argumentCollection = ARGUMENTS);
+            return true;
+        }
+        catch(any exception){
+            writedump(exception);
+            error.errorLog(exception);
+            return false;
+        }
+    }
+
+    /**
+    *  Function to get the vAxis Chart data from the chart_prerefences table.
+    *  @param cid - the corresponding company id 
+    *  @param rid - the corresponding report id
+    *  @return struct containing min, max, interval
+    */
+    remote any function getvAxisValues(required numeric cid, required numeric rid) returnFormat="JSON" {
+        try{
+            return reportObject.getvAxisValues(ARGUMENTS.cid, ARGUMENTS.rid);
+        }
+        catch(any exception){
+            error.errorLog(exception);
+            return '{error}';
         }
     }
 }

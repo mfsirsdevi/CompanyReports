@@ -14,7 +14,8 @@
 }
 
 #wrapper {
-    width: 960px;
+    height: 2000px;
+    width: 910px;
     margin: 0 auto;
     font-family: sans-serif;
 }

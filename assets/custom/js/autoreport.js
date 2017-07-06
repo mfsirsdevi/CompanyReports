@@ -5,7 +5,7 @@ $(document).ready(function() {
         //getting the next element
         var $content = $header.next();
         //open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
-        $content.slideToggle(2000, function() {
+        $content.slideToggle(500, function() {
             //execute this after slideToggle is done
             //change text of header based on visibility of content div
             $header.children('span').text(function() {

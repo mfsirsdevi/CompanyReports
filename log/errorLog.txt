@@ -1,0 +1,1719 @@
+DATE/TIME: {ts '2017-07-04 15:22:48'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Connection reset by peer: socket write error 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:22:48'} 
+ERROR MESSAGE: The getResult method was not found. 
+ERROR DETAILS: Either there are no methods with the specified method name and argument types or the getResult method is overloaded with argument types that ColdFusion cannot decipher reliably. ColdFusion found 0 methods that match the provided arguments. If this is a Java object and you verified that the method exists, use the javacast function to reduce ambiguity. 
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 23 
+ERROR TYPE: Object 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcGENERATEREPORT.runFunction(D:\coldfusion\company\controller\reportController.cfc:23) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:22:48'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Object has been closed. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:22:48'} 
+ERROR MESSAGE: The getResult method was not found. 
+ERROR DETAILS: Either there are no methods with the specified method name and argument types or the getResult method is overloaded with argument types that ColdFusion cannot decipher reliably. ColdFusion found 0 methods that match the provided arguments. If this is a Java object and you verified that the method exists, use the javacast function to reduce ambiguity. 
+ERROR TEMPLATE: D:\coldfusion\company\controller\companyController.cfc 
+ERROR LINE: 107 
+ERROR TYPE: Object 
+STACKTRACE: 	at cfcompanyController2ecfc1027376790$funcGETANALYST.runFunction(D:\coldfusion\company\controller\companyController.cfc:107) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:22:48'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Connection reset by peer: socket write error 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:22:48'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Object has been closed. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:23:04'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Connection reset by peer: socket write error 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:23:04'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Object has been closed. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:23:04'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Connection reset by peer: socket write error 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:23:09'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Connection reset by peer: socket write error 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:23:09'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Object has been closed. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:24:34'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Connection reset by peer: socket write error 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:24:34'} 
+ERROR MESSAGE: The getResult method was not found. 
+ERROR DETAILS: Either there are no methods with the specified method name and argument types or the getResult method is overloaded with argument types that ColdFusion cannot decipher reliably. ColdFusion found 0 methods that match the provided arguments. If this is a Java object and you verified that the method exists, use the javacast function to reduce ambiguity. 
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 23 
+ERROR TYPE: Object 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcGENERATEREPORT.runFunction(D:\coldfusion\company\controller\reportController.cfc:23) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:24:34'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Object has been closed. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:24:34'} 
+ERROR MESSAGE: The getResult method was not found. 
+ERROR DETAILS: Either there are no methods with the specified method name and argument types or the getResult method is overloaded with argument types that ColdFusion cannot decipher reliably. ColdFusion found 0 methods that match the provided arguments. If this is a Java object and you verified that the method exists, use the javacast function to reduce ambiguity. 
+ERROR TEMPLATE: D:\coldfusion\company\controller\companyController.cfc 
+ERROR LINE: 107 
+ERROR TYPE: Object 
+STACKTRACE: 	at cfcompanyController2ecfc1027376790$funcGETANALYST.runFunction(D:\coldfusion\company\controller\companyController.cfc:107) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:25:14'} 
+ERROR MESSAGE: Element TAG is undefined in ARGUMENTS. 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 43 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:43) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:25:24'} 
+ERROR MESSAGE: Element TAG is undefined in ARGUMENTS. 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 43 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:43) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:25:48'} 
+ERROR MESSAGE: Element TAG is undefined in ARGUMENTS. 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 43 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:43) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:29:52'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Connection reset by peer: socket write error 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:29:52'} 
+ERROR MESSAGE: The getResult method was not found. 
+ERROR DETAILS: Either there are no methods with the specified method name and argument types or the getResult method is overloaded with argument types that ColdFusion cannot decipher reliably. ColdFusion found 0 methods that match the provided arguments. If this is a Java object and you verified that the method exists, use the javacast function to reduce ambiguity. 
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 23 
+ERROR TYPE: Object 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcGENERATEREPORT.runFunction(D:\coldfusion\company\controller\reportController.cfc:23) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:29:52'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Object has been closed. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:29:52'} 
+ERROR MESSAGE: The getResult method was not found. 
+ERROR DETAILS: Either there are no methods with the specified method name and argument types or the getResult method is overloaded with argument types that ColdFusion cannot decipher reliably. ColdFusion found 0 methods that match the provided arguments. If this is a Java object and you verified that the method exists, use the javacast function to reduce ambiguity. 
+ERROR TEMPLATE: D:\coldfusion\company\controller\companyController.cfc 
+ERROR LINE: 107 
+ERROR TYPE: Object 
+STACKTRACE: 	at cfcompanyController2ecfc1027376790$funcGETANALYST.runFunction(D:\coldfusion\company\controller\companyController.cfc:107) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:30:27'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Connection reset by peer: socket write error 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:30:27'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Object has been closed. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:30:27'} 
+ERROR MESSAGE: Element GETTOTALDATA.INT_HIGHLIGHT_SEC_ID is undefined in a Java object of type class [Ljava.lang.String; referenced as '' 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 46 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:46) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:34:41'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Connection reset by peer: socket write error 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:34:41'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Object has been closed. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:34:41'} 
+ERROR MESSAGE: Element GETTOTALDATA.INT_HIGHLIGHT_SEC_ID is undefined in a Java object of type class [Ljava.lang.String; referenced as '' 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 46 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:46) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:36:00'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Connection reset by peer: socket write error 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:36:00'} 
+ERROR MESSAGE: The getResult method was not found. 
+ERROR DETAILS: Either there are no methods with the specified method name and argument types or the getResult method is overloaded with argument types that ColdFusion cannot decipher reliably. ColdFusion found 0 methods that match the provided arguments. If this is a Java object and you verified that the method exists, use the javacast function to reduce ambiguity. 
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 23 
+ERROR TYPE: Object 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcGENERATEREPORT.runFunction(D:\coldfusion\company\controller\reportController.cfc:23) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:36:00'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Object has been closed. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:36:00'} 
+ERROR MESSAGE: The getResult method was not found. 
+ERROR DETAILS: Either there are no methods with the specified method name and argument types or the getResult method is overloaded with argument types that ColdFusion cannot decipher reliably. ColdFusion found 0 methods that match the provided arguments. If this is a Java object and you verified that the method exists, use the javacast function to reduce ambiguity. 
+ERROR TEMPLATE: D:\coldfusion\company\controller\companyController.cfc 
+ERROR LINE: 107 
+ERROR TYPE: Object 
+STACKTRACE: 	at cfcompanyController2ecfc1027376790$funcGETANALYST.runFunction(D:\coldfusion\company\controller\companyController.cfc:107) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:36:31'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Connection reset by peer: socket write error 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:36:31'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Object has been closed. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:36:31'} 
+ERROR MESSAGE: Element GETTOTALDATA.INT_HIGHLIGHT_SEC_ID is undefined in a Java object of type class [Ljava.lang.String; referenced as '' 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 46 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:46) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:36:58'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Error establishing socket to host and port: MINDFIRE-PC:1433. Reason: Connection refused: connect 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:36:59'} 
+ERROR MESSAGE: The getPrefix method was not found. 
+ERROR DETAILS: Either there are no methods with the specified method name and argument types or the getPrefix method is overloaded with argument types that ColdFusion cannot decipher reliably. ColdFusion found 0 methods that match the provided arguments. If this is a Java object and you verified that the method exists, use the javacast function to reduce ambiguity. 
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 48 
+ERROR TYPE: Object 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:48) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:37:44'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Connection reset by peer: socket write error 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:37:44'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Object has been closed. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:37:44'} 
+ERROR MESSAGE: Element GETTOTALDATA.INT_HIGHLIGHT_SEC_ID is undefined in a Java object of type class [Ljava.lang.String; referenced as '' 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 46 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:46) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:37:49'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Connection reset by peer: socket write error 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:37:50'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Object has been closed. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:37:50'} 
+ERROR MESSAGE: Element GETTOTALDATA.INT_HIGHLIGHT_SEC_ID is undefined in a Java object of type class [Ljava.lang.String; referenced as '' 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 46 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:46) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:38:03'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Connection reset by peer: socket write error 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:38:03'} 
+ERROR MESSAGE: The getResult method was not found. 
+ERROR DETAILS: Either there are no methods with the specified method name and argument types or the getResult method is overloaded with argument types that ColdFusion cannot decipher reliably. ColdFusion found 0 methods that match the provided arguments. If this is a Java object and you verified that the method exists, use the javacast function to reduce ambiguity. 
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 23 
+ERROR TYPE: Object 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcGENERATEREPORT.runFunction(D:\coldfusion\company\controller\reportController.cfc:23) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:38:03'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Object has been closed. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:38:03'} 
+ERROR MESSAGE: The getResult method was not found. 
+ERROR DETAILS: Either there are no methods with the specified method name and argument types or the getResult method is overloaded with argument types that ColdFusion cannot decipher reliably. ColdFusion found 0 methods that match the provided arguments. If this is a Java object and you verified that the method exists, use the javacast function to reduce ambiguity. 
+ERROR TEMPLATE: D:\coldfusion\company\controller\companyController.cfc 
+ERROR LINE: 107 
+ERROR TYPE: Object 
+STACKTRACE: 	at cfcompanyController2ecfc1027376790$funcGETANALYST.runFunction(D:\coldfusion\company\controller\companyController.cfc:107) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:38:03'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Connection reset by peer: socket write error 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:38:03'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Object has been closed. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:38:05'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Connection reset by peer: socket write error 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:38:05'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Object has been closed. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:38:05'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Connection reset by peer: socket write error 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:38:42'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Connection reset by peer: socket write error 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:38:42'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Object has been closed. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:38:42'} 
+ERROR MESSAGE: Element GETTOTALDATA.INT_HIGHLIGHT_SEC_ID is undefined in a Java object of type class [Ljava.lang.String; referenced as '' 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 46 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:46) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:39:36'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Connection reset by peer: socket write error 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:39:36'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Object has been closed. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:39:36'} 
+ERROR MESSAGE: Element GETTOTALDATA.INT_HIGHLIGHT_SEC_ID is undefined in a Java object of type class [Ljava.lang.String; referenced as '' 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 46 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:46) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:39:51'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Error establishing socket to host and port: MINDFIRE-PC:1433. Reason: Connection refused: connect 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:40:03'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Error establishing socket to host and port: MINDFIRE-PC:1433. Reason: Connection refused: connect 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:40:03'} 
+ERROR MESSAGE: Element GETTOTALDATA.INT_HIGHLIGHT_SEC_ID is undefined in a Java object of type class [Ljava.lang.String; referenced as '' 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 46 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:46) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:40:54'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Connection reset by peer: socket write error 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:40:55'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Object has been closed. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:40:55'} 
+ERROR MESSAGE: Element GETTOTALDATA.INT_HIGHLIGHT_SEC_ID is undefined in a Java object of type class [Ljava.lang.String; referenced as '' 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 46 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:46) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:42:21'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Connection reset by peer: socket write error 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:42:21'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Object has been closed. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:42:21'} 
+ERROR MESSAGE: Element GETTOTALDATA.INT_HIGHLIGHT_SEC_ID is undefined in a Java object of type class [Ljava.lang.String; referenced as '' 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 46 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:46) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:44:09'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Connection reset by peer: socket write error 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:44:09'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Object has been closed. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:44:09'} 
+ERROR MESSAGE: Element GETTOTALDATA.INT_HIGHLIGHT_SEC_ID is undefined in a Java object of type class [Ljava.lang.String; referenced as '' 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 46 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:46) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:46:00'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Connection reset by peer: socket write error 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:46:00'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Object has been closed. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:46:00'} 
+ERROR MESSAGE: Element GETTOTALDATA.INT_HIGHLIGHT_SEC_ID is undefined in a Java object of type class [Ljava.lang.String; referenced as '' 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 46 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:46) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:46:52'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Connection reset by peer: socket write error 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:46:52'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Object has been closed. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:46:52'} 
+ERROR MESSAGE: Element GETTOTALDATA.INT_HIGHLIGHT_SEC_ID is undefined in a Java object of type class [Ljava.lang.String; referenced as '' 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 46 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:46) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:47:46'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Connection reset by peer: socket write error 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:47:46'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Object has been closed. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:47:46'} 
+ERROR MESSAGE: Element GETTOTALDATA.INT_HIGHLIGHT_SEC_ID is undefined in a Java object of type class [Ljava.lang.String; referenced as '' 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 46 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:46) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:48:01'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Error establishing socket to host and port: MINDFIRE-PC:1433. Reason: Connection refused: connect 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:48:13'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Error establishing socket to host and port: MINDFIRE-PC:1433. Reason: Connection refused: connect 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:48:25'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Error establishing socket to host and port: MINDFIRE-PC:1433. Reason: Connection refused: connect 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:48:37'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Error establishing socket to host and port: MINDFIRE-PC:1433. Reason: Connection refused: connect 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:48:49'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Error establishing socket to host and port: MINDFIRE-PC:1433. Reason: Connection refused: connect 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:49:01'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Error establishing socket to host and port: MINDFIRE-PC:1433. Reason: Connection refused: connect 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:49:05'} 
+ERROR MESSAGE: The request has exceeded the allowable time limit Tag: CFQUERY 
+ERROR DETAILS:  
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Application 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:49:05'} 
+ERROR MESSAGE: The request has exceeded the allowable time limit Tag: CFQUERY 
+ERROR DETAILS:  
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Application 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:49:05'} 
+ERROR MESSAGE: The request has exceeded the allowable time limit Tag: CFQUERY 
+ERROR DETAILS:  
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Application 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:49:05'} 
+ERROR MESSAGE: Element GETTOTALDATA.INT_HIGHLIGHT_SEC_ID is undefined in a Java object of type class [Ljava.lang.String; referenced as '' 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 46 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:46) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:49:05'} 
+ERROR MESSAGE: Element GETTOTALDATA.INT_HIGHLIGHT_SEC_ID is undefined in a Java object of type class [Ljava.lang.String; referenced as '' 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 46 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:46) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:49:05'} 
+ERROR MESSAGE: Element GETTOTALDATA.INT_HIGHLIGHT_SEC_ID is undefined in a Java object of type class [Ljava.lang.String; referenced as '' 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 46 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:46) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:49:05'} 
+ERROR MESSAGE: The request has exceeded the allowable time limit Tag: CFQUERY 
+ERROR DETAILS:  
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Application 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:49:05'} 
+ERROR MESSAGE: Element GETTOTALDATA.INT_HIGHLIGHT_SEC_ID is undefined in a Java object of type class [Ljava.lang.String; referenced as '' 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 46 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:46) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:49:05'} 
+ERROR MESSAGE: The request has exceeded the allowable time limit Tag: CFQUERY 
+ERROR DETAILS:  
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Application 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:49:05'} 
+ERROR MESSAGE: Element GETTOTALDATA.INT_HIGHLIGHT_SEC_ID is undefined in a Java object of type class [Ljava.lang.String; referenced as '' 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 46 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:46) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:49:05'} 
+ERROR MESSAGE: The request has exceeded the allowable time limit Tag: CFQUERY 
+ERROR DETAILS:  
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Application 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:49:05'} 
+ERROR MESSAGE: Element GETTOTALDATA.INT_HIGHLIGHT_SEC_ID is undefined in a Java object of type class [Ljava.lang.String; referenced as '' 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 46 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:46) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:49:38'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Connection reset by peer: socket write error 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:49:38'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Object has been closed. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:49:38'} 
+ERROR MESSAGE: Element GETTOTALDATA.INT_HIGHLIGHT_SEC_ID is undefined in a Java object of type class [Ljava.lang.String; referenced as '' 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 46 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:46) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:49:42'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Connection reset by peer: socket write error 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:49:42'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Object has been closed. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:49:42'} 
+ERROR MESSAGE: Element GETTOTALDATA.INT_HIGHLIGHT_SEC_ID is undefined in a Java object of type class [Ljava.lang.String; referenced as '' 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 46 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:46) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:49:45'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Connection reset by peer: socket write error 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:49:45'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Object has been closed. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:49:45'} 
+ERROR MESSAGE: Element GETTOTALDATA.INT_HIGHLIGHT_SEC_ID is undefined in a Java object of type class [Ljava.lang.String; referenced as '' 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 46 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:46) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:49:49'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Connection reset by peer: socket write error 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:49:49'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Object has been closed. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:49:49'} 
+ERROR MESSAGE: Element GETTOTALDATA.INT_HIGHLIGHT_SEC_ID is undefined in a Java object of type class [Ljava.lang.String; referenced as '' 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 46 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:46) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:49:57'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Connection reset by peer: socket write error 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:49:57'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Object has been closed. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:49:57'} 
+ERROR MESSAGE: Element GETTOTALDATA.INT_HIGHLIGHT_SEC_ID is undefined in a Java object of type class [Ljava.lang.String; referenced as '' 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 46 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:46) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:50:16'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Error establishing socket to host and port: MINDFIRE-PC:1433. Reason: Connection refused: connect 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:50:24'} 
+ERROR MESSAGE: The getPrefix method was not found. 
+ERROR DETAILS: Either there are no methods with the specified method name and argument types or the getPrefix method is overloaded with argument types that ColdFusion cannot decipher reliably. ColdFusion found 0 methods that match the provided arguments. If this is a Java object and you verified that the method exists, use the javacast function to reduce ambiguity. 
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 48 
+ERROR TYPE: Object 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:48) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:50:59'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Connection reset by peer: socket write error 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:50:59'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Object has been closed. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:50:59'} 
+ERROR MESSAGE: Element GETTOTALDATA.INT_HIGHLIGHT_SEC_ID is undefined in a Java object of type class [Ljava.lang.String; referenced as '' 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 46 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:46) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:51:05'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Connection reset by peer: socket write error 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:51:05'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Object has been closed. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:51:05'} 
+ERROR MESSAGE: Element GETTOTALDATA.INT_HIGHLIGHT_SEC_ID is undefined in a Java object of type class [Ljava.lang.String; referenced as '' 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 46 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:46) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:51:11'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Connection reset by peer: socket write error 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:51:11'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Object has been closed. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:51:11'} 
+ERROR MESSAGE: Element GETTOTALDATA.INT_HIGHLIGHT_SEC_ID is undefined in a Java object of type class [Ljava.lang.String; referenced as '' 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 46 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:46) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:51:15'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Connection reset by peer: socket write error 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:51:15'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Object has been closed. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:51:15'} 
+ERROR MESSAGE: Element GETTOTALDATA.INT_HIGHLIGHT_SEC_ID is undefined in a Java object of type class [Ljava.lang.String; referenced as '' 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 46 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:46) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:51:31'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Error establishing socket to host and port: MINDFIRE-PC:1433. Reason: Connection refused: connect 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:51:43'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Error establishing socket to host and port: MINDFIRE-PC:1433. Reason: Connection refused: connect 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:51:55'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Error establishing socket to host and port: MINDFIRE-PC:1433. Reason: Connection refused: connect 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:52:07'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Error establishing socket to host and port: MINDFIRE-PC:1433. Reason: Connection refused: connect 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:52:19'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Error establishing socket to host and port: MINDFIRE-PC:1433. Reason: Connection refused: connect 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:52:31'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Error establishing socket to host and port: MINDFIRE-PC:1433. Reason: Connection refused: connect 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:52:44'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Error establishing socket to host and port: MINDFIRE-PC:1433. Reason: Connection refused: connect 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:52:44'} 
+ERROR MESSAGE: Element GETTOTALDATA.INT_HIGHLIGHT_SEC_ID is undefined in a Java object of type class [Ljava.lang.String; referenced as '' 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 46 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:46) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:52:56'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Error establishing socket to host and port: MINDFIRE-PC:1433. Reason: Connection refused: connect 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:52:56'} 
+ERROR MESSAGE: Element GETTOTALDATA.INT_HIGHLIGHT_SEC_ID is undefined in a Java object of type class [Ljava.lang.String; referenced as '' 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 46 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:46) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:53:08'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Error establishing socket to host and port: MINDFIRE-PC:1433. Reason: Connection refused: connect 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:53:08'} 
+ERROR MESSAGE: Element GETTOTALDATA.INT_HIGHLIGHT_SEC_ID is undefined in a Java object of type class [Ljava.lang.String; referenced as '' 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 46 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:46) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:53:20'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Error establishing socket to host and port: MINDFIRE-PC:1433. Reason: Connection refused: connect 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:53:20'} 
+ERROR MESSAGE: Element GETTOTALDATA.INT_HIGHLIGHT_SEC_ID is undefined in a Java object of type class [Ljava.lang.String; referenced as '' 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 46 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:46) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:53:32'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Error establishing socket to host and port: MINDFIRE-PC:1433. Reason: Connection refused: connect 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:53:32'} 
+ERROR MESSAGE: Element GETTOTALDATA.INT_HIGHLIGHT_SEC_ID is undefined in a Java object of type class [Ljava.lang.String; referenced as '' 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 46 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:46) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:53:44'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Error establishing socket to host and port: MINDFIRE-PC:1433. Reason: Connection refused: connect 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:53:44'} 
+ERROR MESSAGE: Element GETTOTALDATA.INT_HIGHLIGHT_SEC_ID is undefined in a Java object of type class [Ljava.lang.String; referenced as '' 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 46 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:46) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:57:52'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Error establishing socket to host and port: MINDFIRE-PC:1433. Reason: Connection refused: connect 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:57:52'} 
+ERROR MESSAGE: The getResult method was not found. 
+ERROR DETAILS: Either there are no methods with the specified method name and argument types or the getResult method is overloaded with argument types that ColdFusion cannot decipher reliably. ColdFusion found 0 methods that match the provided arguments. If this is a Java object and you verified that the method exists, use the javacast function to reduce ambiguity. 
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 23 
+ERROR TYPE: Object 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcGENERATEREPORT.runFunction(D:\coldfusion\company\controller\reportController.cfc:23) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 16:01:20'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Connection reset by peer: socket write error 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 16:01:20'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Object has been closed. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 16:01:20'} 
+ERROR MESSAGE: Element GETTOTALDATA.INT_HIGHLIGHT_SEC_ID is undefined in a Java object of type class [Ljava.lang.String; referenced as '' 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 46 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:46) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 16:01:57'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Error establishing socket to host and port: MINDFIRE-PC:1433. Reason: Connection refused: connect 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 16:02:09'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Error establishing socket to host and port: MINDFIRE-PC:1433. Reason: Connection refused: connect 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 16:02:09'} 
+ERROR MESSAGE: Element GETTOTALDATA.INT_HIGHLIGHT_SEC_ID is undefined in a Java object of type class [Ljava.lang.String; referenced as '' 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 46 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:46) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 16:02:33'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Error establishing socket to host and port: MINDFIRE-PC:1433. Reason: Connection refused: connect 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 16:02:45'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Error establishing socket to host and port: MINDFIRE-PC:1433. Reason: Connection refused: connect 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 16:02:45'} 
+ERROR MESSAGE: Element GETTOTALDATA.INT_HIGHLIGHT_SEC_ID is undefined in a Java object of type class [Ljava.lang.String; referenced as '' 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 46 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:46) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 16:50:27'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Connection reset by peer: socket write error 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 16:50:27'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Object has been closed. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 16:50:27'} 
+ERROR MESSAGE: Element GETTOTALDATA.INT_HIGHLIGHT_SEC_ID is undefined in a Java object of type class [Ljava.lang.String; referenced as '' 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 46 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:46) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 16:50:51'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Error establishing socket to host and port: MINDFIRE-PC:1433. Reason: Connection refused: connect 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 16:51:03'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Error establishing socket to host and port: MINDFIRE-PC:1433. Reason: Connection refused: connect 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-06-30 17:02:21'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver][SQLServer]Invalid column name 'str_column_names'. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-06-30 17:02:21'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver][SQLServer]Invalid column name 'int_companyid'. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-06-30 17:02:22'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver][SQLServer]Invalid column name 'str_column_names'. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-06-30 17:02:41'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver][SQLServer]Invalid column name 'str_column_names'. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-06-30 17:02:41'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver][SQLServer]Invalid column name 'str_column_names'. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-06-30 17:02:45'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver][SQLServer]Invalid column name 'int_companyid'. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-06-30 17:02:45'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver][SQLServer]Invalid column name 'str_column_names'. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-06-30 17:02:45'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver][SQLServer]Invalid column name 'int_companyid'. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-06-30 17:02:45'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver][SQLServer]Invalid column name 'str_column_names'. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-06-30 17:26:49'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver][SQLServer]Invalid column name 'str_column_names'. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-06-30 17:26:49'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver][SQLServer]Invalid column name 'int_companyid'. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:10:06'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Connection reset by peer: socket write error 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:10:31'} 
+ERROR MESSAGE: Variable E is undefined. 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\credintel\ComapnyReports\model\reportModel.cfc 
+ERROR LINE: 342 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportModel2ecfc843441208$funcUPDATECHARTPREF.runFunction(D:\credintel\ComapnyReports\model\reportModel.cfc:342) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:10:43'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Error establishing socket to host and port: CHANDRA:1433. Reason: Connection refused: connect 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:11:13'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Connection reset by peer: socket write error 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-04 15:11:25'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Error establishing socket to host and port: CHANDRA:1433. Reason: Connection refused: connect 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+=======
+DATE/TIME: {ts '2017-07-04 16:51:03'} 
+ERROR MESSAGE: Element GETTOTALDATA.INT_HIGHLIGHT_SEC_ID is undefined in a Java object of type class [Ljava.lang.String; referenced as '' 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\coldfusion\company\controller\reportController.cfc 
+ERROR LINE: 46 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc2117055771$funcADDHIGHLIGHT.runFunction(D:\coldfusion\company\controller\reportController.cfc:46) 
+>>>>>>> 2f922b79aed0cd2a45fb88fe9c096af5100f65e3
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-05 16:17:50'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Connection reset by peer: socket write error 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-05 16:17:50'} 
+ERROR MESSAGE: The getResult method was not found. 
+ERROR DETAILS: Either there are no methods with the specified method name and argument types or the getResult method is overloaded with argument types that ColdFusion cannot decipher reliably. ColdFusion found 0 methods that match the provided arguments. If this is a Java object and you verified that the method exists, use the javacast function to reduce ambiguity. 
+ERROR TEMPLATE: D:\credintel\ComapnyReports\controller\reportController.cfc 
+ERROR LINE: 23 
+ERROR TYPE: Object 
+STACKTRACE: 	at cfreportController2ecfc1569593546$funcGENERATEREPORT.runFunction(D:\credintel\ComapnyReports\controller\reportController.cfc:23) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-05 16:17:50'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Object has been closed. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-05 16:17:50'} 
+ERROR MESSAGE: The getResult method was not found. 
+ERROR DETAILS: Either there are no methods with the specified method name and argument types or the getResult method is overloaded with argument types that ColdFusion cannot decipher reliably. ColdFusion found 0 methods that match the provided arguments. If this is a Java object and you verified that the method exists, use the javacast function to reduce ambiguity. 
+ERROR TEMPLATE: D:\credintel\ComapnyReports\controller\companyController.cfc 
+ERROR LINE: 107 
+ERROR TYPE: Object 
+STACKTRACE: 	at cfcompanyController2ecfc1236161991$funcGETANALYST.runFunction(D:\credintel\ComapnyReports\controller\companyController.cfc:107) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-05 16:17:50'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Connection reset by peer: socket write error 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-05 16:17:50'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Object has been closed. 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-05 16:18:08'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Error establishing socket to host and port: CHANDRA:1433. Reason: Connection refused: connect 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-05 16:18:08'} 
+ERROR MESSAGE: The getResult method was not found. 
+ERROR DETAILS: Either there are no methods with the specified method name and argument types or the getResult method is overloaded with argument types that ColdFusion cannot decipher reliably. ColdFusion found 0 methods that match the provided arguments. If this is a Java object and you verified that the method exists, use the javacast function to reduce ambiguity. 
+ERROR TEMPLATE: D:\credintel\ComapnyReports\controller\reportController.cfc 
+ERROR LINE: 23 
+ERROR TYPE: Object 
+STACKTRACE: 	at cfreportController2ecfc1569593546$funcGENERATEREPORT.runFunction(D:\credintel\ComapnyReports\controller\reportController.cfc:23) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-05 16:18:40'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Connection reset by peer: socket write error 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-05 16:19:01'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Error establishing socket to host and port: CHANDRA:1433. Reason: Connection refused: connect 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-05 16:19:13'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Error establishing socket to host and port: CHANDRA:1433. Reason: Connection refused: connect 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-05 16:19:25'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Error establishing socket to host and port: CHANDRA:1433. Reason: Connection refused: connect 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-05 16:19:37'} 
+ERROR MESSAGE: Error Executing Database Query. 
+ERROR DETAILS: [Macromedia][SQLServer JDBC Driver]Error establishing socket to host and port: CHANDRA:1433. Reason: Connection refused: connect 
+ERROR TEMPLATE: C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc 
+ERROR LINE: 445 
+ERROR TYPE: Database 
+STACKTRACE: 	at cfbase2ecfc450754003$funcINVOKETAG.runFunction(C:\ColdFusion10\cfusion\CustomTags\com\adobe\coldfusion\base.cfc:445) 
+----------------------------------------------------------------------
+
+DATE/TIME: {ts '2017-07-05 16:19:37'} 
+ERROR MESSAGE: Element GETTOTALDATA.INT_HIGHLIGHT_SEC_ID is undefined in a Java object of type class [Ljava.lang.String; referenced as '' 
+ERROR DETAILS:  
+ERROR TEMPLATE: D:\credintel\ComapnyReports\controller\reportController.cfc 
+ERROR LINE: 46 
+ERROR TYPE: Expression 
+STACKTRACE: 	at cfreportController2ecfc1569593546$funcADDHIGHLIGHT.runFunction(D:\credintel\ComapnyReports\controller\reportController.cfc:46) 
+----------------------------------------------------------------------
+
